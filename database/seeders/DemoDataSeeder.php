@@ -101,9 +101,21 @@ class DemoDataSeeder extends Seeder
             );
         }
 
-        $user = \App\Models\User::first();
-        if ($user) {
-            $user->update(['tenant_id' => $tenant->id, 'company_id' => $company->id]);
+        // Create admin user (idempotent — akan selalu ada setelah seed)
+        $admin = \App\Models\User::firstOrCreate(
+            ['email' => 'admin@goerp.test'],
+            [
+                'name' => 'Super Admin',
+                'password' => bcrypt('password'),
+                'tenant_id' => $tenant->id,
+                'company_id' => $company->id,
+                'role' => 'admin',
+            ]
+        );
+        if (!$admin->tenant_id) {
+            $admin->update(['tenant_id' => $tenant->id, 'company_id' => $company->id, 'role' => 'admin']);
         }
+
+        \App\Models\User::where('email', '!=', 'admin@goerp.test')->update(['tenant_id' => $tenant->id, 'company_id' => $company->id]);
     }
 }
