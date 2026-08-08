@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\SalesInvoice;
+use Filament\Facades\Filament;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -11,6 +12,11 @@ class TodaySales extends BaseWidget
     use DashboardWidgetFilter;
 
     protected static ?int $sort = 7;
+
+    public static function canView(): bool
+    {
+        return Filament::getCurrentPanel()?->getId() === 'app' && static::isVisibleToRole(auth()->user()?->role);
+    }
 
     protected static function isVisibleToRole(?string $role): bool
     {

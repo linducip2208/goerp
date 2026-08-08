@@ -109,11 +109,39 @@ class DemoDataSeeder extends Seeder
                 'password' => bcrypt('password'),
                 'tenant_id' => $tenant->id,
                 'company_id' => $company->id,
-                'role' => 'admin',
+                'role' => 'super_admin',
             ]
         );
         if (!$admin->tenant_id) {
-            $admin->update(['tenant_id' => $tenant->id, 'company_id' => $company->id, 'role' => 'admin']);
+            $admin->update(['tenant_id' => $tenant->id, 'company_id' => $company->id, 'role' => 'super_admin']);
+        } else {
+            $admin->update(['role' => 'super_admin']);
+        }
+
+        // Platform Admin (akses /admin)
+        \App\Models\User::firstOrCreate(
+            ['email' => 'platform@goerp.test'],
+            ['name' => 'Platform Admin', 'password' => bcrypt('password'), 'role' => 'platform_admin']
+        );
+
+        // ERP Users (akses /app)
+        $roles = [
+            ['email' => 'owner@goerp.test', 'name' => 'Pemilik Bisnis', 'role' => 'owner'],
+            ['email' => 'finance@goerp.test', 'name' => 'Finance Manager', 'role' => 'finance'],
+            ['email' => 'accounting@goerp.test', 'name' => 'Akuntan', 'role' => 'accounting'],
+            ['email' => 'sales@goerp.test', 'name' => 'Sales Admin', 'role' => 'sales'],
+            ['email' => 'purchasing@goerp.test', 'name' => 'Purchasing Staff', 'role' => 'purchasing'],
+            ['email' => 'warehouse@goerp.test', 'name' => 'Warehouse Staff', 'role' => 'warehouse'],
+            ['email' => 'production@goerp.test', 'name' => 'Production Manager', 'role' => 'production'],
+            ['email' => 'cashier@goerp.test', 'name' => 'Kasir', 'role' => 'cashier'],
+            ['email' => 'auditor@goerp.test', 'name' => 'Auditor', 'role' => 'auditor'],
+        ];
+
+        foreach ($roles as $r) {
+            \App\Models\User::firstOrCreate(
+                ['email' => $r['email']],
+                ['name' => $r['name'], 'password' => bcrypt('password'), 'tenant_id' => $tenant->id, 'company_id' => $company->id, 'role' => $r['role']]
+            )->update(['tenant_id' => $tenant->id, 'company_id' => $company->id, 'role' => $r['role']]);
         }
 
         \App\Models\User::where('email', '!=', 'admin@goerp.test')->update(['tenant_id' => $tenant->id, 'company_id' => $company->id]);

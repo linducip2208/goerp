@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\SalesInvoice;
+use Filament\Facades\Filament;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Widgets\TableWidget as BaseWidget;
@@ -14,6 +15,11 @@ class OverdueInvoices extends BaseWidget
     protected static ?int $sort = 6;
     protected static ?string $heading = 'Faktur Jatuh Tempo';
     protected int|string|array $columnSpan = 'full';
+
+    public static function canView(): bool
+    {
+        return Filament::getCurrentPanel()?->getId() === 'app' && static::isVisibleToRole(auth()->user()?->role);
+    }
 
     protected static function isVisibleToRole(?string $role): bool
     {

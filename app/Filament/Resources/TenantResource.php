@@ -61,6 +61,23 @@ class TenantResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('impersonate')
+                    ->label('Login As')
+                    ->icon('heroicon-o-eye')
+                    ->color('warning')
+                    ->requiresConfirmation()
+                    ->modalDescription('Anda akan login sebagai tenant ini. Semua aktivitas akan dicatat.')
+                    ->action(function (Tenant $tenant) {
+                        \App\Models\ImpersonationLog::create([
+                            'platform_admin_id' => auth()->id(),
+                            'target_user_id' => auth()->id(),
+                            'tenant_id' => $tenant->id,
+                            'start_time' => now(),
+                            'reason' => 'Platform Admin Login As Tenant',
+                        ]);
+                        session(['impersonate_tenant_id' => $tenant->id]);
+                        return redirect('/app');
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

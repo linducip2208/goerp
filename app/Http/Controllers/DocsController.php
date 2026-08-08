@@ -9,7 +9,17 @@ class DocsController extends Controller
     public function index()
     {
         $demoAccounts = [
-            ['role' => 'Admin', 'email' => 'admin@goerp.test', 'password' => 'password', 'scope' => 'Akses penuh'],
+            ['role' => 'Super Admin', 'panel' => 'Platform Admin (/admin)', 'email' => 'admin@goerp.test', 'password' => 'password', 'scope' => 'Kelola tenant, subscription, billing, support, system'],
+            ['role' => 'Platform Admin', 'panel' => 'Platform Admin (/admin)', 'email' => 'platform@goerp.test', 'password' => 'password', 'scope' => 'Kelola tenant & subscription'],
+            ['role' => 'Pemilik Bisnis', 'panel' => 'Customer ERP (/app)', 'email' => 'owner@goerp.test', 'password' => 'password', 'scope' => 'Akses penuh semua modul ERP'],
+            ['role' => 'Finance Manager', 'panel' => 'Customer ERP (/app)', 'email' => 'finance@goerp.test', 'password' => 'password', 'scope' => 'Finance, Kas & Bank, Laporan'],
+            ['role' => 'Akuntan', 'panel' => 'Customer ERP (/app)', 'email' => 'accounting@goerp.test', 'password' => 'password', 'scope' => 'COA, Jurnal, General Ledger, Tutup Buku'],
+            ['role' => 'Sales Admin', 'panel' => 'Customer ERP (/app)', 'email' => 'sales@goerp.test', 'password' => 'password', 'scope' => 'Penawaran, SO, Faktur, Marketplace'],
+            ['role' => 'Purchasing Staff', 'panel' => 'Customer ERP (/app)', 'email' => 'purchasing@goerp.test', 'password' => 'password', 'scope' => 'Purchase Request, PO, Penerimaan'],
+            ['role' => 'Warehouse Staff', 'panel' => 'Customer ERP (/app)', 'email' => 'warehouse@goerp.test', 'password' => 'password', 'scope' => 'Stok, Mutasi, Transfer, Stock Opname'],
+            ['role' => 'Production Manager', 'panel' => 'Customer ERP (/app)', 'email' => 'production@goerp.test', 'password' => 'password', 'scope' => 'BOM, Production Order, QC, HPP'],
+            ['role' => 'Kasir', 'panel' => 'Customer ERP (/app)', 'email' => 'cashier@goerp.test', 'password' => 'password', 'scope' => 'Penerimaan & pembayaran customer'],
+            ['role' => 'Auditor', 'panel' => 'Customer ERP (/app)', 'email' => 'auditor@goerp.test', 'password' => 'password', 'scope' => 'View-only + audit trail'],
         ];
 
         $tutorialPhases = [

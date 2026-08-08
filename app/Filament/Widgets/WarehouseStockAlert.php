@@ -4,6 +4,7 @@ namespace App\Filament\Widgets;
 
 use App\Models\Product;
 use App\Models\InventoryBalance;
+use Filament\Facades\Filament;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Widgets\TableWidget as BaseWidget;
@@ -15,6 +16,11 @@ class WarehouseStockAlert extends BaseWidget
     protected static ?int $sort = 5;
     protected static ?string $heading = 'Stok Di Bawah Minimum';
     protected int|string|array $columnSpan = 'full';
+
+    public static function canView(): bool
+    {
+        return Filament::getCurrentPanel()?->getId() === 'app' && static::isVisibleToRole(auth()->user()?->role);
+    }
 
     protected static function isVisibleToRole(?string $role): bool
     {

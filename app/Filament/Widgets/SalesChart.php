@@ -3,12 +3,18 @@
 namespace App\Filament\Widgets;
 
 use App\Models\SalesInvoice;
+use Filament\Facades\Filament;
 use Filament\Widgets\ChartWidget;
 
 class SalesChart extends ChartWidget
 {
     protected static ?string $heading = 'Grafik Penjualan';
     protected static ?int $sort = 2;
+
+    public static function canView(): bool
+    {
+        return Filament::getCurrentPanel()?->getId() === 'app';
+    }
 
     protected function getData(): array
     {

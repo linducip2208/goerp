@@ -5,12 +5,18 @@ namespace App\Filament\Widgets;
 use App\Models\SalesInvoice;
 use App\Models\Contact;
 use App\Models\ProductVariant;
+use Filament\Facades\Filament;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class StatsOverview extends BaseWidget
 {
     protected static ?int $sort = 1;
+
+    public static function canView(): bool
+    {
+        return Filament::getCurrentPanel()?->getId() === 'app';
+    }
 
     protected function getStats(): array
     {

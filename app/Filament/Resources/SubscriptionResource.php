@@ -101,6 +101,13 @@ class SubscriptionResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            \App\Filament\Resources\SubscriptionResource\RelationManagers\InvoicesRelationManager::class,
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
