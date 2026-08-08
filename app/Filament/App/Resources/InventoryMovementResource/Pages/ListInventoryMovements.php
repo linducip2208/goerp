@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Filament\App\Resources\InventoryMovementResource\Pages;
+
+use App\Filament\App\Resources\InventoryMovementResource;
+use Filament\Actions;
+use Filament\Resources\Pages\ListRecords;
+
+class ListInventoryMovements extends ListRecords
+{
+    protected static string $resource = InventoryMovementResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\CreateAction::make(),
+        ];
+    }
+}

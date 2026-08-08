@@ -68,20 +68,20 @@ class CustomerPanelProvider extends PanelProvider
                 NavigationGroup::make('📥 Import / Export')->collapsed(true),
                 NavigationGroup::make('⚙️ Settings')->collapsed(true),
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\\Filament\\App\\Resources')
+            ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\\Filament\\App\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/App/Widgets'), for: 'App\\Filament\\App\\Widgets')
             ->widgets([
-                \App\Filament\Widgets\StatsOverview::class,
-                \App\Filament\Widgets\SalesChart::class,
-                \App\Filament\Widgets\RecentInvoices::class,
-                \App\Filament\Widgets\CashierToday::class,
-                \App\Filament\Widgets\WarehouseStockAlert::class,
-                \App\Filament\Widgets\OverdueInvoices::class,
-                \App\Filament\Widgets\TodaySales::class,
+                \App\Filament\App\Widgets\StatsOverview::class,
+                \App\Filament\App\Widgets\SalesChart::class,
+                \App\Filament\App\Widgets\RecentInvoices::class,
+                \App\Filament\App\Widgets\CashierToday::class,
+                \App\Filament\App\Widgets\WarehouseStockAlert::class,
+                \App\Filament\App\Widgets\OverdueInvoices::class,
+                \App\Filament\App\Widgets\TodaySales::class,
             ])
             ->renderHook(
                 PanelsRenderHook::GLOBAL_SEARCH_BEFORE,
