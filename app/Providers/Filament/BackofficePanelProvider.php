@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Providers\Filament;
+
+use App\Filament\Backoffice\Pages\BackofficeDashboard;
+use Filament\Http\Middleware\Authenticate;
+use Filament\Http\Middleware\AuthenticateSession;
+use Filament\Http\Middleware\DisableBladeIconComponents;
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
+use Filament\Panel;
+use Filament\PanelProvider;
+use Filament\Support\Colors\Color;
+use Filament\Widgets;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
+
+class BackofficePanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            ->id('backoffice')
+            ->path('backoffice')
+            ->login()
+            ->brandName('GoERP Backoffice')
+            ->colors(['primary' => Color::Violet])
+            ->font('Inter')
+            ->sidebarCollapsibleOnDesktop()
+            ->navigationGroups([
+                NavigationGroup::make('🏢 Pelanggan')->collapsed(false),
+                NavigationGroup::make('💳 Langganan')->collapsed(false),
+                NavigationGroup::make('🎫 Support')->collapsed(true),
+                NavigationGroup::make('⚙️ Sistem')->collapsed(true),
+            ])
+            ->discoverResources(in: app_path('Filament/Backoffice/Resources'), for: 'App\\Filament\\Backoffice\\Resources')
+            ->discoverPages(in: app_path('Filament/Backoffice/Pages'), for: 'App\\Filament\\Backoffice\\Pages')
+            ->pages([
+                BackofficeDashboard::class,
+            ])
+            ->discoverWidgets(in: app_path('Filament/Backoffice/Widgets'), for: 'App\\Filament\\Backoffice\\Widgets')
+            ->widgets([Widgets\AccountWidget::class])
+            ->middleware([
+                EncryptCookies::class,
+                AddQueuedCookiesToResponse::class,
+                StartSession::class,
+                AuthenticateSession::class,
+                ShareErrorsFromSession::class,
+                VerifyCsrfToken::class,
+                SubstituteBindings::class,
+                DisableBladeIconComponents::class,
+                DispatchServingFilamentEvent::class,
+            ])
+            ->authMiddleware([Authenticate::class]);
+    }
+}

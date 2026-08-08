@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /$
+Allow: /docs
+Allow: /blog
+Allow: /marketing/
+Disallow: /admin
+Disallow: /backoffice
+Disallow: /api
+Sitemap: /sitemap.xml
