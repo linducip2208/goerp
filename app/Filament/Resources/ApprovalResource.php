@@ -15,7 +15,7 @@ class ApprovalResource extends Resource
 {
     protected static ?string $model = Approval::class;
 
-    protected static ?string $navigationGroup = '🔄 Workflow & Approval';
+    protected static ?string $navigationGroup = '🔄 Workflow';
     protected static ?string $navigationIcon = 'heroicon-o-check-badge';
     protected static ?int $navigationSort = 91;
     protected static ?string $modelLabel = 'Approval';

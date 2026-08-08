@@ -117,5 +117,31 @@ class DemoDataSeeder extends Seeder
         }
 
         \App\Models\User::where('email', '!=', 'admin@goerp.test')->update(['tenant_id' => $tenant->id, 'company_id' => $company->id]);
+
+        $plan = \App\Models\SubscriptionPlan::firstOrCreate(
+            ['code' => 'enterprise'],
+            [
+                'name' => 'Enterprise',
+                'price_monthly' => 2999000,
+                'price_yearly' => 29990000,
+                'max_users' => 999,
+                'max_companies' => 999,
+                'max_branches' => 999,
+                'max_warehouses' => 999,
+                'features' => json_encode(['accounting','inventory','sales','purchase','production','marketplace','multi_warehouse','approval','api','ai','reports']),
+                'is_active' => true,
+            ]
+        );
+
+        \App\Models\Subscription::firstOrCreate(
+            ['tenant_id' => $tenant->id],
+            [
+                'plan_id' => $plan->id,
+                'start_date' => now(),
+                'end_date' => now()->addYear(),
+                'status' => 'active',
+                'auto_renew' => true,
+            ]
+        );
     }
 }

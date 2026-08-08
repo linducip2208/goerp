@@ -14,7 +14,7 @@ class RecurringJournalResource extends Resource
 {
     protected static ?string $model = RecurringJournal::class;
 
-    protected static ?string $navigationGroup = '📊 Finance & Accounting';
+    protected static ?string $navigationGroup = '📊 Accounting';
     protected static ?string $navigationIcon = 'heroicon-o-arrow-path';
     protected static ?int $navigationSort = 55;
     protected static ?string $modelLabel = 'Jurnal Berulang';

@@ -14,7 +14,7 @@ class FiscalPeriodResource extends Resource
 {
     protected static ?string $model = FiscalPeriod::class;
 
-    protected static ?string $navigationGroup = '📊 Finance & Accounting';
+    protected static ?string $navigationGroup = '📊 Accounting';
     protected static ?string $navigationIcon = 'heroicon-o-calendar';
     protected static ?int $navigationSort = 58;
     protected static ?string $modelLabel = 'Periode Fiskal';

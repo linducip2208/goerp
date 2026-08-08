@@ -17,7 +17,7 @@ class OpeningBalance extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-right-start-on-rectangle';
-    protected static ?string $navigationGroup = '📊 Akuntansi';
+    protected static ?string $navigationGroup = '📊 Accounting';
     protected static ?int $navigationSort = 56;
     protected static ?string $title = 'Saldo Awal';
 

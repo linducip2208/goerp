@@ -14,7 +14,7 @@ class BankTransactionResource extends Resource
 {
     protected static ?string $model = BankTransaction::class;
 
-    protected static ?string $navigationGroup = '💵 Kas & Bank';
+    protected static ?string $navigationGroup = '💵 Finance';
     protected static ?string $navigationIcon = 'heroicon-o-arrows-right-left';
     protected static ?int $navigationSort = 42;
     protected static ?string $modelLabel = 'Transaksi Bank';

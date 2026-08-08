@@ -17,7 +17,7 @@ class BudgetResource extends Resource
 {
     protected static ?string $model = Budget::class;
 
-    protected static ?string $navigationGroup = '📊 Finance & Accounting';
+    protected static ?string $navigationGroup = '📊 Accounting';
     protected static ?string $navigationIcon = 'heroicon-o-chart-pie';
     protected static ?int $navigationSort = 57;
     protected static ?string $modelLabel = 'Anggaran';

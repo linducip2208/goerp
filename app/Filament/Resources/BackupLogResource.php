@@ -12,7 +12,7 @@ class BackupLogResource extends Resource
 {
     protected static ?string $model = BackupLog::class;
 
-    protected static ?string $navigationGroup = '🛠️ Administrator';
+    protected static ?string $navigationGroup = '🛠️ System';
     protected static ?string $navigationIcon = 'heroicon-o-server-stack';
     protected static ?int $navigationSort = 179;
     protected static ?string $modelLabel = 'Log Backup';

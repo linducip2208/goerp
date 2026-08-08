@@ -17,7 +17,7 @@ class SalesLeadResource extends Resource
 {
     protected static ?string $model = SalesLead::class;
 
-    protected static ?string $navigationGroup = '💰 Penjualan';
+    protected static ?string $navigationGroup = '💰 CRM';
     protected static ?string $navigationIcon = 'heroicon-o-user-plus';
     protected static ?int $navigationSort = 18;
     protected static ?string $modelLabel = 'Prospek';

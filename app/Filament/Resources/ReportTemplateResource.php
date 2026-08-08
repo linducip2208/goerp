@@ -14,7 +14,7 @@ class ReportTemplateResource extends Resource
 {
     protected static ?string $model = ReportTemplate::class;
 
-    protected static ?string $navigationGroup = '📈 Reporting';
+    protected static ?string $navigationGroup = '📈 Reports';
     protected static ?string $navigationIcon = 'heroicon-o-document-plus';
     protected static ?int $navigationSort = 77;
     protected static ?string $modelLabel = 'Template Laporan';

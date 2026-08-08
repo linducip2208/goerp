@@ -20,7 +20,7 @@ class DataImport extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-up-tray';
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = '⚙️ Settings';
     protected static ?int $navigationSort = 86;
     protected static ?string $title = 'Import Data';
 

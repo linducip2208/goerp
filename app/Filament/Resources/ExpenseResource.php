@@ -14,7 +14,7 @@ class ExpenseResource extends Resource
 {
     protected static ?string $model = Expense::class;
 
-    protected static ?string $navigationGroup = '💵 Kas & Bank';
+    protected static ?string $navigationGroup = '💵 Finance';
     protected static ?string $navigationIcon = 'heroicon-o-receipt-percent';
     protected static ?int $navigationSort = 43;
     protected static ?string $modelLabel = 'Biaya';

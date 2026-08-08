@@ -16,7 +16,7 @@ class LockPeriodResource extends Resource
     protected static ?string $model = LockPeriod::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-lock-closed';
-    protected static ?string $navigationGroup = '📊 Finance & Accounting';
+    protected static ?string $navigationGroup = '📊 Accounting';
     protected static ?int $navigationSort = 54;
     protected static ?string $modelLabel = 'Lock Period';
     protected static ?string $pluralModelLabel = 'Lock Period';

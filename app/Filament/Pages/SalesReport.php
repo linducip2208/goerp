@@ -20,7 +20,7 @@ class SalesReport extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
-    protected static ?string $navigationGroup = '📈 Laporan';
+    protected static ?string $navigationGroup = '📈 Reports';
     protected static ?int $navigationSort = 74;
     protected static ?string $title = 'Laporan Penjualan';
 

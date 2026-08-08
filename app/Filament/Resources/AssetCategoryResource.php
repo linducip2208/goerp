@@ -14,7 +14,7 @@ class AssetCategoryResource extends Resource
 {
     protected static ?string $model = AssetCategory::class;
 
-    protected static ?string $navigationGroup = '🏦 Asset Management';
+    protected static ?string $navigationGroup = '🏦 Asset';
     protected static ?string $navigationIcon = 'heroicon-o-tag';
     protected static ?int $navigationSort = 102;
     protected static ?string $modelLabel = 'Kategori Aset';

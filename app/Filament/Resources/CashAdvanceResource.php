@@ -14,7 +14,7 @@ class CashAdvanceResource extends Resource
 {
     protected static ?string $model = CashAdvance::class;
 
-    protected static ?string $navigationGroup = '💵 Kas & Bank';
+    protected static ?string $navigationGroup = '💵 Finance';
     protected static ?string $navigationIcon = 'heroicon-o-arrow-right-circle';
     protected static ?int $navigationSort = 45;
     protected static ?string $modelLabel = 'Uang Muka';

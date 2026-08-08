@@ -19,7 +19,7 @@ class CompanySettings extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = '⚙️ Settings';
     protected static ?int $navigationSort = 81;
     protected static ?string $title = 'Perusahaan';
 

@@ -9,13 +9,14 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use App\Enums\UserRole;
 use Illuminate\Support\Facades\Hash;
 
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationGroup = '🏢 Organisasi';
+    protected static ?string $navigationGroup = '🏢 Tenants';
     protected static ?string $navigationIcon = 'heroicon-o-user';
     protected static ?int $navigationSort = 5;
     protected static ?string $modelLabel = 'Pengguna';
@@ -52,14 +53,8 @@ class UserResource extends Resource
                     ->maxLength(255)
                     ->label('Password'),
                 Forms\Components\Select::make('role')
-                    ->options([
-                        'admin' => 'Admin',
-                        'cashier' => 'Kasir',
-                        'warehouse' => 'Gudang',
-                        'finance' => 'Keuangan',
-                        'sales' => 'Sales',
-                        'owner' => 'Owner',
-                    ])
+                    ->options(collect(UserRole::cases())->mapWithKeys(fn($r) => [$r->value => $r->label()]))
+                    ->required()
                     ->label('Role'),
             ]);
     }
@@ -73,13 +68,22 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('role')
                     ->label('Role')
                     ->badge()
+                    ->formatStateUsing(fn(?string $state): string => UserRole::tryFrom($state)?->label() ?? $state ?? '-')
                     ->color(fn(?string $state): string => match ($state) {
-                        'admin' => 'info',
-                        'cashier' => 'success',
-                        'warehouse' => 'warning',
-                        'finance' => 'danger',
-                        'sales' => 'primary',
+                        'super_admin' => 'danger',
+                        'platform_admin' => 'danger',
+                        'platform_support' => 'info',
+                        'platform_billing' => 'warning',
                         'owner' => 'gray',
+                        'admin' => 'info',
+                        'finance' => 'success',
+                        'accounting' => 'success',
+                        'sales' => 'primary',
+                        'purchasing' => 'primary',
+                        'warehouse' => 'warning',
+                        'production' => 'warning',
+                        'cashier' => 'success',
+                        'auditor' => 'danger',
                         default => 'gray',
                     }),
                 Tables\Columns\TextColumn::make('last_login_at')

@@ -29,12 +29,18 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(\App\Filament\Pages\Login::class)
-            ->brandName('GoERP')
+            ->brandName('GoERP Platform')
             ->favicon(asset('favicon.ico'))
             ->colors([
                 'primary' => Color::Indigo,
+                'success' => Color::Emerald,
+                'warning' => Color::Amber,
+                'danger' => Color::Rose,
+                'info' => Color::Sky,
+                'gray' => Color::Stone,
             ])
             ->font('Inter')
+            ->darkMode(true)
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->sidebarCollapsibleOnDesktop()
             ->sidebarWidth('15.5rem')
@@ -42,32 +48,17 @@ class AdminPanelProvider extends PanelProvider
             ->topbar(true)
             ->navigationGroups([
                 NavigationGroup::make('🏠 Dashboard')->collapsed(false),
-                NavigationGroup::make('🏢 Organisasi')->collapsed(false),
-                NavigationGroup::make('📚 Master Data')->collapsed(false),
-                NavigationGroup::make('💰 Penjualan')->collapsed(true),
-                NavigationGroup::make('🛒 Pembelian')->collapsed(true),
-                NavigationGroup::make('📦 Inventory')->collapsed(true),
-                NavigationGroup::make('🏭 Gudang & Logistik')->collapsed(true),
-                NavigationGroup::make('🏭 Manufacturing')->collapsed(true),
-                NavigationGroup::make('💵 Kas & Bank')->collapsed(true),
-                NavigationGroup::make('📊 Finance & Accounting')->collapsed(true),
-                NavigationGroup::make('🏦 Asset Management')->collapsed(true),
-                NavigationGroup::make('🧾 Perpajakan')->collapsed(true),
-                NavigationGroup::make('👥 CRM')->collapsed(true),
-                NavigationGroup::make('👨‍💼 Human Capital')->collapsed(true),
-                NavigationGroup::make('📋 Project')->collapsed(true),
-                NavigationGroup::make('🛍️ POS & Retail')->collapsed(true),
-                NavigationGroup::make('🛒 Marketplace')->collapsed(true),
-                NavigationGroup::make('📈 Reporting')->collapsed(true),
-                NavigationGroup::make('🤖 AI & Automation')->collapsed(true),
-                NavigationGroup::make('🔄 Workflow & Approval')->collapsed(true),
-                NavigationGroup::make('🔐 Security & Audit')->collapsed(true),
-                NavigationGroup::make('🔌 Integrations')->collapsed(true),
-                NavigationGroup::make('📥 Import & Export')->collapsed(true),
-                NavigationGroup::make('⚙️ Pengaturan')->collapsed(true),
-                NavigationGroup::make('🔔 Notifikasi')->collapsed(true),
-                NavigationGroup::make('📝 Content')->collapsed(true),
-                NavigationGroup::make('🛠️ Administrator')->collapsed(true),
+                NavigationGroup::make('👥 Customers')->collapsed(false),
+                NavigationGroup::make('🏢 Tenants')->collapsed(false),
+                NavigationGroup::make('💳 Subscriptions')->collapsed(true),
+                NavigationGroup::make('💰 Billing')->collapsed(true),
+                NavigationGroup::make('📊 Usage')->collapsed(true),
+                NavigationGroup::make('🎫 Support')->collapsed(true),
+                NavigationGroup::make('📢 Announcements')->collapsed(true),
+                NavigationGroup::make('🔐 Security')->collapsed(true),
+                NavigationGroup::make('🛠️ System')->collapsed(true),
+                NavigationGroup::make('🔌 Platform Integrations')->collapsed(true),
+                NavigationGroup::make('⚙️ Platform Settings')->collapsed(true),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -76,13 +67,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                \App\Filament\Widgets\StatsOverview::class,
-                \App\Filament\Widgets\SalesChart::class,
-                \App\Filament\Widgets\RecentInvoices::class,
-                \App\Filament\Widgets\CashierToday::class,
-                \App\Filament\Widgets\WarehouseStockAlert::class,
-                \App\Filament\Widgets\OverdueInvoices::class,
-                \App\Filament\Widgets\TodaySales::class,
+                Widgets\AccountWidget::class,
             ])
             ->renderHook(
                 PanelsRenderHook::GLOBAL_SEARCH_BEFORE,
@@ -101,6 +86,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+                \App\Http\Middleware\EnsurePlatformAccess::class,
             ]);
     }
 }

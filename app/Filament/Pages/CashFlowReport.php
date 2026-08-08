@@ -16,7 +16,7 @@ class CashFlowReport extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-trending-up';
-    protected static ?string $navigationGroup = '📈 Laporan';
+    protected static ?string $navigationGroup = '📈 Reports';
     protected static ?int $navigationSort = 73;
     protected static ?string $title = 'Arus Kas';
 

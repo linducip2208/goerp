@@ -14,7 +14,7 @@ class PettyCashResource extends Resource
 {
     protected static ?string $model = PettyCash::class;
 
-    protected static ?string $navigationGroup = '💵 Kas & Bank';
+    protected static ?string $navigationGroup = '💵 Finance';
     protected static ?string $navigationIcon = 'heroicon-o-wallet';
     protected static ?int $navigationSort = 44;
     protected static ?string $modelLabel = 'Kas Kecil';

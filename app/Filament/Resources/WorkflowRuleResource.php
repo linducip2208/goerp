@@ -14,7 +14,7 @@ class WorkflowRuleResource extends Resource
 {
     protected static ?string $model = WorkflowRule::class;
 
-    protected static ?string $navigationGroup = '🔄 Workflow & Approval';
+    protected static ?string $navigationGroup = '🔄 Workflow';
     protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
     protected static ?int $navigationSort = 95;
     protected static ?string $modelLabel = 'Aturan Workflow';

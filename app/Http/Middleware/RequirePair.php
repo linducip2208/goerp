@@ -54,6 +54,7 @@ class RequirePair
         if ($path === '/blog' || str_starts_with($path, '/blog/')) return true;
         if (str_starts_with($path, '/portal/')) return true;
         if ($path === '/login' || $path === '/logout') return true;
+        if (str_starts_with($path, '/app')) return true;
         if (str_starts_with($path, '/locale/')) return true;
         if (str_starts_with($path, '/build/')) return true;
 

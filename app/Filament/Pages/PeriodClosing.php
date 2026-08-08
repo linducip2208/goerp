@@ -12,7 +12,7 @@ use Filament\Pages\Page;
 class PeriodClosing extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-check-badge';
-    protected static ?string $navigationGroup = '📊 Akuntansi';
+    protected static ?string $navigationGroup = '📊 Accounting';
     protected static ?int $navigationSort = 55;
     protected static ?string $title = 'Tutup Buku';
     protected static ?string $navigationLabel = 'Tutup Buku';

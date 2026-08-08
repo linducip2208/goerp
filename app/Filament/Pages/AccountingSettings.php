@@ -17,7 +17,7 @@ class AccountingSettings extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-calculator';
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = '⚙️ Settings';
     protected static ?int $navigationSort = 82;
     protected static ?string $title = 'Akuntansi';
 

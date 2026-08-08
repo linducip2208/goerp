@@ -74,7 +74,7 @@
         {{-- Tagline + Benefit Cards --}}
         <div class="relative z-10 text-white">
             <h2 class="text-4xl xl:text-5xl font-extrabold leading-tight mb-3 tracking-tight">
-                SaaS ERP Accounting, Inventory & Production untuk bisnis Indonesia
+                ERP Accounting, Inventory & Production untuk bisnis Indonesia
             </h2>
             <p class="text-indigo-200 text-lg leading-relaxed mb-10 max-w-md">
                 Kelola keuangan, gudang, produksi, dan marketplace dalam satu dashboard. Double-entry accounting, multi-warehouse, real-time reports.
@@ -90,7 +90,7 @@
                     <svg class="w-6 h-6 text-indigo-300 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                     </svg>
-                    <p class="text-xs font-semibold text-white">Multi-Warehouse Inventory</p>
+                    <p class="text-xs font-semibold text-white">Multi-Warehouse</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/10 hover:bg-white/15 transition-colors">
                     <svg class="w-6 h-6 text-indigo-300 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -122,7 +122,7 @@
                 </h1>
             </div>
 
-            <h1 class="text-4xl font-extrabold text-zinc-900 mb-2">Masuk ke GoERP</h1>
+            <h1 class="text-4xl font-extrabold text-zinc-900 mb-2 tracking-tight">Masuk</h1>
             <p class="text-zinc-500 mb-8">
                 @if (filament()->hasRegistration())
                 Belum punya akun?
@@ -168,7 +168,7 @@
             <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-5">
                 <div class="flex items-center gap-2 mb-3">
                     <svg class="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
                     </svg>
                     <span class="text-sm font-semibold text-zinc-800">Demo Login</span>
                 </div>
@@ -176,6 +176,22 @@
                     <div class="flex justify-between">
                         <span class="font-semibold text-zinc-700">Admin</span>
                         <span>admin@goerp.test / password</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold text-zinc-700">Manager</span>
+                        <span>manager@goerp.test / password</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold text-zinc-700">Kasir</span>
+                        <span>kasir@goerp.test / password</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold text-zinc-700">Gudang</span>
+                        <span>gudang@goerp.test / password</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold text-zinc-700">Finance</span>
+                        <span>finance@goerp.test / password</span>
                     </div>
                 </div>
             </div>

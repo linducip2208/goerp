@@ -11,7 +11,7 @@ use Filament\Forms\Form;
 class GeneralLedger extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
-    protected static ?string $navigationGroup = '📊 Akuntansi';
+    protected static ?string $navigationGroup = '📊 Accounting';
     protected static ?int $navigationSort = 53;
     protected static ?string $title = 'General Ledger';
     protected static ?string $navigationLabel = 'General Ledger';
