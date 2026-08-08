@@ -100,6 +100,7 @@ class CustomerPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+                \App\Http\Middleware\EnsureCustomerAccess::class,
             ]);
     }
 }
