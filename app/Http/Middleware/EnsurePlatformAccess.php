@@ -12,7 +12,7 @@ class EnsurePlatformAccess
     public function handle(Request $request, Closure $next): Response
     {
         $user = $request->user();
-        if (!$user) return redirect('/app/login');
+        if (!$user) return redirect('/admin/login');
 
         $role = UserRole::tryFrom($user->role ?? '');
         if (!$role || !$role->isPlatform()) {

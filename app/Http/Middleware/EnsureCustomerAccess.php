@@ -12,7 +12,7 @@ class EnsureCustomerAccess
     public function handle(Request $request, Closure $next): Response
     {
         $user = $request->user();
-        if (!$user) return redirect('/admin/login');
+        if (!$user) return redirect('/app/login');
 
         $role = UserRole::tryFrom($user->role ?? '');
         if ($role && $role->isPlatform()) {
