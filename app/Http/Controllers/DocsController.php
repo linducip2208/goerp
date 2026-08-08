@@ -75,6 +75,32 @@ class DocsController extends Controller
             ]],
         ];
 
+        $architecture = [
+            'title' => 'Arsitektur Platform',
+            'description' => 'GoERP dipisahkan menjadi dua panel terpisah dengan autentikasi dan otorisasi berbeda.',
+            'panels' => [
+                ['name' => 'Platform Admin', 'url' => '/admin', 'desc' => 'Control Center untuk owner SaaS — kelola tenant, subscription, billing, support, system.', 'groups' => ['Dashboard', 'Tenants', 'Subscriptions', 'Billing', 'Usage', 'Support', 'System', 'Security']],
+                ['name' => 'Customer ERP', 'url' => '/app', 'desc' => 'Workspace operasional tenant — semua modul bisnis: penjualan, pembelian, inventory, accounting, produksi, dll.', 'groups' => ['Dashboard', 'Organisasi', 'Master Data', 'CRM', 'Penjualan', 'Pembelian', 'Inventory', 'Manufacturing', 'Finance', 'Accounting', 'Reports', 'Settings']],
+            ],
+            'auth' => 'Role-based access: platform_admin hanya bisa akses /admin, customer hanya bisa akses /app. Diback oleh middleware EnsurePlatformAccess & EnsureCustomerAccess.',
+            'tenant' => 'Setiap request Customer ERP di-scope otomatis ke tenant via TenantScope global scope. Data antar tenant terisolasi penuh di database layer.',
+            'subscription' => 'Feature entitlement per subscription plan (Starter/Pro/Business/Enterprise). Feature dicek via FeatureGate trait di backend.',
+        ];
+
+        $deploySection = [
+            'title' => 'Deploy ke Production',
+            'steps' => [
+                'SSH ke server: ssh user@your-server',
+                'cd /var/www/goerp && git pull origin main',
+                'composer install --no-dev --optimize-autoloader',
+                'npm install && npm run build',
+                'php artisan migrate --force',
+                'php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan optimize',
+                'sudo supervisorctl restart goerp-worker',
+            ],
+            'script' => 'Atau langsung: chmod +x deploy.sh && ./deploy.sh',
+        ];
+
         $features = [
             ['group' => 'Penjualan', 'items' => ['Penawaran', 'Sales Order', 'Pengiriman', 'Faktur Penjualan', 'Pembayaran', 'Retur']],
             ['group' => 'Pembelian', 'items' => ['Purchase Order', 'Penerimaan', 'Faktur Pembelian', 'Pembayaran', 'Retur']],
@@ -84,6 +110,6 @@ class DocsController extends Controller
             ['group' => 'Marketplace', 'items' => ['Import Excel', 'SKU Matching', 'Auto Stock Deduction']],
         ];
 
-        return view('pseo.docs-index', compact('demoAccounts', 'tutorialPhases', 'features'));
+        return view('pseo.docs-index', compact('demoAccounts', 'tutorialPhases', 'features', 'architecture', 'deploySection'));
     }
 }

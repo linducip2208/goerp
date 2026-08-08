@@ -42,10 +42,10 @@
 <nav class="bg-white border-b border-stone-200 sticky top-16 z-40 overflow-x-auto">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-6 text-sm py-3 whitespace-nowrap">
         <a href="#demo" class="text-indigo-600 font-medium hover:text-indigo-800">Akun Demo</a>
-        <a href="#struktur" class="text-stone-600 font-medium hover:text-stone-900">Struktur Menu</a>
+        <a href="#arsitektur" class="text-stone-600 font-medium hover:text-stone-900">Arsitektur</a>
         <a href="#tutorial" class="text-stone-600 font-medium hover:text-stone-900">Tutorial</a>
         <a href="#fitur" class="text-stone-600 font-medium hover:text-stone-900">Fitur Lengkap</a>
-        <a href="#cta" class="text-stone-600 font-medium hover:text-stone-900">Mulai Sekarang</a>
+        <a href="#deploy" class="text-stone-600 font-medium hover:text-stone-900">Deploy</a>
     </div>
 </nav>
 
@@ -65,6 +65,7 @@
             <thead class="bg-stone-50 border-b border-stone-200">
                 <tr>
                     <th class="text-left px-5 py-3 font-semibold text-stone-700 uppercase text-xs tracking-wider">Role</th>
+                    <th class="text-left px-5 py-3 font-semibold text-stone-700 uppercase text-xs tracking-wider">Panel</th>
                     <th class="text-left px-5 py-3 font-semibold text-stone-700 uppercase text-xs tracking-wider">Email</th>
                     <th class="text-left px-5 py-3 font-semibold text-stone-700 uppercase text-xs tracking-wider">Password</th>
                     <th class="text-left px-5 py-3 font-semibold text-stone-700 uppercase text-xs tracking-wider">Cakupan</th>
@@ -74,6 +75,7 @@
                 @foreach($demoAccounts as $acct)
                 <tr class="hover:bg-stone-50/50">
                     <td class="px-5 py-3 font-semibold text-indigo-700">{{ $acct['role'] }}</td>
+                    <td class="px-5 py-3"><span class="text-xs font-medium {{ str_contains($acct['panel'], '/admin') ? 'bg-violet-100 text-violet-700' : 'bg-emerald-100 text-emerald-700' }} px-2 py-0.5 rounded-full">{{ $acct['panel'] }}</span></td>
                     <td class="px-5 py-3 font-mono text-sm text-stone-600">{{ $acct['email'] }}</td>
                     <td class="px-5 py-3 font-mono text-sm text-stone-600">{{ $acct['password'] }}</td>
                     <td class="px-5 py-3 text-stone-600">{{ $acct['scope'] }}</td>
@@ -157,16 +159,72 @@
     </div>
 </section>
 
-{{-- CTA --}}
+{{-- Arsitektur --}}
+<section id="arsitektur">
+    <h2 class="text-2xl font-bold text-stone-900 mb-6">🏗️ Arsitektur Platform</h2>
+
+    <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-sm mb-6">
+        <p class="text-stone-600 mb-4">{{ $architecture['description'] }}</p>
+        <div class="grid md:grid-cols-2 gap-6">
+            @foreach ($architecture['panels'] as $panel)
+            <div class="border border-stone-200 rounded-xl p-5">
+                <h3 class="font-bold text-lg mb-2">
+                    <span class="text-indigo-700">{{ $panel['name'] }}</span>
+                    <code class="text-xs bg-stone-100 px-2 py-0.5 rounded ml-2">{{ $panel['url'] }}</code>
+                </h3>
+                <p class="text-stone-500 text-sm mb-3">{{ $panel['desc'] }}</p>
+                <div class="flex flex-wrap gap-1.5">
+                    @foreach ($panel['groups'] as $g)
+                    <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-medium">{{ $g }}</span>
+                    @endforeach
+                </div>
+            </div>
+            @endforeach
+        </div>
+        <div class="mt-4 grid grid-cols-3 gap-3 text-xs text-stone-500">
+            <div class="bg-stone-50 rounded-lg p-3"><strong class="text-stone-700">Auth:</strong> {{ $architecture['auth'] }}</div>
+            <div class="bg-stone-50 rounded-lg p-3"><strong class="text-stone-700">Tenant:</strong> {{ $architecture['tenant'] }}</div>
+            <div class="bg-stone-50 rounded-lg p-3"><strong class="text-stone-700">Subscription:</strong> {{ $architecture['subscription'] }}</div>
+        </div>
+    </div>
+</section>
+
+{{-- Tutorial --}}
+<section id="tutorial">
+{{-- Deploy --}}
+<section id="deploy">
+    <h2 class="text-2xl font-bold text-stone-900 mb-6">🚀 Deploy ke Production</h2>
+    <div class="bg-zinc-900 rounded-xl p-6 shadow-lg overflow-x-auto">
+        <pre class="text-green-400 text-sm font-mono leading-relaxed"># 1. SSH ke server
+ssh user@your-server
+
+# 2. Masuk folder project
+cd /var/www/goerp && git pull origin main
+
+# 3. Install dependencies
+composer install --no-dev --optimize-autoloader
+npm install && npm run build
+
+# 4. Migrasi + cache
+php artisan migrate --force
+php artisan config:cache && php artisan route:cache
+php artisan view:cache && php artisan optimize
+
+# 5. Restart worker
+sudo supervisorctl restart goerp-worker</pre>
+    </div>
+    <p class="text-stone-500 text-sm mt-2">Atau langsung: <code class="bg-stone-100 px-2 py-0.5 rounded text-xs">chmod +x deploy.sh && ./deploy.sh</code></p>
+</section>
+
 <section id="cta" class="bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-10 sm:p-16 text-center text-white shadow-xl">
     <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">Siap Memulai?</h2>
-    <p class="text-indigo-100 text-lg mb-8 max-w-lg mx-auto">Akses panel admin GoERP sekarang dan kelola bisnis Anda lebih efisien.</p>
+    <p class="text-indigo-100 text-lg mb-8 max-w-lg mx-auto">Akses GoERP sekarang — Platform Admin untuk kelola SaaS, Customer ERP untuk operasional bisnis.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/admin" class="inline-flex items-center justify-center px-8 py-3 bg-white text-indigo-700 font-semibold rounded-xl hover:bg-indigo-50 transition-colors shadow-lg">
-            Buka Admin Panel &#x2192;
+            Platform Admin &#x2192;
         </a>
-        <a href="/docs" class="inline-flex items-center justify-center px-8 py-3 bg-indigo-500/30 text-white font-semibold rounded-xl hover:bg-indigo-500/50 transition-colors border border-white/20">
-            Lihat Dokumentasi
+        <a href="/app" class="inline-flex items-center justify-center px-8 py-3 bg-indigo-500/30 text-white font-semibold rounded-xl hover:bg-indigo-500/50 transition-colors border border-white/20">
+            Customer ERP &#x2192;
         </a>
     </div>
 </section>
