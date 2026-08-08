@@ -14,7 +14,7 @@ class NotificationResource extends Resource
 {
     protected static ?string $model = Notification::class;
 
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = '🔔 Notifikasi';
     protected static ?string $navigationIcon = 'heroicon-o-bell-alert';
     protected static ?int $navigationSort = 99;
     protected static ?string $modelLabel = 'Notifikasi';

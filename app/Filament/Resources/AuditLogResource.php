@@ -14,7 +14,7 @@ class AuditLogResource extends Resource
 {
     protected static ?string $model = AuditLog::class;
 
-    protected static ?string $navigationGroup = '🔐 Approval & Audit';
+    protected static ?string $navigationGroup = '🔐 Security & Audit';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
     protected static ?int $navigationSort = 92;
     protected static ?string $modelLabel = 'Audit Trail';

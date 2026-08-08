@@ -14,7 +14,7 @@ class PieceRateResource extends Resource
 {
     protected static ?string $model = PieceRate::class;
 
-    protected static ?string $navigationGroup = '🏭 Produksi';
+    protected static ?string $navigationGroup = '🏭 Manufacturing';
     protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
     protected static ?int $navigationSort = 66;
     protected static ?string $modelLabel = 'Borongan';

@@ -17,7 +17,7 @@ class ProductionOrderResource extends Resource
 {
     protected static ?string $model = ProductionOrder::class;
 
-    protected static ?string $navigationGroup = '🏭 Produksi';
+    protected static ?string $navigationGroup = '🏭 Manufacturing';
     protected static ?string $navigationIcon = 'heroicon-o-wrench-screwdriver';
     protected static ?int $navigationSort = 62;
     protected static ?string $modelLabel = 'Production Order';

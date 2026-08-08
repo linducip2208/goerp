@@ -17,6 +17,9 @@ class FixedAsset extends Model
         'company_id',
         'asset_code',
         'name',
+        'asset_category_id',
+        'location',
+        'serial_number',
         'category',
         'acquisition_date',
         'acquisition_cost',
@@ -27,6 +30,7 @@ class FixedAsset extends Model
         'accum_depr_account_id',
         'expense_account_id',
         'is_active',
+        'status',
     ];
 
     protected function casts(): array
@@ -57,6 +61,11 @@ class FixedAsset extends Model
     public function accumDeprAccount(): BelongsTo
     {
         return $this->belongsTo(Account::class, 'accum_depr_account_id');
+    }
+
+    public function assetCategory(): BelongsTo
+    {
+        return $this->belongsTo(AssetCategory::class, 'asset_category_id');
     }
 
     public function expenseAccount(): BelongsTo

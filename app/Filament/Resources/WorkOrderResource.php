@@ -14,7 +14,7 @@ class WorkOrderResource extends Resource
 {
     protected static ?string $model = WorkOrder::class;
 
-    protected static ?string $navigationGroup = '🏭 Produksi';
+    protected static ?string $navigationGroup = '🏭 Manufacturing';
     protected static ?string $navigationIcon = 'heroicon-o-queue-list';
     protected static ?int $navigationSort = 63;
     protected static ?string $modelLabel = 'Work Order';

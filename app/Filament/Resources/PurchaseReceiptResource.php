@@ -15,7 +15,7 @@ class PurchaseReceiptResource extends Resource
 {
     protected static ?string $model = PurchaseReceipt::class;
 
-    protected static ?string $navigationGroup = '🛒 Pembelian';
+    protected static ?string $navigationGroup = '🏭 Gudang & Logistik';
     protected static ?string $navigationIcon = 'heroicon-o-archive-box-arrow-down';
     protected static ?int $navigationSort = 34;
     protected static ?string $modelLabel = 'Penerimaan Barang';

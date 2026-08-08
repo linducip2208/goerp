@@ -14,7 +14,7 @@ class MarketplaceSkuMappingResource extends Resource
 {
     protected static ?string $model = MarketplaceSkuMapping::class;
 
-    protected static ?string $navigationGroup = '💰 Penjualan';
+    protected static ?string $navigationGroup = '🛒 Marketplace';
     protected static ?string $navigationIcon = 'heroicon-o-link';
     protected static ?int $navigationSort = 26;
     protected static ?string $modelLabel = 'Mapping SKU';

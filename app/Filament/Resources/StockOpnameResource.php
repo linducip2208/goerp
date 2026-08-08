@@ -15,7 +15,7 @@ class StockOpnameResource extends Resource
 {
     protected static ?string $model = StockOpname::class;
 
-    protected static ?string $navigationGroup = '📦 Master Data';
+    protected static ?string $navigationGroup = '📦 Inventory';
     protected static ?string $navigationIcon = 'heroicon-o-magnifying-glass';
     protected static ?int $navigationSort = 19;
     protected static ?string $modelLabel = 'Stock Opname';

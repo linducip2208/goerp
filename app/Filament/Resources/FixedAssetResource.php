@@ -17,7 +17,7 @@ class FixedAssetResource extends Resource
 {
     protected static ?string $model = FixedAsset::class;
 
-    protected static ?string $navigationGroup = '📦 Master Data';
+    protected static ?string $navigationGroup = '🏦 Asset Management';
     protected static ?string $navigationIcon = 'heroicon-o-building-office';
     protected static ?int $navigationSort = 20;
     protected static ?string $modelLabel = 'Aset Tetap';
