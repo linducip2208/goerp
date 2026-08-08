@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProgrammaticSeoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -64,5 +65,13 @@ Route::prefix('portal')->name('portal.')->group(function () {
         Route::get('/payments', [\App\Http\Controllers\Portal\DashboardController::class, 'payments'])->name('payments');
     });
 });
+
+
+Route::get('/best-{category}', [ProgrammaticSeoController::class, 'bestCategory'])->where('category', '[a-z0-9-]+');
+Route::get('/best-{category}-{year}', [ProgrammaticSeoController::class, 'bestCategoryYear'])->where(['category' => '[a-z0-9-]+', 'year' => '[0-9]+']);
+Route::get('/alternatives-to-{slug}', [ProgrammaticSeoController::class, 'alternatives'])->where('slug', '[a-z0-9-]+');
+Route::get('/compare/{a}-vs-{b}', [ProgrammaticSeoController::class, 'compare'])->where(['a' => '[a-z0-9-]+', 'b' => '[a-z0-9-]+']);
+Route::get('/{category}-under-{price}', [ProgrammaticSeoController::class, 'categoryUnderPrice'])->where(['category' => '[a-z0-9-]+', 'price' => '[0-9]+']);
+Route::get('/learn-{skill}-online', [ProgrammaticSeoController::class, 'learnSkillOnline'])->where('skill', '[a-z0-9-]+');
 
 require base_path('routes/pair-routes.php');
