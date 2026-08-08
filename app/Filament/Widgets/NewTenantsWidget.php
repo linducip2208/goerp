@@ -26,7 +26,7 @@ class NewTenantsWidget extends BaseWidget
             ->columns([
                 TextColumn::make('name')->label('Nama Tenant')->searchable(),
                 TextColumn::make('domain')->label('Domain'),
-                TextColumn::make('status')->label('Status')->badge()->color(fn(string $s): string => match($s) {
+                TextColumn::make('status')->label('Status')->badge()->color(fn(string $state): string => match($state) {
                     'active' => 'success',
                     'trial' => 'info',
                     'expired' => 'warning',
