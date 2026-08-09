@@ -1,66 +1,24 @@
-<!DOCTYPE html>
-<html lang="id" class="h-full">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Masuk — GoERP</title>
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800|jetbrains-mono:400,500" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                }
-            }
-        }
-    </script>
-    @filamentStyles
-    <style>
-        @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-        @keyframes fadeUp { 0%{opacity:0;transform:translateY(30px)} 100%{opacity:1;transform:translateY(0)} }
-        .animate-float { animation: floatSlow 5s ease-in-out infinite }
-        .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(.16,1,.3,1) forwards }
-        .delay-1 { animation-delay: 0.1s }
-        .delay-2 { animation-delay: 0.25s }
-        .delay-3 { animation-delay: 0.4s }
+<style>
+    @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes fadeUp { 0%{opacity:0;transform:translateY(30px)} 100%{opacity:1;transform:translateY(0)} }
+    .animate-float { animation: floatSlow 5s ease-in-out infinite }
+    .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(.16,1,.3,1) forwards }
+    .delay-1 { animation-delay: 0.1s }
+    .delay-2 { animation-delay: 0.25s }
+    .delay-3 { animation-delay: 0.4s }
 
-        /* Override Filament form inside our two-column layout */
-        .fi-simple-page {
-            max-width: none !important;
-            padding: 0 !important;
-        }
-        .fi-simple-main {
-            max-width: none !important;
-            width: 100% !important;
-            box-shadow: none !important;
-            border: none !important;
-            border-radius: 0 !important;
-            background: transparent !important;
-        }
-        .fi-simple-page .fi-logo {
-            display: none !important;
-        }
-    </style>
-</head>
-<body class="h-full bg-white antialiased text-zinc-900">
-<div>
+    .fi-simple-page { max-width: none !important; padding: 0 !important; }
+    .fi-simple-main { max-width: none !important; width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: transparent !important; }
+    .fi-simple-page .fi-logo { display: none !important; }
+</style>
 
 <div class="min-h-screen flex">
     {{-- Left: Brand Hero Panel --}}
     <div class="hidden lg:flex lg:w-1/2 xl:w-5/12 relative bg-gradient-to-br from-indigo-700 via-indigo-800 to-zinc-900 p-12 flex-col justify-between overflow-hidden">
-        {{-- Decorative gradient circles --}}
         <div class="absolute inset-0 opacity-30"
              style="background-image: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.3) 0%, transparent 50%)"></div>
-
-        {{-- Large decorative icon --}}
         <div class="absolute -bottom-20 -right-20 text-[20rem] opacity-10 select-none">🏢</div>
 
-        {{-- Logo + Brand --}}
         <div class="relative z-10">
             <a href="{{ url('/') }}" class="inline-flex items-center gap-3 text-white group">
                 <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-white/15 backdrop-blur shadow-lg group-hover:bg-white/20 transition-colors">
@@ -72,7 +30,6 @@
             </a>
         </div>
 
-        {{-- Tagline + Benefit Cards --}}
         <div class="relative z-10 text-white">
             <h2 class="text-4xl xl:text-5xl font-extrabold leading-tight mb-3 tracking-tight">
                 ERP Accounting, Inventory & Production untuk bisnis Indonesia
@@ -102,7 +59,6 @@
             </div>
         </div>
 
-        {{-- Copyright --}}
         <div class="relative z-10 text-indigo-200/70 text-xs">
             &copy; {{ date('Y') }} GoERP &middot; Powered by Laravel
         </div>
@@ -111,7 +67,6 @@
     {{-- Right: Login Form --}}
     <div class="flex-1 flex items-center justify-center p-8 lg:p-16 bg-white">
         <div class="w-full max-w-md">
-            {{-- Mobile logo (visible only on small screens) --}}
             <div class="lg:hidden mb-8 text-center">
                 <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-600 to-violet-600 shadow-lg shadow-indigo-500/25 mb-4 animate-float">
                     <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -131,7 +86,6 @@
                 @endif
             </p>
 
-            {{-- Error Display --}}
             @if ($errors->any())
             <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
                 <div class="flex items-start gap-3">
@@ -150,12 +104,10 @@
             </div>
             @endif
 
-            {{-- Filament Form --}}
             <x-filament-panels::form id="form" wire:submit="authenticate">
                 {{ $this->form }}
             </x-filament-panels::form>
 
-            {{-- Divider --}}
             <div class="relative my-8">
                 <div class="absolute inset-0 flex items-center">
                     <div class="w-full border-t border-zinc-200"></div>
@@ -165,7 +117,6 @@
                 </div>
             </div>
 
-            {{-- Demo Login Box --}}
             <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-5">
                 <div class="flex items-center gap-2 mb-3">
                     <svg class="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -179,28 +130,23 @@
                         <span>admin@goerp.test / password</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="font-semibold text-zinc-700">Manager</span>
-                        <span>manager@goerp.test / password</span>
+                        <span class="font-semibold text-zinc-700">Finance</span>
+                        <span>finance@goerp.test / password</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="font-semibold text-zinc-700">Kasir</span>
-                        <span>kasir@goerp.test / password</span>
+                        <span class="font-semibold text-zinc-700">Sales</span>
+                        <span>sales@goerp.test / password</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="font-semibold text-zinc-700">Gudang</span>
-                        <span>gudang@goerp.test / password</span>
+                        <span>warehouse@goerp.test / password</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="font-semibold text-zinc-700">Finance</span>
-                        <span>finance@goerp.test / password</span>
+                        <span class="font-semibold text-zinc-700">Kasir</span>
+                        <span>cashier@goerp.test / password</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-@filamentScripts
-</div>
-</body>
-</html>
