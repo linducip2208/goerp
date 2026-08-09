@@ -48,6 +48,7 @@
     </style>
 </head>
 <body class="h-full bg-white antialiased text-zinc-900">
+<div>
 
 <div class="min-h-screen flex">
     {{-- Left: Brand Hero Panel --}}
@@ -200,5 +201,6 @@
 </div>
 
 @filamentScripts
+</div>
 </body>
 </html>
