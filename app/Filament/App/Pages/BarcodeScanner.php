@@ -16,8 +16,9 @@ class BarcodeScanner extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-qr-code';
-    protected static ?string $navigationGroup = '📦 Master Data';
-    protected static ?int $navigationSort = 21;
+    protected static ?string $navigationGroup = null;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $title = 'Barcode Scanner';
 
     protected static string $view = 'filament.pages.barcode-scanner';
