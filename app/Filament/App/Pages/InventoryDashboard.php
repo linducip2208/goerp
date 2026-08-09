@@ -10,9 +10,10 @@ use Filament\Pages\Page;
 
 class InventoryDashboard extends Page
 {
-    protected static ?string $navigationGroup = '🏠 Dashboard';
+    protected static ?string $navigationGroup = null;
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $navigationIcon = 'heroicon-o-archive-box';
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 999;
     protected static ?string $title = 'Dashboard Inventory';
 
     protected static string $view = 'filament.pages.inventory-dashboard';

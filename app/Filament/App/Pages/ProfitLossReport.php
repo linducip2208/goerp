@@ -19,7 +19,7 @@ class ProfitLossReport extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
-    protected static ?string $navigationGroup = '📈 Reports';
+    protected static ?string $navigationGroup = '📈 Laporan';
     protected static ?int $navigationSort = 71;
     protected static ?string $title = 'Laba Rugi';
 

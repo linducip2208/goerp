@@ -9,9 +9,10 @@ use Filament\Pages\Page;
 
 class CustomerDashboard extends Page
 {
-    protected static ?string $navigationGroup = '🏠 Dashboard';
+    protected static ?string $navigationGroup = null;
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 999;
     protected static ?string $title = 'Dashboard Customer';
 
     protected static string $view = 'filament.pages.customer-dashboard';

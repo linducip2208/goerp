@@ -16,7 +16,7 @@ class StockReport extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-table-cells';
-    protected static ?string $navigationGroup = '📈 Reports';
+    protected static ?string $navigationGroup = '📈 Laporan';
     protected static ?int $navigationSort = 75;
     protected static ?string $title = 'Laporan Stok';
 

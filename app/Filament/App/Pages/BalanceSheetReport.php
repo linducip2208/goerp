@@ -17,7 +17,7 @@ class BalanceSheetReport extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
-    protected static ?string $navigationGroup = '📈 Reports';
+    protected static ?string $navigationGroup = '📈 Laporan';
     protected static ?int $navigationSort = 72;
     protected static ?string $title = 'Neraca';
 

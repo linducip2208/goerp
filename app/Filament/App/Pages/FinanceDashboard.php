@@ -10,9 +10,10 @@ use Filament\Pages\Page;
 
 class FinanceDashboard extends Page
 {
-    protected static ?string $navigationGroup = '🏠 Dashboard';
+    protected static ?string $navigationGroup = null;
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 999;
     protected static ?string $title = 'Dashboard Keuangan';
 
     protected static string $view = 'filament.pages.finance-dashboard';
