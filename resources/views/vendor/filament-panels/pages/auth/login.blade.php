@@ -1,3 +1,10 @@
+<div>
+<style>
+    .fi-simple-page { max-width: none !important; padding: 0 !important; }
+    .fi-simple-main { max-width: none !important; width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: transparent !important; }
+    .fi-simple-page .fi-logo { display: none !important; }
+</style>
+
 <div class="flex min-h-screen">
     <div class="hidden lg:flex lg:w-1/2 xl:w-5/12 relative flex-col justify-between overflow-hidden" style="background:linear-gradient(135deg,#3730a3,#312e81,#1c1917);padding:3rem">
         <div style="position:absolute;inset:0;opacity:.3;background-image:radial-gradient(circle at 20% 30%,rgba(99,102,241,.5),transparent 50%),radial-gradient(circle at 80% 70%,rgba(139,92,246,.4),transparent 50%)"></div>
@@ -74,7 +81,8 @@
                             <li>{{ $error }}</li>
                             @endforeach
                         </ul>
-                    </div>
+</div>
+</div>
                 </div>
             </div>
             @endif
@@ -108,9 +116,4 @@
         </div>
     </div>
 </div>
-
-<style>
-    .fi-simple-page { max-width: none !important; padding: 0 !important; }
-    .fi-simple-main { max-width: none !important; width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: transparent !important; }
-    .fi-simple-page .fi-logo { display: none !important; }
-</style>
+</div>
