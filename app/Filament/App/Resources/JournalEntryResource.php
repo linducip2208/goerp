@@ -15,9 +15,10 @@ class JournalEntryResource extends Resource
 {
     protected static ?string $model = JournalEntry::class;
 
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
-    protected static ?int $navigationSort = 179;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Jurnal';
     protected static ?string $pluralModelLabel = 'Jurnal';
 

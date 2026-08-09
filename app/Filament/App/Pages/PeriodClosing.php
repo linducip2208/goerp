@@ -12,8 +12,9 @@ use Filament\Pages\Page;
 class PeriodClosing extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-check-badge';
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
-    protected static ?int $navigationSort = 167;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?string $navigationGroup = null;
+    protected static ?int $navigationSort = 999;
     protected static ?string $title = 'Tutup Buku';
     protected static ?string $navigationLabel = 'Tutup Buku';
     protected static string $view = 'filament.pages.period-closing';
@@ -187,8 +188,4 @@ class PeriodClosing extends Page
             ->send();
     }
 
-    public static function shouldRegisterNavigation(): bool
-    {
-        return true;
-    }
 }

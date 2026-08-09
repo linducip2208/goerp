@@ -17,9 +17,10 @@ class TaxRateResource extends Resource
 {
     protected static ?string $model = TaxRate::class;
 
-    protected static ?string $navigationGroup = 'Master Data';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-calculator';
-    protected static ?int $navigationSort = 115;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Tarif Pajak';
     protected static ?string $pluralModelLabel = 'Tarif Pajak';
 

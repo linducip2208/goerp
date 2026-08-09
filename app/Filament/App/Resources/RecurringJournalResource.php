@@ -14,9 +14,10 @@ class RecurringJournalResource extends Resource
 {
     protected static ?string $model = RecurringJournal::class;
 
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-arrow-path';
-    protected static ?int $navigationSort = 178;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Jurnal Berulang';
     protected static ?string $pluralModelLabel = 'Jurnal Berulang';
 

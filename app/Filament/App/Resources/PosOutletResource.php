@@ -14,9 +14,10 @@ class PosOutletResource extends Resource
 {
     protected static ?string $model = PosOutlet::class;
 
-    protected static ?string $navigationGroup = 'Operasional';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
-    protected static ?int $navigationSort = 46;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Outlet POS';
     protected static ?string $pluralModelLabel = 'Outlet POS';
 

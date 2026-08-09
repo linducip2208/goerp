@@ -12,9 +12,10 @@ class ImportHistoryResource extends Resource
 {
     protected static ?string $model = ImportHistory::class;
 
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-clock';
-    protected static ?int $navigationSort = 176;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Riwayat Impor';
     protected static ?string $pluralModelLabel = 'Riwayat Impor';
 

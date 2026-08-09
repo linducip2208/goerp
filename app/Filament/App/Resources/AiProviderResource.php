@@ -14,9 +14,10 @@ class AiProviderResource extends Resource
 {
     protected static ?string $model = AiProvider::class;
 
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-cpu-chip';
-    protected static ?int $navigationSort = 173;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Provider AI';
     protected static ?string $pluralModelLabel = 'Provider AI';
 

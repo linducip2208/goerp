@@ -15,9 +15,10 @@ class MaterialRequestResource extends Resource
 {
     protected static ?string $model = MaterialRequest::class;
 
-    protected static ?string $navigationGroup = '🏭 Produksi';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-arrow-down-tray';
-    protected static ?int $navigationSort = 153;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Permintaan Material';
     protected static ?string $pluralModelLabel = 'Permintaan Material';
 

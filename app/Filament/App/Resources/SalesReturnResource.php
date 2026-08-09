@@ -14,9 +14,10 @@ class SalesReturnResource extends Resource
 {
     protected static ?string $model = SalesReturn::class;
 
-    protected static ?string $navigationGroup = 'Operasional';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-arrow-uturn-left';
-    protected static ?int $navigationSort = 44;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Retur Penjualan';
     protected static ?string $pluralModelLabel = 'Retur Penjualan';
 

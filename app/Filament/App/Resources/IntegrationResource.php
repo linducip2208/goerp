@@ -17,9 +17,10 @@ class IntegrationResource extends Resource
 {
     protected static ?string $model = Integration::class;
 
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-puzzle-piece';
-    protected static ?int $navigationSort = 174;
+    protected static bool $shouldRegisterNavigation = false;
+    protected static ?int $navigationSort = 999;
     protected static ?string $modelLabel = 'Integrasi';
     protected static ?string $pluralModelLabel = 'Integrasi';
 
