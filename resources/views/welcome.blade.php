@@ -80,6 +80,7 @@
         }
         html{scroll-padding-top:80px}
     </style>
+    <noscript><style>.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger,.stagger>*{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="bg-white text-stone-900 antialiased font-sans">
 
@@ -122,26 +123,25 @@
     <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-violet-50"></div>
     <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-indigo-200/40 to-violet-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 animate-float"></div>
     <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-indigo-300/20 to-blue-300/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 animate-float-reverse"></div>
-    <div class="absolute top-1/2 left-1/3 w-3 h-3 bg-indigo-400 rounded-full animate-ping-slow opacity-20"></div>
-    <div class="absolute bottom-1/3 right-1/4 w-2 h-2 bg-violet-400 rounded-full animate-ping-slow opacity-20" style="animation-delay:1s"></div>
+
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="reveal opacity-0 mb-6" style="opacity:0">
+            <div class="reveal opacity-0 mb-6">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold">
                     <span class="relative flex h-2 w-2"><span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span></span>
                     SaaS ERP Multi-Tenant
                 </span>
             </div>
-            <h1 class="reveal opacity-0 delay-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-tight" style="opacity:0">
+            <h1 class="reveal opacity-0 delay-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-tight">
                 Satu Platform ERP
                 <span class="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent animate-gradient">Lengkap</span>
                 untuk Bisnis Anda
             </h1>
-            <p class="reveal opacity-0 delay-2 text-lg sm:text-xl text-stone-500 max-w-2xl mx-auto leading-relaxed mt-6" style="opacity:0">
+            <p class="reveal opacity-0 delay-2 text-lg sm:text-xl text-stone-500 max-w-2xl mx-auto leading-relaxed mt-6">
                 Accounting, Inventory, Production, CRM, Marketplace &mdash; semua dalam satu dashboard. Double-entry accounting otomatis, real-time reports, multi-cabang, dan AI-powered analytics. Dibuat untuk bisnis Indonesia.
             </p>
-            <div class="reveal opacity-0 delay-3 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" style="opacity:0">
+            <div class="reveal opacity-0 delay-3 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="{{ url('/app') }}" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold text-lg shadow-xl shadow-indigo-500/25 hover:shadow-2xl hover:shadow-indigo-500/30 hover:-translate-y-0.5 transition-all duration-200 card-lift">
                     Coba Demo Gratis
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
@@ -158,7 +158,7 @@
 
 {{-- ===== STATS COUNTER BAR ===== --}}
 <section class="relative -mt-20 z-20 max-w-4xl mx-auto px-4 sm:px-6">
-    <div class="reveal opacity-0 bg-white border border-stone-200 rounded-2xl shadow-xl shadow-stone-200/50 p-6 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6" style="opacity:0">
+    <div class="reveal opacity-0 bg-white border border-stone-200 rounded-2xl shadow-xl shadow-stone-200/50 p-6 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         <div class="text-center">
             <div class="text-3xl sm:text-4xl font-extrabold text-indigo-600">14</div>
             <div class="text-sm text-stone-500 mt-1">Role Pengguna</div>
@@ -181,7 +181,7 @@
 {{-- ===== TRUST STRIP — WHO IS THIS FOR ===== --}}
 <section class="py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="reveal opacity-0 text-center mb-14" style="opacity:0">
+        <div class="reveal opacity-0 text-center mb-14">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">Siapa yang Cocok Pakai GoERP?</h2>
             <p class="text-stone-500 text-lg mt-3 max-w-2xl mx-auto">Dari UMKM sampai enterprise — GoERP fleksibel untuk berbagai skala bisnis</p>
         </div>
@@ -214,12 +214,12 @@
 {{-- ===== PROBLEM / SOLUTION ===== --}}
 <section class="py-20 lg:py-28 bg-stone-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="reveal opacity-0 text-center mb-16" style="opacity:0">
+        <div class="reveal opacity-0 text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">Stop Pakai Excel, Mulai Pakai ERP</h2>
             <p class="text-stone-500 text-lg mt-3 max-w-2xl mx-auto">Bisnis modern butuh sistem terintegrasi, bukan spreadsheet yang rawan error dan susah di-track</p>
         </div>
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-            <div class="reveal-left opacity-0 rounded-2xl border-2 border-red-200 bg-red-50/50 p-8" style="opacity:0">
+            <div class="reveal-left opacity-0 rounded-2xl border-2 border-red-200 bg-red-50/50 p-8">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center text-red-600">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -235,7 +235,7 @@
                     <li class="flex gap-2"><span class="text-red-400 mt-0.5">&times;</span> Multi-cabang? Beda file, beda versi &mdash; chaos</li>
                 </ul>
             </div>
-            <div class="reveal-right opacity-0 rounded-2xl border-2 border-emerald-200 bg-emerald-50/50 p-8" style="opacity:0">
+            <div class="reveal-right opacity-0 rounded-2xl border-2 border-emerald-200 bg-emerald-50/50 p-8">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
@@ -258,7 +258,7 @@
 {{-- ===== FEATURE SECTIONS (Alternating) ===== --}}
 <section id="fitur" class="py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="reveal opacity-0 text-center mb-16" style="opacity:0">
+        <div class="reveal opacity-0 text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">Fitur Unggulan GoERP</h2>
             <p class="text-stone-500 text-lg mt-3 max-w-2xl mx-auto">Dibangun untuk menangani kompleksitas bisnis nyata di Indonesia</p>
         </div>
@@ -334,7 +334,7 @@
 
         @foreach($features as $i => $f)
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center {{ $i > 0 ? 'mt-20 lg:mt-28' : '' }}">
-            <div class="reveal-left opacity-0 {{ $i % 2 === 1 ? 'lg:order-2' : '' }}" style="opacity:0">
+            <div class="reveal-left opacity-0 {{ $i % 2 === 1 ? 'lg:order-2' : '' }}">
                 <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-{{ $f['color'] }}-100 text-{{ $f['color'] }}-600 mb-5">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="{{ $f['icon'] }}" /></svg>
                 </div>
@@ -349,7 +349,7 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="reveal-right opacity-0 {{ $i % 2 === 1 ? 'lg:order-1' : '' }}" style="opacity:0">
+            <div class="reveal-right opacity-0 {{ $i % 2 === 1 ? 'lg:order-1' : '' }}">
                 <div class="relative rounded-2xl border border-stone-200 bg-stone-50 overflow-hidden shadow-lg">
                     <div class="flex items-center gap-1.5 px-4 py-3 border-b border-stone-200 bg-white">
                         <div class="w-3 h-3 rounded-full bg-red-400"></div>
@@ -376,7 +376,7 @@
 {{-- ===== MODULES GRID ===== --}}
 <section id="modul" class="py-20 lg:py-28 bg-stone-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="reveal opacity-0 text-center mb-16" style="opacity:0">
+        <div class="reveal opacity-0 text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">22 Grup Modul — Satu Platform</h2>
             <p class="text-stone-500 text-lg mt-3 max-w-2xl mx-auto">Semua yang dibutuhkan bisnis modern dalam satu aplikasi terintegrasi</p>
         </div>
@@ -424,7 +424,7 @@
 {{-- ===== USE CASES ===== --}}
 <section class="py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="reveal opacity-0 text-center mb-16" style="opacity:0">
+        <div class="reveal opacity-0 text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">Use Cases — GoERP di Berbagai Industri</h2>
             <p class="text-stone-500 text-lg mt-3 max-w-2xl mx-auto">Fleksibel untuk berbagai jenis bisnis di Indonesia</p>
         </div>
@@ -456,14 +456,14 @@
 {{-- ===== DEMO ACCOUNTS ===== --}}
 <section id="demo" class="py-20 lg:py-28 bg-stone-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="reveal opacity-0 text-center mb-16" style="opacity:0">
+        <div class="reveal opacity-0 text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">Coba Demo Sekarang</h2>
             <p class="text-stone-500 text-lg mt-3 max-w-2xl mx-auto">Semua akun demo sudah aktif — gunakan yang sesuai role Anda. Password: <code class="bg-stone-200 px-2 py-0.5 rounded text-sm font-mono text-stone-700">password</code></p>
         </div>
 
         {{-- Two Panels --}}
         <div class="grid lg:grid-cols-2 gap-8 mb-12">
-            <div class="reveal-left opacity-0" style="opacity:0">
+            <div class="reveal-left opacity-0">
                 <div class="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
                     <div class="px-6 py-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
                         <h3 class="font-extrabold text-lg">Platform Admin</h3>
@@ -482,7 +482,7 @@
                     </div>
                 </div>
             </div>
-            <div class="reveal-right opacity-0" style="opacity:0">
+            <div class="reveal-right opacity-0">
                 <div class="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
                     <div class="px-6 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
                         <h3 class="font-extrabold text-lg">ERP Customer Panel</h3>
@@ -510,7 +510,7 @@
                 </div>
             </div>
         </div>
-        <div class="reveal-scale opacity-0 text-center" style="opacity:0">
+        <div class="reveal-scale opacity-0 text-center">
             <a href="{{ url('/app') }}" class="inline-flex items-center gap-2 px-10 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold text-lg shadow-xl shadow-indigo-500/25 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-200 card-lift">
                 Masuk Dashboard Demo
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
@@ -522,7 +522,7 @@
 {{-- ===== PRICING ===== --}}
 <section id="harga" class="py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="reveal opacity-0 text-center mb-16" style="opacity:0">
+        <div class="reveal opacity-0 text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">Harga yang Transparan</h2>
             <p class="text-stone-500 text-lg mt-3 max-w-2xl mx-auto">Pilih paket yang sesuai dengan skala bisnis Anda</p>
         </div>
@@ -562,14 +562,13 @@
 
 {{-- ===== SOURCE CODE CTA ===== --}}
 <section class="py-16 bg-gradient-to-r from-indigo-600 to-violet-600 relative overflow-hidden">
-    <div class="absolute inset-0 animate-shimmer"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="reveal opacity-0" style="opacity:0">
+        <div class="reveal opacity-0">
             <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs font-semibold mb-6 backdrop-blur-sm">💻 Source Code</span>
         </div>
-        <h2 class="reveal opacity-0 delay-1 text-3xl sm:text-4xl font-extrabold text-white mb-4" style="opacity:0">Ingin Punya Aplikasi ERP Sendiri?</h2>
-        <p class="reveal opacity-0 delay-2 text-lg text-indigo-100 max-w-xl mx-auto mb-8" style="opacity:0">Source code GoERP tersedia untuk dibeli. Full source code, bisa di-rebrand, di-host sendiri, dan dimodifikasi sesuai kebutuhan bisnis Anda.</p>
-        <div class="reveal opacity-0 delay-3 flex flex-col sm:flex-row items-center justify-center gap-4" style="opacity:0">
+        <h2 class="reveal opacity-0 delay-1 text-3xl sm:text-4xl font-extrabold text-white mb-4">Ingin Punya Aplikasi ERP Sendiri?</h2>
+        <p class="reveal opacity-0 delay-2 text-lg text-indigo-100 max-w-xl mx-auto mb-8">Source code GoERP tersedia untuk dibeli. Full source code, bisa di-rebrand, di-host sendiri, dan dimodifikasi sesuai kebutuhan bisnis Anda.</p>
+        <div class="reveal opacity-0 delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow-xl hover:-translate-y-0.5 transition-all duration-200">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Chat WhatsApp
@@ -587,9 +586,9 @@
     <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/40 via-transparent to-transparent"></div>
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6 reveal opacity-0" style="opacity:0">Siap Transformasi Bisnis Anda?</h2>
-        <p class="text-lg text-stone-400 max-w-xl mx-auto mb-10 reveal opacity-0 delay-1" style="opacity:0">Dari UMKM ke enterprise — GoERP skalabel untuk setiap tahap pertumbuhan bisnis Anda. Mulai gratis, upgrade sesuai kebutuhan.</p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal opacity-0 delay-2" style="opacity:0">
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6 reveal opacity-0">Siap Transformasi Bisnis Anda?</h2>
+        <p class="text-lg text-stone-400 max-w-xl mx-auto mb-10 reveal opacity-0 delay-1">Dari UMKM ke enterprise — GoERP skalabel untuk setiap tahap pertumbuhan bisnis Anda. Mulai gratis, upgrade sesuai kebutuhan.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal opacity-0 delay-2">
             <a href="{{ url('/app') }}" class="px-10 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-bold text-lg shadow-2xl shadow-indigo-500/30 hover:-translate-y-0.5 transition-all duration-200 card-lift">Coba Demo Gratis</a>
             <a href="/docs" class="px-10 py-4 rounded-xl border-2 border-stone-700 text-stone-300 font-bold text-lg hover:bg-stone-800 hover:border-stone-600 transition-all duration-200">Baca Dokumentasi</a>
         </div>
@@ -648,10 +647,10 @@
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger').forEach(function (el) {
-        el.style.opacity = '0';
-        observer.observe(el);
-    });
+    var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger');
+    els.forEach(function (el) { observer.observe(el); });
+    // Fallback: show all after 3s even if observer fails
+    setTimeout(function() { els.forEach(function(el) { el.classList.add('visible'); }); }, 3000);
 })();
 </script>
 
