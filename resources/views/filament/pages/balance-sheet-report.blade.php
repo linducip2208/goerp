@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <x-filament-panels::page>
     <div class="space-y-6">
         {{ $this->form }}
@@ -14,6 +15,17 @@
             <div class="bg-green-50 rounded-xl p-5 border border-green-200">
                 <div class="text-sm text-green-600 font-medium">Total Ekuitas</div>
                 <div class="text-2xl font-bold text-green-700 mt-1">{{ number_format($totalEquity, 2) }}</div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 bg-gray-50">
+                <h3 class="text-lg font-semibold text-gray-800">Grafik Neraca</h3>
+            </div>
+            <div class="p-6 flex justify-center">
+                <div style="max-width: 420px; width: 100%;">
+                    <canvas id="balanceSheetChart"></canvas>
+                </div>
             </div>
         </div>
 
@@ -102,4 +114,34 @@
             </div>
         </div>
     </div>
+<script>
+    const bsCtx = document.getElementById('balanceSheetChart').getContext('2d');
+    new Chart(bsCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Aset', 'Liabilitas', 'Ekuitas'],
+            datasets: [{
+                data: [
+                    {{ $totalAssets }},
+                    {{ abs($totalLiabilities) }},
+                    {{ $totalEquity }}
+                ],
+                backgroundColor: ['#3b82f6', '#ef4444', '#22c55e'],
+                borderWidth: 2,
+                borderColor: '#fff',
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' },
+                tooltip: {
+                    callbacks: {
+                        label: ctx => ctx.label + ': Rp ' + new Intl.NumberFormat('id-ID').format(ctx.raw)
+                    }
+                }
+            }
+        }
+    });
+</script>
 </x-filament-panels::page>

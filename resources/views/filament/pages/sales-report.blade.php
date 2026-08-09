@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <x-filament-panels::page>
     <div class="space-y-6">
         {{ $this->form }}
@@ -18,6 +19,30 @@
             <div class="bg-orange-50 rounded-xl p-5 border border-orange-200">
                 <div class="text-sm text-orange-600 font-medium">Outstanding</div>
                 <div class="text-2xl font-bold text-orange-700 mt-1">{{ number_format($summary['total_outstanding'] ?? 0, 2) }}</div>
+            </div>
+        </div>
+
+        @php
+            $monthlySales = [];
+            foreach ($invoices as $inv) {
+                $month = \Carbon\Carbon::parse($inv['invoice_date'] ?? null)->format('Y-m');
+                $monthlySales[$month] = ($monthlySales[$month] ?? 0) + ($inv['grand_total'] ?? 0);
+            }
+            ksort($monthlySales);
+            $salesLabels = [];
+            $salesData = [];
+            foreach ($monthlySales as $m => $val) {
+                $salesLabels[] = \Carbon\Carbon::createFromFormat('Y-m', $m)->translatedFormat('M Y');
+                $salesData[] = $val;
+            }
+        @endphp
+
+        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 bg-gray-50">
+                <h3 class="text-lg font-semibold text-gray-800">Grafik Penjualan per Bulan</h3>
+            </div>
+            <div class="p-6">
+                <canvas id="salesChart" height="120"></canvas>
             </div>
         </div>
 
@@ -62,4 +87,36 @@
             </table>
         </div>
     </div>
+<script>
+    const slCtx = document.getElementById('salesChart').getContext('2d');
+    new Chart(slCtx, {
+        type: 'bar',
+        data: {
+            labels: {!! json_encode($salesLabels) !!},
+            datasets: [{
+                label: 'Pendapatan (Rp)',
+                data: {!! json_encode($salesData) !!},
+                backgroundColor: '#3b82f6',
+                borderRadius: 8,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: ctx => 'Rp ' + new Intl.NumberFormat('id-ID').format(ctx.raw)
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: v => new Intl.NumberFormat('id-ID', {notation: 'compact'}).format(v)
+                    }
+                }
+            }
+        }
+    });
+</script>
 </x-filament-panels::page>

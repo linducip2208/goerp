@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <x-filament-panels::page>
     <div class="space-y-6">
         {{ $this->form }}
@@ -14,6 +15,15 @@
             <div class="bg-blue-50 rounded-xl p-5 border border-blue-200">
                 <div class="text-sm text-blue-600 font-medium">Arus Kas Bersih</div>
                 <div class="text-2xl font-bold {{ $netCashFlow >= 0 ? 'text-blue-700' : 'text-red-700' }} mt-1">{{ number_format($netCashFlow, 2) }}</div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 bg-gray-50">
+                <h3 class="text-lg font-semibold text-gray-800">Grafik Arus Kas</h3>
+            </div>
+            <div class="p-6">
+                <canvas id="cashFlowChart" height="120"></canvas>
             </div>
         </div>
 
@@ -53,4 +63,37 @@
             </table>
         </div>
     </div>
+<script>
+    const cfCtx = document.getElementById('cashFlowChart').getContext('2d');
+    new Chart(cfCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Kas Masuk', 'Kas Keluar'],
+            datasets: [{
+                label: 'Jumlah (Rp)',
+                data: [{{ $totalIn }}, {{ $totalOut }}],
+                backgroundColor: ['#22c55e', '#ef4444'],
+                borderRadius: 8,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: ctx => 'Rp ' + new Intl.NumberFormat('id-ID').format(ctx.raw)
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: v => new Intl.NumberFormat('id-ID', {notation: 'compact'}).format(v)
+                    }
+                }
+            }
+        }
+    });
+</script>
 </x-filament-panels::page>
