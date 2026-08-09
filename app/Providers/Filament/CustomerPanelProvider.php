@@ -67,6 +67,9 @@ class CustomerPanelProvider extends PanelProvider
                 \App\Filament\App\Widgets\StatsOverview::class,
                 \App\Filament\App\Widgets\SalesChart::class,
                 \App\Filament\App\Widgets\OverdueInvoices::class,
+                \App\Filament\App\Widgets\TodaySales::class,
+                \App\Filament\App\Widgets\RecentInvoices::class,
+                \App\Filament\App\Widgets\WarehouseStockAlert::class,
             ])
             ->renderHook(
                 PanelsRenderHook::GLOBAL_SEARCH_BEFORE,

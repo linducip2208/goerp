@@ -20,7 +20,10 @@ class StatsOverview extends BaseWidget
 
     protected function getStats(): array
     {
-        $totalPenjualan = SalesInvoice::where('status', '!=', 'draft')->sum('grand_total');
+        $totalPenjualan = SalesInvoice::where('status', '!=', 'draft')
+            ->whereMonth('invoice_date', now()->month)
+            ->whereYear('invoice_date', now()->year)
+            ->sum('grand_total');
         $totalPiutang = SalesInvoice::whereIn('status', ['open', 'partial', 'overdue'])->sum('outstanding');
         $totalCustomer = Contact::where('type', 'customer')->count();
         $totalProduk = ProductVariant::count();
