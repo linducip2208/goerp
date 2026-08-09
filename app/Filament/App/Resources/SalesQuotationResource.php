@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,7 +17,7 @@ class SalesQuotationResource extends Resource
 
     protected static ?string $navigationGroup = '💰 Penjualan';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?int $navigationSort = 19;
+    protected static ?int $navigationSort = 30;
     protected static ?string $modelLabel = 'Penawaran';
     protected static ?string $pluralModelLabel = 'Penawaran';
 

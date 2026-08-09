@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,7 +17,7 @@ class SalesOrderResource extends Resource
 
     protected static ?string $navigationGroup = '💰 Penjualan';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
-    protected static ?int $navigationSort = 20;
+    protected static ?int $navigationSort = 31;
     protected static ?string $modelLabel = 'Sales Order';
     protected static ?string $pluralModelLabel = 'Sales Order';
 

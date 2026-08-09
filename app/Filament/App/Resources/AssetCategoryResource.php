@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class AssetCategoryResource extends Resource
 {
     protected static ?string $model = AssetCategory::class;
 
-    protected static ?string $navigationGroup = '🏦 Asset';
+    protected static ?string $navigationGroup = '🏦 Aset';
     protected static ?string $navigationIcon = 'heroicon-o-tag';
-    protected static ?int $navigationSort = 102;
+    protected static ?int $navigationSort = 131;
     protected static ?string $modelLabel = 'Kategori Aset';
     protected static ?string $pluralModelLabel = 'Kategori Aset';
 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class IntegrationResource extends Resource
 {
     protected static ?string $model = Integration::class;
 
-    protected static ?string $navigationGroup = '🔌 Integrations';
+    protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-puzzle-piece';
-    protected static ?int $navigationSort = 141;
+    protected static ?int $navigationSort = 163;
     protected static ?string $modelLabel = 'Integrasi';
     protected static ?string $pluralModelLabel = 'Integrasi';
 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class FiscalPeriodResource extends Resource
 {
     protected static ?string $model = FiscalPeriod::class;
 
-    protected static ?string $navigationGroup = '📊 Accounting';
+    protected static ?string $navigationGroup = '📖 Akuntansi';
     protected static ?string $navigationIcon = 'heroicon-o-calendar';
-    protected static ?int $navigationSort = 58;
+    protected static ?int $navigationSort = 115;
     protected static ?string $modelLabel = 'Periode Fiskal';
     protected static ?string $pluralModelLabel = 'Periode Fiskal';
 

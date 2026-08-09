@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,7 +17,7 @@ class PurchaseOrderResource extends Resource
 
     protected static ?string $navigationGroup = '🛒 Pembelian';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
-    protected static ?int $navigationSort = 31;
+    protected static ?int $navigationSort = 51;
     protected static ?string $modelLabel = 'Purchase Order';
     protected static ?string $pluralModelLabel = 'Purchase Order';
 

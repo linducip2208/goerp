@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class PromotionResource extends Resource
 {
     protected static ?string $model = Promotion::class;
 
-    protected static ?string $navigationGroup = '🛍️ Marketplace';
+    protected static ?string $navigationGroup = '💰 Penjualan';
     protected static ?string $navigationIcon = 'heroicon-o-gift';
-    protected static ?int $navigationSort = 152;
+    protected static ?int $navigationSort = 37;
     protected static ?string $modelLabel = 'Promosi';
     protected static ?string $pluralModelLabel = 'Promosi';
 

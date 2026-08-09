@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class ApiKeyResource extends Resource
 {
     protected static ?string $model = ApiKey::class;
 
-    protected static ?string $navigationGroup = '🔌 Integrations';
+    protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-key';
-    protected static ?int $navigationSort = 142;
+    protected static ?int $navigationSort = 164;
     protected static ?string $modelLabel = 'API Key';
     protected static ?string $pluralModelLabel = 'API Key';
 

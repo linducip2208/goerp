@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -18,9 +18,9 @@ class MarketplaceImportResource extends Resource
 {
     protected static ?string $model = MarketplaceImport::class;
 
-    protected static ?string $navigationGroup = '🛒 Marketplace';
+    protected static ?string $navigationGroup = '💰 Penjualan';
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
-    protected static ?int $navigationSort = 25;
+    protected static ?int $navigationSort = 38;
     protected static ?string $modelLabel = 'Import Marketplace';
     protected static ?string $pluralModelLabel = 'Import Marketplace';
 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class FixedAssetResource extends Resource
 {
     protected static ?string $model = FixedAsset::class;
 
-    protected static ?string $navigationGroup = '🏦 Asset';
+    protected static ?string $navigationGroup = '🏦 Aset';
     protected static ?string $navigationIcon = 'heroicon-o-building-office';
-    protected static ?int $navigationSort = 20;
+    protected static ?int $navigationSort = 130;
     protected static ?string $modelLabel = 'Aset Tetap';
     protected static ?string $pluralModelLabel = 'Aset Tetap';
 

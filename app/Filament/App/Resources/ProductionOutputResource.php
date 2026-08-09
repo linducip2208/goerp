@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class ProductionOutputResource extends Resource
 {
     protected static ?string $model = ProductionOutput::class;
 
-    protected static ?string $navigationGroup = '🏭 Manufacturing';
+    protected static ?string $navigationGroup = '🏭 Manufaktur';
     protected static ?string $navigationIcon = 'heroicon-o-check-circle';
-    protected static ?int $navigationSort = 65;
+    protected static ?int $navigationSort = 74;
     protected static ?string $modelLabel = 'Output Produksi';
     protected static ?string $pluralModelLabel = 'Output Produksi';
 

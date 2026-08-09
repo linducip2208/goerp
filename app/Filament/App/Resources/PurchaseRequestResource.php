@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -19,7 +19,7 @@ class PurchaseRequestResource extends Resource
 
     protected static ?string $navigationGroup = '🛒 Pembelian';
     protected static ?string $navigationIcon = 'heroicon-o-document-plus';
-    protected static ?int $navigationSort = 30;
+    protected static ?int $navigationSort = 50;
     protected static ?string $modelLabel = 'Permintaan Pembelian';
     protected static ?string $pluralModelLabel = 'Permintaan Pembelian';
 

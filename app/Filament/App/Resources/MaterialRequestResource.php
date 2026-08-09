@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -15,9 +15,9 @@ class MaterialRequestResource extends Resource
 {
     protected static ?string $model = MaterialRequest::class;
 
-    protected static ?string $navigationGroup = '🏭 Manufacturing';
+    protected static ?string $navigationGroup = '🏭 Manufaktur';
     protected static ?string $navigationIcon = 'heroicon-o-arrow-down-tray';
-    protected static ?int $navigationSort = 64;
+    protected static ?int $navigationSort = 73;
     protected static ?string $modelLabel = 'Permintaan Material';
     protected static ?string $pluralModelLabel = 'Permintaan Material';
 

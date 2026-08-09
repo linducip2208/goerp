@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -16,7 +16,7 @@ class PurchaseReturnResource extends Resource
 
     protected static ?string $navigationGroup = '🛒 Pembelian';
     protected static ?string $navigationIcon = 'heroicon-o-arrow-uturn-right';
-    protected static ?int $navigationSort = 36;
+    protected static ?int $navigationSort = 54;
     protected static ?string $modelLabel = 'Retur Pembelian';
     protected static ?string $pluralModelLabel = 'Retur Pembelian';
 

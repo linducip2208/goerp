@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -15,9 +15,9 @@ class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
-    protected static ?string $navigationGroup = '📚 Master Data';
+    protected static ?string $navigationGroup = '📦 Produk & Inventori';
     protected static ?string $navigationIcon = 'heroicon-o-cube';
-    protected static ?int $navigationSort = 11;
+    protected static ?int $navigationSort = 10;
     protected static ?string $modelLabel = 'Produk';
     protected static ?string $pluralModelLabel = 'Produk';
 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class PieceRateResource extends Resource
 {
     protected static ?string $model = PieceRate::class;
 
-    protected static ?string $navigationGroup = '🏭 Manufacturing';
+    protected static ?string $navigationGroup = '🏭 Manufaktur';
     protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
-    protected static ?int $navigationSort = 66;
+    protected static ?int $navigationSort = 75;
     protected static ?string $modelLabel = 'Borongan';
     protected static ?string $pluralModelLabel = 'Borongan';
 

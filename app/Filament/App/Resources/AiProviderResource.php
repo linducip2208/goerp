@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class AiProviderResource extends Resource
 {
     protected static ?string $model = AiProvider::class;
 
-    protected static ?string $navigationGroup = '🤖 AI';
+    protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-cpu-chip';
-    protected static ?int $navigationSort = 161;
+    protected static ?int $navigationSort = 162;
     protected static ?string $modelLabel = 'Provider AI';
     protected static ?string $pluralModelLabel = 'Provider AI';
 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class ProjectResource extends Resource
 {
     protected static ?string $model = Project::class;
 
-    protected static ?string $navigationGroup = '📋 Organisasi';
+    protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-rocket-launch';
-    protected static ?int $navigationSort = 131;
+    protected static ?int $navigationSort = 155;
     protected static ?string $modelLabel = 'Proyek';
     protected static ?string $pluralModelLabel = 'Proyek';
 

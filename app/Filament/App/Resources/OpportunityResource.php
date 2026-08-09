@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class OpportunityResource extends Resource
 {
     protected static ?string $model = Opportunity::class;
 
-    protected static ?string $navigationGroup = '👥 CRM';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-star';
-    protected static ?int $navigationSort = 102;
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $modelLabel = 'Peluang';
     protected static ?string $pluralModelLabel = 'Peluang';
 

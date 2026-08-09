@@ -31,42 +31,31 @@ class CustomerPanelProvider extends PanelProvider
             ->brandName('GoERP')
             ->favicon(asset('favicon.ico'))
             ->colors([
-                'primary' => Color::Indigo,
+                'primary' => Color::Blue,
                 'success' => Color::Emerald,
                 'warning' => Color::Amber,
                 'danger' => Color::Rose,
                 'info' => Color::Sky,
-                'gray' => Color::Stone,
+                'gray' => Color::Slate,
             ])
             ->font('Inter')
             ->darkMode(true)
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->sidebarCollapsibleOnDesktop()
-            ->sidebarWidth('15.5rem')
+            ->sidebarWidth('16rem')
             ->collapsedSidebarWidth('4rem')
             ->topbar(true)
             ->navigationGroups([
-                NavigationGroup::make('🏠 Dashboard')->collapsed(false),
-                NavigationGroup::make('🏢 Organisasi')->collapsed(false),
-                NavigationGroup::make('📚 Master Data')->collapsed(false),
-                NavigationGroup::make('👥 CRM')->collapsed(true),
-                NavigationGroup::make('💰 Penjualan')->collapsed(true),
-                NavigationGroup::make('🛒 Pembelian')->collapsed(true),
-                NavigationGroup::make('📦 Inventory')->collapsed(true),
-                NavigationGroup::make('🏭 Warehouse')->collapsed(true),
-                NavigationGroup::make('🏭 Manufacturing')->collapsed(true),
-                NavigationGroup::make('💵 Finance')->collapsed(true),
-                NavigationGroup::make('📊 Accounting')->collapsed(true),
-                NavigationGroup::make('🧾 Tax')->collapsed(true),
-                NavigationGroup::make('🏦 Asset')->collapsed(true),
-                NavigationGroup::make('🛒 Marketplace')->collapsed(true),
-                NavigationGroup::make('📈 Reports')->collapsed(true),
-                NavigationGroup::make('🔄 Workflow')->collapsed(true),
-                NavigationGroup::make('🔐 Security & Audit')->collapsed(true),
-                NavigationGroup::make('🔌 Integrations')->collapsed(true),
-                NavigationGroup::make('🤖 AI')->collapsed(true),
-                NavigationGroup::make('📥 Import / Export')->collapsed(true),
-                NavigationGroup::make('⚙️ Settings')->collapsed(true),
+                NavigationGroup::make('📊 Dashboard')->collapsed(false),
+                NavigationGroup::make('📦 Produk & Inventori')->collapsed(false),
+                NavigationGroup::make('💰 Penjualan')->collapsed(false),
+                NavigationGroup::make('🛒 Pembelian')->collapsed(false),
+                NavigationGroup::make('🏭 Manufaktur')->collapsed(true),
+                NavigationGroup::make('💵 Keuangan')->collapsed(true),
+                NavigationGroup::make('📖 Akuntansi')->collapsed(true),
+                NavigationGroup::make('🏦 Aset')->collapsed(true),
+                NavigationGroup::make('📈 Laporan')->collapsed(true),
+                NavigationGroup::make('⚙️ Pengaturan')->collapsed(true),
             ])
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\\Filament\\App\\Resources')
             ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\\Filament\\App\\Pages')
@@ -77,15 +66,11 @@ class CustomerPanelProvider extends PanelProvider
             ->widgets([
                 \App\Filament\App\Widgets\StatsOverview::class,
                 \App\Filament\App\Widgets\SalesChart::class,
-                \App\Filament\App\Widgets\RecentInvoices::class,
-                \App\Filament\App\Widgets\CashierToday::class,
-                \App\Filament\App\Widgets\WarehouseStockAlert::class,
                 \App\Filament\App\Widgets\OverdueInvoices::class,
-                \App\Filament\App\Widgets\TodaySales::class,
             ])
             ->renderHook(
                 PanelsRenderHook::GLOBAL_SEARCH_BEFORE,
-                fn() => view('filament.components.language-switcher'),
+                fn() => view('filament.components.notification-bell'),
             )
             ->middleware([
                 EncryptCookies::class,

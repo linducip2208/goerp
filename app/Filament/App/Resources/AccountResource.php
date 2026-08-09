@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -16,9 +16,9 @@ class AccountResource extends Resource
 {
     protected static ?string $model = Account::class;
 
-    protected static ?string $navigationGroup = '📊 Accounting';
+    protected static ?string $navigationGroup = '📖 Akuntansi';
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
-    protected static ?int $navigationSort = 51;
+    protected static ?int $navigationSort = 110;
     protected static ?string $modelLabel = 'Chart of Accounts';
     protected static ?string $pluralModelLabel = 'Chart of Accounts';
 

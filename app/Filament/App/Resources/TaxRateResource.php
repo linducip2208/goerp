@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class TaxRateResource extends Resource
 {
     protected static ?string $model = TaxRate::class;
 
-    protected static ?string $navigationGroup = '🧾 Tax';
+    protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-calculator';
-    protected static ?int $navigationSort = 111;
+    protected static ?int $navigationSort = 156;
     protected static ?string $modelLabel = 'Tarif Pajak';
     protected static ?string $pluralModelLabel = 'Tarif Pajak';
 

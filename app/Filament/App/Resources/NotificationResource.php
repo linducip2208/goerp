@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class NotificationResource extends Resource
 {
     protected static ?string $model = Notification::class;
 
-    protected static ?string $navigationGroup = '🔔 Notifikasi';
+    protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-bell-alert';
-    protected static ?int $navigationSort = 99;
+    protected static ?int $navigationSort = 161;
     protected static ?string $modelLabel = 'Notifikasi';
     protected static ?string $pluralModelLabel = 'Notifikasi';
 

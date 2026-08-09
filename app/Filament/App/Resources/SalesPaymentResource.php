@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -16,7 +16,7 @@ class SalesPaymentResource extends Resource
 
     protected static ?string $navigationGroup = '💰 Penjualan';
     protected static ?string $navigationIcon = 'heroicon-o-banknotes';
-    protected static ?int $navigationSort = 22;
+    protected static ?int $navigationSort = 33;
     protected static ?string $modelLabel = 'Pembayaran Masuk';
     protected static ?string $pluralModelLabel = 'Pembayaran Masuk';
 

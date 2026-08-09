@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class BudgetResource extends Resource
 {
     protected static ?string $model = Budget::class;
 
-    protected static ?string $navigationGroup = '📊 Accounting';
+    protected static ?string $navigationGroup = '📖 Akuntansi';
     protected static ?string $navigationIcon = 'heroicon-o-chart-pie';
-    protected static ?int $navigationSort = 57;
+    protected static ?int $navigationSort = 114;
     protected static ?string $modelLabel = 'Anggaran';
     protected static ?string $pluralModelLabel = 'Anggaran';
 

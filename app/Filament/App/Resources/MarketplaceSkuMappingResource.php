@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class MarketplaceSkuMappingResource extends Resource
 {
     protected static ?string $model = MarketplaceSkuMapping::class;
 
-    protected static ?string $navigationGroup = '🛒 Marketplace';
+    protected static ?string $navigationGroup = '💰 Penjualan';
     protected static ?string $navigationIcon = 'heroicon-o-link';
-    protected static ?int $navigationSort = 26;
+    protected static ?int $navigationSort = 39;
     protected static ?string $modelLabel = 'Mapping SKU';
     protected static ?string $pluralModelLabel = 'Mapping SKU';
 

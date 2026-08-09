@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class CrmActivityResource extends Resource
 {
     protected static ?string $model = CrmActivity::class;
 
-    protected static ?string $navigationGroup = '👥 CRM';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
-    protected static ?int $navigationSort = 103;
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $modelLabel = 'Aktivitas';
     protected static ?string $pluralModelLabel = 'Aktivitas';
 

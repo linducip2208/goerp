@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class WorkOrderResource extends Resource
 {
     protected static ?string $model = WorkOrder::class;
 
-    protected static ?string $navigationGroup = '🏭 Manufacturing';
+    protected static ?string $navigationGroup = '🏭 Manufaktur';
     protected static ?string $navigationIcon = 'heroicon-o-queue-list';
-    protected static ?int $navigationSort = 63;
+    protected static ?int $navigationSort = 72;
     protected static ?string $modelLabel = 'Work Order';
     protected static ?string $pluralModelLabel = 'Work Order';
 

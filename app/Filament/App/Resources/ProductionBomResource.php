@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -15,9 +15,9 @@ class ProductionBomResource extends Resource
 {
     protected static ?string $model = ProductionBom::class;
 
-    protected static ?string $navigationGroup = '🏭 Manufacturing';
+    protected static ?string $navigationGroup = '🏭 Manufaktur';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
-    protected static ?int $navigationSort = 61;
+    protected static ?int $navigationSort = 70;
     protected static ?string $modelLabel = 'Bill of Materials';
     protected static ?string $pluralModelLabel = 'Bill of Materials';
 

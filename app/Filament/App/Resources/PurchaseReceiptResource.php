@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -15,9 +15,9 @@ class PurchaseReceiptResource extends Resource
 {
     protected static ?string $model = PurchaseReceipt::class;
 
-    protected static ?string $navigationGroup = '🏭 Warehouse';
+    protected static ?string $navigationGroup = '🛒 Pembelian';
     protected static ?string $navigationIcon = 'heroicon-o-archive-box-arrow-down';
-    protected static ?int $navigationSort = 34;
+    protected static ?int $navigationSort = 55;
     protected static ?string $modelLabel = 'Penerimaan Barang';
     protected static ?string $pluralModelLabel = 'Penerimaan Barang';
 

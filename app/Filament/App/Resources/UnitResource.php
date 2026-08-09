@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class UnitResource extends Resource
 {
     protected static ?string $model = Unit::class;
 
-    protected static ?string $navigationGroup = '📚 Master Data';
+    protected static ?string $navigationGroup = '📦 Produk & Inventori';
     protected static ?string $navigationIcon = 'heroicon-o-beaker';
-    protected static ?int $navigationSort = 15;
+    protected static ?int $navigationSort = 14;
     protected static ?string $modelLabel = 'Satuan';
     protected static ?string $pluralModelLabel = 'Satuan';
 

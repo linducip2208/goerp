@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -15,9 +15,9 @@ class StockOpnameResource extends Resource
 {
     protected static ?string $model = StockOpname::class;
 
-    protected static ?string $navigationGroup = '📦 Inventory';
+    protected static ?string $navigationGroup = '📦 Produk & Inventori';
     protected static ?string $navigationIcon = 'heroicon-o-magnifying-glass';
-    protected static ?int $navigationSort = 19;
+    protected static ?int $navigationSort = 21;
     protected static ?string $modelLabel = 'Stock Opname';
     protected static ?string $pluralModelLabel = 'Stock Opname';
 

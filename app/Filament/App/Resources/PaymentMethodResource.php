@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class PaymentMethodResource extends Resource
 {
     protected static ?string $model = PaymentMethod::class;
 
-    protected static ?string $navigationGroup = '📚 Master Data';
+    protected static ?string $navigationGroup = '📦 Produk & Inventori';
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
-    protected static ?int $navigationSort = 17;
+    protected static ?int $navigationSort = 15;
     protected static ?string $modelLabel = 'Metode Pembayaran';
     protected static ?string $pluralModelLabel = 'Metode Pembayaran';
 

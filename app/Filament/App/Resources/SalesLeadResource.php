@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,9 +17,9 @@ class SalesLeadResource extends Resource
 {
     protected static ?string $model = SalesLead::class;
 
-    protected static ?string $navigationGroup = '💰 CRM';
+    protected static ?string $navigationGroup = null;
     protected static ?string $navigationIcon = 'heroicon-o-user-plus';
-    protected static ?int $navigationSort = 18;
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $modelLabel = 'Prospek';
     protected static ?string $pluralModelLabel = 'Prospek';
 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -17,7 +17,7 @@ class ProductBrandResource extends Resource
 {
     protected static ?string $model = ProductBrand::class;
 
-    protected static ?string $navigationGroup = '📚 Master Data';
+    protected static ?string $navigationGroup = '📦 Produk & Inventori';
     protected static ?string $navigationIcon = 'heroicon-o-bookmark';
     protected static ?int $navigationSort = 13;
     protected static ?string $modelLabel = 'Merek Produk';

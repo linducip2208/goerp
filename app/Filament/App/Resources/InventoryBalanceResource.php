@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class InventoryBalanceResource extends Resource
 {
     protected static ?string $model = InventoryBalance::class;
 
-    protected static ?string $navigationGroup = '📦 Inventory';
+    protected static ?string $navigationGroup = '📦 Produk & Inventori';
     protected static ?string $navigationIcon = 'heroicon-o-scale';
-    protected static ?int $navigationSort = 15;
+    protected static ?int $navigationSort = 17;
     protected static ?string $modelLabel = 'Stok';
     protected static ?string $pluralModelLabel = 'Stok';
 

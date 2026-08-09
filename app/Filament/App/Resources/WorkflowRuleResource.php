@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class WorkflowRuleResource extends Resource
 {
     protected static ?string $model = WorkflowRule::class;
 
-    protected static ?string $navigationGroup = '🔄 Workflow';
+    protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
-    protected static ?int $navigationSort = 95;
+    protected static ?int $navigationSort = 158;
     protected static ?string $modelLabel = 'Aturan Workflow';
     protected static ?string $pluralModelLabel = 'Aturan Workflow';
 

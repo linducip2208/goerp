@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class BankTransactionResource extends Resource
 {
     protected static ?string $model = BankTransaction::class;
 
-    protected static ?string $navigationGroup = '💵 Finance';
+    protected static ?string $navigationGroup = '💵 Keuangan';
     protected static ?string $navigationIcon = 'heroicon-o-arrows-right-left';
-    protected static ?int $navigationSort = 42;
+    protected static ?int $navigationSort = 91;
     protected static ?string $modelLabel = 'Transaksi Bank';
     protected static ?string $pluralModelLabel = 'Transaksi Bank';
 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -15,9 +15,9 @@ class SalesDeliveryResource extends Resource
 {
     protected static ?string $model = SalesDelivery::class;
 
-    protected static ?string $navigationGroup = '🏭 Warehouse';
+    protected static ?string $navigationGroup = '💰 Penjualan';
     protected static ?string $navigationIcon = 'heroicon-o-truck';
-    protected static ?int $navigationSort = 24;
+    protected static ?int $navigationSort = 35;
     protected static ?string $modelLabel = 'Pengiriman';
     protected static ?string $pluralModelLabel = 'Pengiriman';
 

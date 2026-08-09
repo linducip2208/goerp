@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Filament\App\Resources;
 
@@ -14,9 +14,9 @@ class PosOutletResource extends Resource
 {
     protected static ?string $model = PosOutlet::class;
 
-    protected static ?string $navigationGroup = '🛍️ Marketplace';
+    protected static ?string $navigationGroup = '💰 Penjualan';
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
-    protected static ?int $navigationSort = 151;
+    protected static ?int $navigationSort = 36;
     protected static ?string $modelLabel = 'Outlet POS';
     protected static ?string $pluralModelLabel = 'Outlet POS';
 
