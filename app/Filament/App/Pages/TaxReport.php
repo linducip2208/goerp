@@ -12,7 +12,7 @@ class TaxReport extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-calculator';
     protected static ?string $navigationGroup = '📈 Laporan';
-    protected static ?int $navigationSort = 78;
+    protected static ?int $navigationSort = 17;
     protected static ?string $title = 'Laporan Pajak';
 
     protected static string $view = 'filament.pages.reports.tax';

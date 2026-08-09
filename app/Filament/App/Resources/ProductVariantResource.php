@@ -14,9 +14,9 @@ class ProductVariantResource extends Resource
 {
     protected static ?string $model = ProductVariant::class;
 
-    protected static ?string $navigationGroup = '📦 Produk & Inventori';
+    protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationIcon = 'heroicon-o-swatch';
-    protected static ?int $navigationSort = 11;
+    protected static ?int $navigationSort = 102;
     protected static ?string $modelLabel = 'Varian Produk';
     protected static ?string $pluralModelLabel = 'Varian Produk';
 

@@ -17,9 +17,9 @@ class ProductBrandResource extends Resource
 {
     protected static ?string $model = ProductBrand::class;
 
-    protected static ?string $navigationGroup = '📦 Produk & Inventori';
+    protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationIcon = 'heroicon-o-bookmark';
-    protected static ?int $navigationSort = 13;
+    protected static ?int $navigationSort = 104;
     protected static ?string $modelLabel = 'Merek Produk';
     protected static ?string $pluralModelLabel = 'Merek Produk';
 

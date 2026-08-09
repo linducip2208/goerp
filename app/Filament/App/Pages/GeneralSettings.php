@@ -8,7 +8,7 @@ class GeneralSettings extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-cog';
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
-    protected static ?int $navigationSort = 82;
+    protected static ?int $navigationSort = 161;
     protected static ?string $title = 'Pengaturan Umum';
 
     protected static string $view = 'filament.pages.general-settings';

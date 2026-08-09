@@ -17,9 +17,9 @@ class SalesInvoiceResource extends Resource
 {
     protected static ?string $model = SalesInvoice::class;
 
-    protected static ?string $navigationGroup = '💰 Penjualan';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?int $navigationSort = 32;
+    protected static ?int $navigationSort = 42;
     protected static ?string $modelLabel = 'Faktur Penjualan';
     protected static ?string $pluralModelLabel = 'Faktur Penjualan';
 

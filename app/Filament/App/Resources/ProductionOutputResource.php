@@ -14,9 +14,9 @@ class ProductionOutputResource extends Resource
 {
     protected static ?string $model = ProductionOutput::class;
 
-    protected static ?string $navigationGroup = '🏭 Manufaktur';
+    protected static ?string $navigationGroup = '🏭 Produksi';
     protected static ?string $navigationIcon = 'heroicon-o-check-circle';
-    protected static ?int $navigationSort = 74;
+    protected static ?int $navigationSort = 154;
     protected static ?string $modelLabel = 'Output Produksi';
     protected static ?string $pluralModelLabel = 'Output Produksi';
 

@@ -14,9 +14,9 @@ class InventoryBalanceResource extends Resource
 {
     protected static ?string $model = InventoryBalance::class;
 
-    protected static ?string $navigationGroup = '📦 Produk & Inventori';
+    protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationIcon = 'heroicon-o-scale';
-    protected static ?int $navigationSort = 17;
+    protected static ?int $navigationSort = 108;
     protected static ?string $modelLabel = 'Stok';
     protected static ?string $pluralModelLabel = 'Stok';
 

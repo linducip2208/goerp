@@ -20,7 +20,7 @@ class ProfitLossReport extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
     protected static ?string $navigationGroup = '📈 Laporan';
-    protected static ?int $navigationSort = 71;
+    protected static ?int $navigationSort = 10;
     protected static ?string $title = 'Laba Rugi';
 
     protected static string $view = 'filament.pages.profit-loss-report';

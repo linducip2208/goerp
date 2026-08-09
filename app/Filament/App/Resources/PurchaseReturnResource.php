@@ -14,7 +14,7 @@ class PurchaseReturnResource extends Resource
 {
     protected static ?string $model = PurchaseReturn::class;
 
-    protected static ?string $navigationGroup = '🛒 Pembelian';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-arrow-uturn-right';
     protected static ?int $navigationSort = 54;
     protected static ?string $modelLabel = 'Retur Pembelian';

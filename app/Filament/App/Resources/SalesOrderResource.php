@@ -15,9 +15,9 @@ class SalesOrderResource extends Resource
 {
     protected static ?string $model = SalesOrder::class;
 
-    protected static ?string $navigationGroup = '💰 Penjualan';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
-    protected static ?int $navigationSort = 31;
+    protected static ?int $navigationSort = 41;
     protected static ?string $modelLabel = 'Sales Order';
     protected static ?string $pluralModelLabel = 'Sales Order';
 

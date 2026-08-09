@@ -21,7 +21,7 @@ class DataImport extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-up-tray';
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
-    protected static ?int $navigationSort = 86;
+    protected static ?int $navigationSort = 166;
     protected static ?string $title = 'Import Data';
 
     protected static string $view = 'filament.pages.data-import';

@@ -46,15 +46,12 @@ class CustomerPanelProvider extends PanelProvider
             ->collapsedSidebarWidth('4rem')
             ->topbar(true)
             ->navigationGroups([
-                NavigationGroup::make('📊 Dashboard')->collapsed(false),
-                NavigationGroup::make('📦 Produk & Inventori')->collapsed(false),
-                NavigationGroup::make('💰 Penjualan')->collapsed(false),
-                NavigationGroup::make('🛒 Pembelian')->collapsed(false),
-                NavigationGroup::make('🏭 Manufaktur')->collapsed(true),
-                NavigationGroup::make('💵 Keuangan')->collapsed(true),
-                NavigationGroup::make('📖 Akuntansi')->collapsed(true),
-                NavigationGroup::make('🏦 Aset')->collapsed(true),
-                NavigationGroup::make('📈 Laporan')->collapsed(true),
+                NavigationGroup::make('Beranda')->collapsed(false),
+                NavigationGroup::make('📈 Laporan')->collapsed(false),
+                NavigationGroup::make('💰 Anggaran')->collapsed(true),
+                NavigationGroup::make('Operasional')->collapsed(false),
+                NavigationGroup::make('Master Data')->collapsed(false),
+                NavigationGroup::make('🏭 Produksi')->collapsed(true),
                 NavigationGroup::make('⚙️ Pengaturan')->collapsed(true),
             ])
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\\Filament\\App\\Resources')

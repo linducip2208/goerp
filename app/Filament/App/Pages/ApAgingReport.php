@@ -10,7 +10,7 @@ class ApAgingReport extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-clock';
     protected static ?string $navigationGroup = '📈 Laporan';
-    protected static ?int $navigationSort = 77;
+    protected static ?int $navigationSort = 16;
     protected static ?string $title = 'AP Aging';
 
     protected static string $view = 'filament.pages.reports.ap-aging';

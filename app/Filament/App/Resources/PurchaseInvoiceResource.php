@@ -16,7 +16,7 @@ class PurchaseInvoiceResource extends Resource
 {
     protected static ?string $model = PurchaseInvoice::class;
 
-    protected static ?string $navigationGroup = '🛒 Pembelian';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-document-arrow-down';
     protected static ?int $navigationSort = 52;
     protected static ?string $modelLabel = 'Faktur Pembelian';

@@ -15,9 +15,9 @@ class SalesQuotationResource extends Resource
 {
     protected static ?string $model = SalesQuotation::class;
 
-    protected static ?string $navigationGroup = '💰 Penjualan';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?int $navigationSort = 30;
+    protected static ?int $navigationSort = 40;
     protected static ?string $modelLabel = 'Penawaran';
     protected static ?string $pluralModelLabel = 'Penawaran';
 

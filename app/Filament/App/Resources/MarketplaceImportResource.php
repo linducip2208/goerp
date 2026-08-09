@@ -18,9 +18,9 @@ class MarketplaceImportResource extends Resource
 {
     protected static ?string $model = MarketplaceImport::class;
 
-    protected static ?string $navigationGroup = '💰 Penjualan';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
-    protected static ?int $navigationSort = 38;
+    protected static ?int $navigationSort = 48;
     protected static ?string $modelLabel = 'Import Marketplace';
     protected static ?string $pluralModelLabel = 'Import Marketplace';
 

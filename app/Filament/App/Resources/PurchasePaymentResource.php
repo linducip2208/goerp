@@ -14,7 +14,7 @@ class PurchasePaymentResource extends Resource
 {
     protected static ?string $model = PurchasePayment::class;
 
-    protected static ?string $navigationGroup = '🛒 Pembelian';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-arrow-up-on-square';
     protected static ?int $navigationSort = 53;
     protected static ?string $modelLabel = 'Pembayaran Keluar';

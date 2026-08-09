@@ -17,7 +17,7 @@ class ApprovalResource extends Resource
 
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-check-badge';
-    protected static ?int $navigationSort = 159;
+    protected static ?int $navigationSort = 170;
     protected static ?string $modelLabel = 'Approval';
     protected static ?string $pluralModelLabel = 'Approval';
 

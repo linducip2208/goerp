@@ -17,7 +17,7 @@ class CashFlowReport extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-trending-up';
     protected static ?string $navigationGroup = '📈 Laporan';
-    protected static ?int $navigationSort = 73;
+    protected static ?int $navigationSort = 12;
     protected static ?string $title = 'Arus Kas';
 
     protected static string $view = 'filament.pages.cash-flow-report';

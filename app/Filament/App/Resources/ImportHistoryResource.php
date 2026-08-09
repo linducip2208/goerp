@@ -14,7 +14,7 @@ class ImportHistoryResource extends Resource
 
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-clock';
-    protected static ?int $navigationSort = 165;
+    protected static ?int $navigationSort = 176;
     protected static ?string $modelLabel = 'Riwayat Impor';
     protected static ?string $pluralModelLabel = 'Riwayat Impor';
 

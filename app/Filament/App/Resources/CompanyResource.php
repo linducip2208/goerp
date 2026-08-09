@@ -14,9 +14,9 @@ class CompanyResource extends Resource
 {
     protected static ?string $model = Company::class;
 
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
-    protected static ?int $navigationSort = 150;
+    protected static ?int $navigationSort = 118;
     protected static ?string $modelLabel = 'Perusahaan';
     protected static ?string $pluralModelLabel = 'Perusahaan';
 

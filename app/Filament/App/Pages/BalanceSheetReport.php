@@ -18,7 +18,7 @@ class BalanceSheetReport extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
     protected static ?string $navigationGroup = '📈 Laporan';
-    protected static ?int $navigationSort = 72;
+    protected static ?int $navigationSort = 11;
     protected static ?string $title = 'Neraca';
 
     protected static string $view = 'filament.pages.balance-sheet-report';

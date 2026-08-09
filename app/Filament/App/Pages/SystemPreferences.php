@@ -8,7 +8,7 @@ class SystemPreferences extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-adjustments-vertical';
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
-    protected static ?int $navigationSort = 89;
+    protected static ?int $navigationSort = 164;
     protected static ?string $title = 'Preferensi Sistem';
 
     protected static string $view = 'filament.pages.system-preferences';

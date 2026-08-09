@@ -17,7 +17,7 @@ class TransactionNumberSettings extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-hashtag';
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
-    protected static ?int $navigationSort = 83;
+    protected static ?int $navigationSort = 163;
     protected static ?string $title = 'Nomor Transaksi';
 
     protected static string $view = 'filament.pages.transaction-number-settings';

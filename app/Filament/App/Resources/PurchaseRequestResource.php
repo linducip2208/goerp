@@ -17,7 +17,7 @@ class PurchaseRequestResource extends Resource
 {
     protected static ?string $model = PurchaseRequest::class;
 
-    protected static ?string $navigationGroup = '🛒 Pembelian';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-document-plus';
     protected static ?int $navigationSort = 50;
     protected static ?string $modelLabel = 'Permintaan Pembelian';

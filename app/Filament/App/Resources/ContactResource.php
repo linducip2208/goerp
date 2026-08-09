@@ -15,9 +15,9 @@ class ContactResource extends Resource
 {
     protected static ?string $model = Contact::class;
 
-    protected static ?string $navigationGroup = '📦 Produk & Inventori';
+    protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
-    protected static ?int $navigationSort = 22;
+    protected static ?int $navigationSort = 100;
     protected static ?string $modelLabel = 'Kontak';
     protected static ?string $pluralModelLabel = 'Kontak';
 

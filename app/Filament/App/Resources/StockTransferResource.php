@@ -15,9 +15,9 @@ class StockTransferResource extends Resource
 {
     protected static ?string $model = StockTransfer::class;
 
-    protected static ?string $navigationGroup = '📦 Produk & Inventori';
+    protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationIcon = 'heroicon-o-arrows-right-left';
-    protected static ?int $navigationSort = 19;
+    protected static ?int $navigationSort = 110;
     protected static ?string $modelLabel = 'Transfer Gudang';
     protected static ?string $pluralModelLabel = 'Transfer Gudang';
 

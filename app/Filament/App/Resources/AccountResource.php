@@ -16,9 +16,9 @@ class AccountResource extends Resource
 {
     protected static ?string $model = Account::class;
 
-    protected static ?string $navigationGroup = '📖 Akuntansi';
+    protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
-    protected static ?int $navigationSort = 110;
+    protected static ?int $navigationSort = 113;
     protected static ?string $modelLabel = 'Chart of Accounts';
     protected static ?string $pluralModelLabel = 'Chart of Accounts';
 

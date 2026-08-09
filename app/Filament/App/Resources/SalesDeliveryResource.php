@@ -15,9 +15,9 @@ class SalesDeliveryResource extends Resource
 {
     protected static ?string $model = SalesDelivery::class;
 
-    protected static ?string $navigationGroup = '💰 Penjualan';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-truck';
-    protected static ?int $navigationSort = 35;
+    protected static ?int $navigationSort = 45;
     protected static ?string $modelLabel = 'Pengiriman';
     protected static ?string $pluralModelLabel = 'Pengiriman';
 

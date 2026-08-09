@@ -17,8 +17,8 @@ class OpeningBalance extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-right-start-on-rectangle';
-    protected static ?string $navigationGroup = '📖 Akuntansi';
-    protected static ?int $navigationSort = 56;
+    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?int $navigationSort = 168;
     protected static ?string $title = 'Saldo Awal';
 
     protected static string $view = 'filament.pages.opening-balance';

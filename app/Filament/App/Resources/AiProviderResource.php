@@ -16,7 +16,7 @@ class AiProviderResource extends Resource
 
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-cpu-chip';
-    protected static ?int $navigationSort = 162;
+    protected static ?int $navigationSort = 173;
     protected static ?string $modelLabel = 'Provider AI';
     protected static ?string $pluralModelLabel = 'Provider AI';
 

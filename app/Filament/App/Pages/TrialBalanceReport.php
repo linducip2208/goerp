@@ -10,7 +10,7 @@ class TrialBalanceReport extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-scale';
     protected static ?string $navigationGroup = '📈 Laporan';
-    protected static ?int $navigationSort = 79;
+    protected static ?int $navigationSort = 18;
     protected static ?string $title = 'Neraca Saldo';
 
     protected static string $view = 'filament.pages.reports.trial-balance';

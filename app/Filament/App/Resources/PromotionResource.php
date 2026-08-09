@@ -14,9 +14,9 @@ class PromotionResource extends Resource
 {
     protected static ?string $model = Promotion::class;
 
-    protected static ?string $navigationGroup = '💰 Penjualan';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-gift';
-    protected static ?int $navigationSort = 37;
+    protected static ?int $navigationSort = 47;
     protected static ?string $modelLabel = 'Promosi';
     protected static ?string $pluralModelLabel = 'Promosi';
 

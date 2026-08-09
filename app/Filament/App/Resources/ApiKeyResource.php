@@ -19,7 +19,7 @@ class ApiKeyResource extends Resource
 
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-key';
-    protected static ?int $navigationSort = 164;
+    protected static ?int $navigationSort = 175;
     protected static ?string $modelLabel = 'API Key';
     protected static ?string $pluralModelLabel = 'API Key';
 

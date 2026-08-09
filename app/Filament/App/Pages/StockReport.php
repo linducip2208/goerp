@@ -17,7 +17,7 @@ class StockReport extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-table-cells';
     protected static ?string $navigationGroup = '📈 Laporan';
-    protected static ?int $navigationSort = 75;
+    protected static ?int $navigationSort = 14;
     protected static ?string $title = 'Laporan Stok';
 
     protected static string $view = 'filament.pages.stock-report';

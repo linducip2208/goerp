@@ -16,7 +16,7 @@ class WorkflowRuleResource extends Resource
 
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
     protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
-    protected static ?int $navigationSort = 158;
+    protected static ?int $navigationSort = 169;
     protected static ?string $modelLabel = 'Aturan Workflow';
     protected static ?string $pluralModelLabel = 'Aturan Workflow';
 

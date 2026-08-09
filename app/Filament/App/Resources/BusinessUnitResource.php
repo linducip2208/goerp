@@ -17,9 +17,9 @@ class BusinessUnitResource extends Resource
 {
     protected static ?string $model = BusinessUnit::class;
 
-    protected static ?string $navigationGroup = '⚙️ Pengaturan';
+    protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationIcon = 'heroicon-o-building-office';
-    protected static ?int $navigationSort = 152;
+    protected static ?int $navigationSort = 120;
     protected static ?string $modelLabel = 'Unit Bisnis';
     protected static ?string $pluralModelLabel = 'Unit Bisnis';
 

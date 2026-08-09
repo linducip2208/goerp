@@ -18,7 +18,7 @@ class AccountingSettings extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-calculator';
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
-    protected static ?int $navigationSort = 82;
+    protected static ?int $navigationSort = 162;
     protected static ?string $title = 'Akuntansi';
 
     protected static string $view = 'filament.pages.accounting-settings';

@@ -14,9 +14,9 @@ class BankAccountResource extends Resource
 {
     protected static ?string $model = BankAccount::class;
 
-    protected static ?string $navigationGroup = '💵 Keuangan';
+    protected static ?string $navigationGroup = 'Operasional';
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
-    protected static ?int $navigationSort = 90;
+    protected static ?int $navigationSort = 56;
     protected static ?string $modelLabel = 'Rekening Bank';
     protected static ?string $pluralModelLabel = 'Rekening Bank';
 

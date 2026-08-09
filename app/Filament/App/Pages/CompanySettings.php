@@ -20,7 +20,7 @@ class CompanySettings extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
     protected static ?string $navigationGroup = '⚙️ Pengaturan';
-    protected static ?int $navigationSort = 81;
+    protected static ?int $navigationSort = 160;
     protected static ?string $title = 'Perusahaan';
 
     protected static string $view = 'filament.pages.company-settings';
