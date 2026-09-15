@@ -1,730 +1,717 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="GoERP - Built with Laravel">
+  <h1 align="center">GoERP — SaaS ERP Accounting, Inventory, Production & Marketplace</h1>
+  <p align="center">Laravel 11 + Filament 3.3 + MySQL 8 · Multi-Tenant SaaS · 101 Models · 109 Migrations · 75+ Filament Resources</p>
 </p>
-
-<h1 align="center">GoERP — SaaS ERP, Accounting, Inventory, Production & Marketplace</h1>
 
 <p align="center">
   <a href="https://github.com/linducip2208/goerp"><img src="https://img.shields.io/github/stars/linducip2208/goerp?style=social" alt="Stars"></a>
   <img src="https://img.shields.io/badge/Laravel-11-red" alt="Laravel 11">
   <img src="https://img.shields.io/badge/Filament-3.3-yellow" alt="Filament 3.3">
-  <img src="https://img.shields.io/badge/PHP-8.2+-blue" alt="PHP 8.2+">
-  <img src="https://img.shields.io/badge/MySQL-8-orange" alt="MySQL 8">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT">
+  <img src="https://img.shields.io/badge/PHP-8.2+-blue" alt="PHP">
+  <img src="https://img.shields.io/badge/MySQL-8.0-orange" alt="MySQL">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
 </p>
 
-<p align="center">
-  <b>🌍 Language / Bahasa / اللغة:</b><br>
-  <a href="#-english">🇬🇧 English</a> ·
-  <a href="#-bahasa-indonesia">🇮🇩 Indonesia</a> ·
-  <a href="#-العربية-arabic">🇸🇦 العربية</a>
-</p>
-
-> **Contact / Kontak / الاتصال — Lindu Cipta**
-> 📱 WhatsApp: **+62 812-9605-2010** — 👉 Chat now: **https://wa.me/6281296052010**
-> _Need demo, installation, customization, or license? / Butuh demo, instalasi, kustomisasi, atau lisensi? / هل تحتاج إلى عرض تجريبي أو تثبيت أو تخصيص أو ترخيص؟ — Chat on WhatsApp._
+> **Contact / Kontak / اتصل بنا:**
+> **Lindu Cipta — WhatsApp: [+6281296052010](https://wa.me/6281296052010)**
+> Click to chat → https://wa.me/6281296052010
 
 ---
 
-<a id="-english"></a>
-# 🇬🇧 English
+## 🌐 Language / Bahasa / اللغة
 
-## 1. What is GoERP?
+- [1. English](#1--english)
+- [2. Bahasa Indonesia](#2--bahasa-indonesia)
+- [3. العربية (Arabic)](#3--العربية-arabic)
+- [Subscription Plans (all languages)](#-subscription-plans--paket-harga--خطط-الاشتراك)
+- [Installation](#-installation--instalasi--التثبيت)
+- [Contact](#-contact--kontak--اتصل-بنا)
 
-**GoERP** is a **multi-tenant SaaS ERP** built for Indonesian businesses (and ready for global use). One installation serves hundreds of companies with strict data isolation per tenant.
+---
 
-It combines a **double-entry accounting core** with full operational modules: **Sales, Purchase, Inventory, Cash & Bank, Fixed Assets, Production, Marketplace Excel Import, Approval Workflow, Audit Trail, Reports (PDF/Excel), Customer Portal, Blog/SEO, and a SaaS Backoffice** (tenants, subscriptions, billing, support).
+# 1. 🇬🇧 English
 
-**Why GoERP vs Jurnal.id / Accurate / Mekari?**
-- ✅ Production module: BOM + versioning, Work Orders, WIP, QC, Reject/Rework, Actual HPP, Borongan (piece-rate labor)
-- ✅ Marketplace Excel import (Shopee / TikTok Shop / Lazada) with auto + manual + bulk SKU matching, duplicate protection, auto stock deduction
-- ✅ Multi-tenant SaaS from day one: sell ERP as a subscription (Starter / Pro / Business / Enterprise)
-- ✅ Backoffice: MRR dashboard, feature flags, package limits, impersonation, announcements, support tickets, backup/restore
+## What is GoERP?
 
-**Codebase reality (verified):** 101 Eloquent models · 367 Filament admin files · 109 migrations · ~60+ business tables · Laravel 11 + Filament 3.3 + TailwindCSS + Sanctum-ready API + DomPDF + Laravel Excel.
+**GoERP** is a **multi-tenant SaaS ERP** built for Indonesian businesses. One installation serves hundreds of companies, each fully isolated by `tenant_id`.
 
-## 2. Tech Stack
+Every operational transaction **auto-posts to the accounting ledger (double-entry)**. No standalone transaction without a journal.
+
+**Different from Jurnal.id / Accurate / Mekari:**
+- Production module: BOM + versioning, WIP, QC (good/reject/rework), material variance, actual HPP, borongan (piece-rate labor)
+- Marketplace Excel import (Shopee / TikTok Shop / Lazada) with automatic SKU matching, duplicate protection, auto stock deduction
+- SaaS from day-1: backoffice, subscriptions, billing, feature flags, impersonation, support tickets
+- Customer self-service portal, POS outlets, CRM, HRM, Projects, Budgeting, Recurring Journals, Blog/CMS + programmatic SEO
+
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| Backend | Laravel 11, PHP 8.2+ |
+| Backend | Laravel 11 (PHP 8.2+) |
 | Admin Panel | Filament 3.3 |
 | Database | MySQL 8 |
-| Public Frontend | Blade + TailwindCSS |
-| API (Mobile / Integration) | Laravel Sanctum (token-based, JSON) |
-| Queue | Redis + Horizon (production) |
-| Search | Meilisearch (optional) |
-| Storage | Local / S3-compatible (R2 / MinIO) |
-| Export | barryvdh/laravel-dompdf (PDF), maatwebsite/excel (XLSX/CSV) |
-| Mobile | Flutter (roadmap, API-ready) |
+| Public site | Blade + TailwindCSS + Vite |
+| PDF | barryvdh/laravel-dompdf |
+| Excel Import/Export | maatwebsite/excel |
+| Auth (future mobile API) | Laravel Sanctum ready |
+| Mobile | Flutter (roadmap) |
 
-## 3. Architecture (3 Layers)
+## Architecture (3 Layers)
 
 ```
-Layer 1 — SaaS Management: Tenant · Company · Branch · Subscription · Billing · Feature Flags · Backoffice
-Layer 2 — Core ERP/Accounting: Sales · Purchase · Cash&Bank · Expense · Inventory · Accounting · Assets · Contacts · Reports
-Layer 3 — Operational: Production · Multi-Warehouse · Marketplace Excel · SKU Matching · Customer Portal · Blog/SEO
+SaaS Management Layer  → Tenant, Subscription, Billing, Backoffice, Feature Flags
+Core ERP / Accounting  → Sales, Purchase, Cash & Bank, Expense, Inventory, Accounting, Assets, Contacts, Reports, Approval, Audit
+Operational Layer      → Production (BOM/WIP/QC/HPP), Multi-Warehouse, Marketplace Excel + SKU Matching
 ```
 
-**Golden rule:** every operational transaction auto-posts to the ledger. No standalone transaction without a journal.
+Accounting flow:
 
 ```
-Sales Invoice posted  → Dr Accounts Receivable / Cr Sales + Dr COGS / Cr Inventory
-Payment received      → Dr Bank / Cr Accounts Receivable
-Purchase Invoice      → Dr Inventory / Cr Accounts Payable
-Supplier payment      → Dr Accounts Payable / Cr Bank
-Material Issue        → Dr WIP / Cr Raw Material
-Production Output     → Dr Finished Goods / Cr WIP
+TRANSACTION → SUB-LEDGER → JOURNAL ENTRY → GENERAL LEDGER → TRIAL BALANCE → FINANCIAL REPORT
+Sales Invoice → AR → Dr Receivables / Cr Sales → GL per COA → Trial Balance → P&L / Balance Sheet / Cash Flow
 ```
 
-## 4. Complete Feature List (122+ features, 16 modules)
+## Complete Feature List (EN)
 
 ### A. SaaS & Multi-Tenant (6)
-| # | Feature | Detail |
-|---|---|---|
-| A-1 | Multi-tenant architecture | One app, many customers. Tenant = data boundary |
-| A-2 | Data isolation | Every record scoped by `tenant_id` (global scope + middleware) |
-| A-3 | Login + subscription check | User → tenant → subscription status. Expired = view-only, renewable |
-| A-4 | Multi-company | One tenant, N companies. Switcher in header |
-| A-5 | Multi-branch | Branch with PIC, phone, address, default warehouse, active flag |
-| A-6 | Roles & permissions | Owner, Finance, Accounting, Purchasing, Warehouse, Production, Sales, Auditor. Granular: View/Create/Edit/Delete/Approve/Export/Print per menu |
+1. **Multi-tenant architecture** — one app, many customers; tenant = data boundary.
+2. **Data isolation** — every record has `tenant_id`; global scope prevents leaks.
+3. **Login + subscription check** — expired/suspended tenants become view-only, can renew.
+4. **Multi-company** — one tenant can own multiple companies, switch from header.
+5. **Multi-branch** — branches with PIC name/phone, default warehouse, active flag.
+6. **Roles & permissions** — Owner, Finance, Accounting, Purchasing, Warehouse, Production, Sales, Auditor; View/Create/Edit/Delete/Approve/Export/Print per menu.
 
 ### B. Dashboard & Navigation (5)
-| # | Feature | Detail |
-|---|---|---|
-| B-1 | Main dashboard | Cash, AR, AP, inventory cards, filter by company/branch/period |
-| B-2 | Sales chart | Day/week/month/year + previous-period comparison (Chart.js) |
-| B-3 | Cash-flow summary | Cash in / out / net |
-| B-4 | Quick actions | +Invoice, +SO, +PO, +Expense, +Payment, +Product, +Contact |
-| B-5 | Global search & notifications | Search invoice/PO/product/contact/journal; due-date, approval, low-stock, import-error notifications |
+7. **Main dashboard** — cash, AR, AP, inventory summary cards, filter by company/branch/period.
+8. **Sales chart** — day/week/month/year with previous-period comparison.
+9. **Cash-flow summary** — cash in, cash out, net.
+10. **Quick actions** — +Invoice, +SO, +PO, +Expense, +Payment, +Product, +Contact.
+11. **Global search & notifications** — search invoices/POs/products/contacts/journals; due-date, approval, low-stock, import-error notifications.
 
 ### C. Sales (9)
-| # | Feature | Detail |
-|---|---|---|
-| C-1 | Full sales flow | Quotation → Sales Order → Delivery → Invoice → Payment → Return |
-| C-2 | Sales Quotation | Expiry date, send/accept/reject, 1-click convert to SO |
-| C-3 | Sales Order | Stock reservation, partial fulfillment, channel, salesperson |
-| C-4 | Delivery (Surat Jalan) | Partial delivery, remaining-qty tracking |
-| C-5 | Sales Invoice | Discount, tax, multi-warehouse/branch, due date, reference |
-| C-6 | Invoice status | Draft → Open → Partial → Paid → Overdue → Void |
-| C-7 | Customer payment | Full/partial, cash/transfer/giro, auto-updates AR |
-| C-8 | Sales return | Stock-in + refund or credit note |
-| C-9 | Auto-journal | Dr AR Cr Sales; Dr COGS Cr Inventory; Dr Bank Cr AR. PDF export per invoice |
+12. **Full sales flow** — Quotation → Sales Order → Delivery → Invoice → Payment.
+13. **Sales Quotation** — expiry date, send/accept/reject, one-click convert to SO.
+14. **Sales Order** — stock reservation, partial fulfillment, channel (offline/marketplace), salesperson.
+15. **Delivery (Surat Jalan)** — partial delivery, remaining-qty tracking.
+16. **Sales Invoice** — discount, tax, multi-branch/warehouse, due date, reference.
+17. **Invoice status** — Draft → Open → Partial → Paid → Overdue → Void.
+18. **Customer Payment** — full/partial, cash/transfer/giro, updates AR; **Invoice PDF** download.
+19. **Sales Return** — stock-in + refund or credit note.
+20. **Auto-journal (sales)** — Dr AR / Cr Sales; Dr COGS / Cr Inventory; Dr Bank / Cr AR.
 
-### D. Purchase (7)
-| # | Feature | Detail |
-|---|---|---|
-| D-1 | Full purchase flow | PO → Receipt → Invoice → Payment → Return |
-| D-2 | Purchase Order | Approval workflow, expected delivery, payment terms |
-| D-3 | Goods Receipt | Receive actual qty (≠ PO qty allowed), partial receiving |
-| D-4 | Purchase Invoice | Supplier bill → AP, supplier invoice no., due date |
-| D-5 | Supplier payment | Full/partial, auto-updates AP |
-| D-6 | Purchase return | Stock-out + AP reduction / refund |
-| D-7 | Auto-journal | Dr Inventory Cr AP; Dr AP Cr Bank. PDF export per PO |
+### D. Purchase (7 + extras)
+21. **Full purchase flow** — Request → PO → Receipt → Invoice → Payment.
+22. **Purchase Request** — internal request before PO.
+23. **Purchase Order** — approval workflow, expected delivery, payment terms; **PO PDF** download.
+24. **Goods Receipt** — stock-in by actual received qty, partial receiving supported.
+25. **Purchase Invoice** — supplier bill → AP, supplier invoice number, due date.
+26. **Supplier Payment** — full/partial, updates AP.
+27. **Purchase Return** — stock-out + AP reduction/refund.
+28. **Auto-journal (purchase)** — Dr Inventory / Cr AP; Dr AP / Cr Bank.
 
-### E. Product & Inventory (9)
-| # | Feature | Detail |
-|---|---|---|
-| E-1 | Product master | SKU, barcode, category, brand, unit, cost/sell price, weight, dimensions, image, COA links |
-| E-2 | Product variants | Color/size/attributes → each combination = unique internal SKU |
-| E-3 | Internal SKU | Single source of truth for sales, purchase, stock, production, marketplace |
-| E-4 | Multi-warehouse | Per-warehouse stock, branch-linked |
-| E-5 | Stock balance | On Hand / Reserved / Available + average cost + last purchase cost |
-| E-6 | Stock movement log | Immutable before/after log per SKU per warehouse |
-| E-7 | Warehouse transfer | Draft → Approved → In Transit → Received |
-| E-8 | Stock adjustment | In / Out / Lost / Damage / Reject / Correction / Return |
-| E-9 | Stock opname | System vs physical → variance → approval → auto adjustment |
+### E. Product & Inventory (12)
+29. **Product master** — name, base SKU, barcode, category, brand, unit, purchase/sell price, COA links, image, weight/dimensions.
+30. **Product variants** — color/size/attributes; each combination = unique internal SKU.
+31. **Internal SKU as single source of truth** — all modules reference it.
+32. **Categories, Brands, Units** — hierarchical categories, brand master, unit master.
+33. **Multi-warehouse** — per-warehouse stock, branch-linked warehouses.
+34. **Stock balance** — On Hand / Reserved / Available + average cost & last purchase cost.
+35. **Stock movement log** — immutable before/after log for every change (sale/purchase/transfer/adjustment/production).
+36. **Warehouse transfer** — Draft → Approved → In Transit → Received.
+37. **Stock adjustment** — in/out/lost/damage/reject/correction/return with approval.
+38. **Stock opname** — system vs physical, variance, approval → auto adjustment.
+39. **Inventory reports** — summary, detail, stock card, valuation, movement, low-stock, negative-stock alerts.
+40. **Excel import/export** — bulk product import/export via Filament.
 
-### F. Cash, Bank, Expense, Contacts (7)
-| # | Feature | Detail |
-|---|---|---|
-| F-1 | Cash & bank accounts | Linked to COA, initial + current balance |
-| F-2 | Receive money | Non-invoice cash-in with COA + contact + memo + attachment |
-| F-3 | Send money | Cash-out to expense/asset account |
-| F-4 | Inter-bank transfer | Transfer in/out between company accounts |
-| F-5 | Bank reconciliation | Match system vs bank statement (reconciled flag + date) |
-| F-6 | Expense | Category, department, branch, tax, bank source, attachment |
-| F-7 | Contacts | Customer / Supplier / Employee / Other; NPWP, NIK, payment terms, credit limit |
+### F. Cash, Bank, Expense, Contacts (10)
+41. **Bank & cash accounts** — linked to COA, initial/current balance.
+42. **Receive money** — cash-in not from invoice.
+43. **Send money** — cash-out to expense/asset account.
+44. **Inter-bank transfer** — between company accounts.
+45. **Bank reconciliation** — match system vs bank statement, reconciled flag + date.
+46. **Expense** — category, department, branch, tax, attachment, approval.
+47. **Cash Advance (Kas Bon)** — employee advance + settlement tracking.
+48. **Petty Cash (Kas Kecil)** — small-cash ledger per outlet/branch.
+49. **Payment methods** — cash, transfer, giro, VA, e-wallet, other.
+50. **Contacts** — customer/supplier/employee/other with code, NPWP/NIK, payment terms, credit limit.
 
-### G. Accounting Core (7)
-| # | Feature | Detail |
-|---|---|---|
-| G-1 | Chart of Accounts | Hierarchical: 1-Asset, 2-Liability, 3-Equity, 4-Revenue, 5-COGS, 6-Expense, 7-Other Income, 8-Other Expense |
-| G-2 | Journal entries | Auto from transactions + manual; source_type/source_id traceability |
-| G-3 | Manual journal | Debit = credit validation |
-| G-4 | General ledger | Per-account mutation: opening → movements → closing balance |
-| G-5 | Opening balance | Per account (+ AR/AP per contact) for migration |
-| G-6 | Lock period | Block backdate edits in closed YYYY-MM periods |
-| G-7 | Period closing | Checklist (bank reconciled, opname done, depreciation run, trial balance OK) → transfer P&L to retained earnings |
+### G. Accounting Core (10)
+51. **Chart of Accounts (COA)** — hierarchical: 1-Asset, 2-Liability, 3-Equity, 4-Revenue, 5-COGS, 6-Expense, 7-Other Income, 8-Other Expense; lock flag for system accounts.
+52. **Journal entries** — auto-generated from every transaction + manual view.
+53. **Manual journal** — debit must equal credit validation.
+54. **Recurring journals** — scheduled repeating entries (rent, subscriptions).
+55. **General ledger** — per-account opening → movements → closing balance.
+56. **Opening balance** — initial balances incl. AR/AP per contact.
+57. **Fiscal periods, lock period & closing** — lock `YYYY-MM` against backdate edits; closing checklist (bank reconciled, opname done, depreciation run, trial balance OK) → transfer P&L to retained earnings.
+58. **Multi-currency** — base + transaction currency with exchange rates.
+59. **Tax rates** — name, rate, inclusive/exclusive, COA link.
+60. **Budgeting** — budget per account/period vs actual report.
 
-### H. Fixed Assets & Reports (8+)
-| # | Feature | Detail |
-|---|---|---|
-| H-1 | Fixed assets | Register, category, acquisition cost/date, residual value, useful life, straight-line / double-declining, auto depreciation schedule + journal |
-| H-2 | Profit & Loss | Gross → net profit, Chart.js visualization |
-| H-3 | Balance Sheet | Assets = Liabilities + Equity |
-| H-4 | Cash Flow | Operating / investing / financing |
-| H-5 | Trial Balance | Debits = credits check |
-| H-6 | Tax report | Per-tax-rate summary |
-| H-7 | AR/AP aging | Overdue buckets per customer/supplier |
-| H-8 | Sales reports | By product, customer, salesperson, channel, branch, date |
-| H-9 | Purchase reports | By supplier, product, branch |
-| H-10 | Inventory reports | Summary, detail, stock card, valuation, movement, low stock, negative stock |
-| H-11 | Production reports | Output, variance, cost per unit |
+### H. Fixed Assets & Financial Reports (8)
+61. **Fixed assets** — register, category, acquisition date/cost, residual value, useful life, straight-line / double-declining depreciation, auto depreciation schedule + journal.
+62. **Profit & Loss** — Revenue − COGS = Gross − Expenses = Net.
+63. **Balance Sheet** — Assets = Liabilities + Equity.
+64. **Cash Flow** — operating / investing / financing.
+65. **Trial Balance** — debits = credits check.
+66. **Sales reports** — by product, customer, salesperson, channel, branch, date; AR aging.
+67. **Purchase reports** — by supplier, product, branch; AP aging.
+68. **Report templates + PDF/Excel export** — save report layouts, export any report to PDF/Excel.
 
-### I. Approval & Audit (3)
-| # | Feature | Detail |
-|---|---|---|
-| I-1 | Approval workflow | Draft → Submitted → Waiting → Approved → Posted / Rejected |
-| I-2 | Approval rules | Multi-level by amount (e.g. <5M Supervisor, 5–50M Manager, >50M Owner) |
-| I-3 | Audit trail | User, datetime, module, document type/no, old/new JSON, IP, user agent. Immutable, soft-delete only |
+### I. Approval, Workflow & Audit (5)
+69. **Approval workflow** — Draft → Submitted → Waiting → Approved → Posted / Rejected.
+70. **Approval rules / Workflow rules** — multi-level by amount (e.g. <5M Supervisor, 5–50M Manager, >50M Owner).
+71. **Audit trail** — user, datetime, module, document type/no, old/new JSON, IP, user agent.
+72. **Login history** — every login tracked per user/device/IP.
+73. **Notifications** — due dates, approvals, low stock, import errors.
 
 ### J. Marketplace Excel Import (10)
-| # | Feature | Detail |
-|---|---|---|
-| J-1 | No-API concept (V1) | Download Excel from Shopee/TikTok/Lazada → upload to GoERP |
-| J-2 | Import wizard | Select marketplace + warehouse + upload XLSX/XLS/CSV |
-| J-3 | Smart parsing | Order no, date, marketplace SKU, product, variant, qty, price, discount |
-| J-4 | Auto SKU match | marketplace SKU = internal SKU → instant link |
-| J-5 | Manual SKU match | Pick internal product, mapping saved for future imports |
-| J-6 | Bulk matching UI | Resolve all unmatched SKUs at once |
-| J-7 | Preview | Totals: orders, items, matched, unmatched, duplicates. Block import if unmatched remains |
-| J-8 | Duplicate protection | Skip already-imported marketplace order/item IDs |
-| J-9 | Auto stock deduction | Stock movement on internal SKU after import |
-| J-10 | Import history | File, date, marketplace, counts, status (Uploaded/Matched/Previewed/Imported/Failed) |
+74. **No-API concept (V1)** — download Excel from Shopee/TikTok/Lazada → upload to GoERP.
+75. **Import wizard** — select marketplace + warehouse, upload XLSX/XLS/CSV.
+76. **Smart parsing** — order no, date, marketplace SKU, product name, variant, qty, price, discount.
+77. **Auto SKU match** — marketplace SKU = internal SKU → instant link.
+78. **Manual SKU match** — pick internal product, mapping saved for future imports.
+79. **Bulk SKU matching** — resolve all unmatched SKUs on one screen.
+80. **Preview before commit** — totals: orders, items, matched, unmatched, duplicates; block import if unmatched remain.
+81. **Duplicate protection** — marketplace item ID checked against DB; skips already-imported orders.
+82. **Auto stock deduction** — stock movement created on internal SKU after import.
+83. **Import history log** — file, date, marketplace, counts, status (Uploaded/Matched/Previewed/Imported/Failed).
 
 ### K. Production (13)
-| # | Feature | Detail |
-|---|---|---|
-| K-1 | Production flow | BOM → Production Order → Material Request → Material Issue → WIP → Work Orders → Output/QC → Actual HPP |
-| K-2 | BOM | Material qty per output unit, waste %, standard labor + overhead |
-| K-3 | BOM versioning | Old orders keep their version |
-| K-4 | Production Order | Target qty, BOM version, start/due dates, raw + finished warehouses |
-| K-5 | Work Orders | Cutting → Sewing → Finishing → QC → Packing; team/operator, target/actual/reject/rework qty |
-| K-6 | Material request | Production → warehouse request |
-| K-7 | Material issue | Stock ↓, value → WIP (Dr WIP Cr Raw Material) |
-| K-8 | WIP tracking | Goods in process before finished |
-| K-9 | Material variance | Standard vs actual usage |
-| K-10 | Output & QC | Good / Reject / Rework classification |
-| K-11 | Reject & rework | Defect reasons (hole stitching, dirty, size, color, other) → reject warehouse |
-| K-12 | Actual HPP | Total cost / good output per unit |
-| K-13 | Borongan | Piece-rate labor per operation per operator → journal (Dr Production Labor Cr Bank/Cash) |
+84. **Production flow** — BOM → Production Order → Material Request → Material Issue → WIP → Output → QC.
+85. **Bill of Materials (BOM)** — material qty per finished unit, expected output, waste %, standard labor/overhead.
+86. **BOM versioning** — new version = new record; old orders keep their version.
+87. **Production Order** — target qty, BOM version, start/due dates, raw & finished warehouses.
+88. **Work Orders** — stages: cutting → sewing → finishing → QC → packing; team/operator, target/actual/reject/rework qty.
+89. **Material Request** — production requests raw material from warehouse.
+90. **Material Issue** — stock decreases, value moves to WIP (Dr WIP / Cr Raw Material).
+91. **WIP tracking** — value of goods still in production.
+92. **Material variance** — standard (BOM) vs actual usage.
+93. **Production output & QC** — good / reject / rework classification per output.
+94. **Reject & rework** — defect reasons (hole stitching, dirty, size, color, other), reject warehouse.
+95. **Actual HPP** — total material + labor + overhead ÷ good output.
+96. **Borongan (piece rate)** — pay per operator per operation per qty (Dr Production Labor / Cr Cash/Bank).
 
-### L. Settings (12)
-Company (logo, NPWP, NIB, address, timezone, fiscal year, currency) · Accounting defaults (AR/AP/inventory/sales/COGS/tax/retained earnings) · Inventory (costing, negative stock, multi-warehouse, alerts) · Sales/Purchase defaults (warehouse, tax, payment terms, credit limit, approval, over-receipt) · Production (raw/WIP/finished/reject warehouses, cost accounts) · Marketplace (require match, reduce stock, create SO/invoice/journal) · Transaction numbering (`INV/{YYYY}/{MM}/{####}` per doc type) · Tax rates (name, rate, inclusive/exclusive, COA) · Multi-currency + exchange rates · Attachments (PDF/JPG/PNG/XLSX) · Notifications (due, approval, low stock, import error).
+### L. HRM, CRM, Projects, POS (12)
+97. **Employees** — profile, department, position, branch.
+98. **Departments & Business Units** — org structure master.
+99. **Sales Leads** — prospect pipeline.
+100. **Opportunities + Activities** — deal stages + follow-up activity log.
+101. **Projects** — project tracker linked to costs.
+102. **POS Outlets** — outlet master for retail/POS use.
+103. **Promotions** — discount/promo master.
+104. **Customer portal** — customers login to see their invoices & payment history.
+105. **Blog / CMS** — categories + posts, published scheduling, public blog pages.
+106. **Programmatic SEO** — best-category, alternatives, compare, under-price, learn-skill pages + sitemap + IndexNow.
+107. **Docs page** — in-app documentation route.
+108. **Settings per module** — company, sales, purchase, inventory, production, marketplace, accounting, tax, notification, transaction numbers (`INV/{YYYY}/{MM}/{####}`), attachments (PDF/JPG/PNG/XLSX).
 
-### M. SaaS Backoffice — Platform Owner (16)
-Dashboard (tenants, MRR, outstanding) · Tenant list/detail (companies, users, features, usage, billing, support) · 4 subscription plans (no code change) · Feature entitlement per plan · Package limits (users/companies/branches/warehouses/storage) · Status lifecycle (Trial → Active → Due → Grace → Suspended) · Expired handling (view-only, renewable, data kept) · Billing (invoice, payment, renewal, discount, coupon, tax) · Usage monitor · Per-tenant feature override · Impersonation / login-as-customer (fully logged) · Support tickets + replies · Announcements (all / plan / tenant) · Backup history/schedule/restore · Activity log.
+### M. SaaS Backoffice — Superadmin Only (16)
+109. **Separate admin panel** (`/admin`) for platform owner.
+110. **SaaS dashboard** — tenant count, active/trial/expired, MRR, outstanding invoices.
+111. **Tenant management** — list with package, dates, users, status.
+112. **Tenant detail** — companies, subscription, users, features, usage, billing, support.
+113. **Subscription plans** — Starter/Pro/Business/Enterprise editable without code.
+114. **Feature entitlement** — per-plan flags (accounting, inventory, production, marketplace, approval…).
+115. **Package limits** — max users/companies/branches/warehouses/storage.
+116. **Subscription lifecycle** — Trial → Active → Due → Grace → Suspended; expired = view-only, data kept.
+117. **Billing** — subscription invoices, payments, renewal, discount, coupon, tax.
+118. **Usage monitor** — users, companies, products, transactions per tenant.
+119. **Feature control override** — toggle features per tenant.
+120. **Impersonation (login as customer)** — fully logged with activity JSON.
+121. **Support tickets** — tenant → staff thread with priority/assignment.
+122. **Announcements** — broadcast to all / per-plan / per-tenant.
+123. **Backup** — scheduled DB backup + history + restore control.
+124. **Activity & audit log** — platform-wide visibility.
 
-### N. Extra built-in modules (beyond PRD — already in code)
-| Module | What you get |
-|---|---|
-| Customer Portal | Separate login for customers: dashboard, invoice list/detail, payment history |
-| CRM Lite | Leads, opportunities, activities |
-| HR Lite | Employees, departments |
-| Project & Budget | Projects, budgets vs actual |
-| Cash Advance & Petty Cash | Advances, petty-cash ledger |
-| POS Outlets, Promotions, Units, Brands, Currencies, Payment Methods | Retail-ready masters |
-| Recurring Journals, Fiscal Periods, Workflow Rules, Integrations, API Keys | Automation-ready |
-| Blog + Categories + Programmatic SEO + Sitemap + IndexNow | Built-in marketing/SEO engine |
-| PDF + Excel everywhere | Invoice/PO PDFs, report exports |
-| License Client (`routes/pair-routes.php`) | Pairing/license enforcement ready |
-
-## 5. Subscription Plans
-
-| Feature | Starter | Pro | Business | Enterprise |
-|---|---|---|---|---|
-| Accounting | ✅ | ✅ | ✅ | ✅ |
-| Inventory | ✅ | ✅ | ✅ | ✅ |
-| Multi-Warehouse | ❌ | ✅ | ✅ | ✅ |
-| Approval | ❌ | ✅ | ✅ | ✅ |
-| Marketplace Import | ❌ | ❌ | ✅ | ✅ |
-| Production | ❌ | ❌ | ✅ | ✅ |
-| Max Users | 3 | 10 | 25 | Unlimited |
-| Max Companies | 1 | 3 | 10 | Unlimited |
-| Max Branches / Warehouses | 1 / 1 | 5 / 5 | 20 / 20 | Unlimited |
-| Support | Email | Priority Email | Chat + Email | Dedicated |
-
-## 6. Quick Start
-
-```bash
-git clone https://github.com/linducip2208/goerp.git
-cd goerp
-composer install
-cp .env.example .env
-php artisan key:generate
-# set DB_* in .env (MySQL 8), then:
-php artisan migrate --seed
-npm install && npm run build
-php artisan serve
-# Admin: /admin (Filament) · Portal: /portal · Blog: /blog · Docs: /docs
-```
-
-Requirements: PHP 8.2+, Composer, Node 18+, MySQL 8.
-
-## 7. Roles
-
-Owner · Finance · Accounting · Purchasing · Warehouse · Production · Sales · Auditor (read-only) · Superadmin (backoffice only).
-
-## 8. Roadmap
-
-- [x] Phase 1 — Core SaaS + Accounting (MVP)
-- [x] Phase 2 — Operational control (multi-warehouse, opname, approval, audit, assets, lock, closing)
-- [x] Phase 3 — Production (BOM, WIP, QC, HPP, borongan)
-- [x] Phase 4 — Marketplace Excel (Shopee/TikTok/Lazada)
-- [ ] Phase 5 — Marketplace API, customer portal v2, multi-currency++, budgeting++, AI forecasting (BYOK), Flutter mobile app
-
-## 9. Contact (EN)
-
-> **Lindu Cipta — GoERP Sales / Support / Custom Development**
-> 📱 WhatsApp: **+62 812-9605-2010**
-> 🔗 Direct chat: **https://wa.me/6281296052010**
-> Please include your company name + needs (demo / install / custom / license) when chatting.
-
-## 10. License
-
-MIT — free for commercial use. See `LICENSE`.
+### N. Integrations & System (8)
+125. **API keys** — per-tenant keys for integrations.
+126. **Integrations manager** — configurable providers (payment/SMS/storage/AI), no hardcoded secrets; encrypted at rest.
+127. **AI Providers (BYOK)** — use your own AI key for forecasting/assistant features.
+128. **Notifications center** — in-app notification resource.
+129. **Users & impersonation log** — full user admin.
+130. **Import/Export framework** — every master supports Excel import/export.
+131. **License pairing** — whitelabel pairing wizard (`/__pair`) with RSA + AES-256-GCM lock file.
+132. **Scheduler + queue** — cron `schedule:run`, supervisor queue workers.
 
 ---
 
-<a id="-bahasa-indonesia"></a>
-# 🇮🇩 Bahasa Indonesia
+# 2. 🇮🇩 Bahasa Indonesia
 
-## 1. Apa itu GoERP?
+## Apa itu GoERP?
 
-**GoERP** adalah **ERP SaaS multi-tenant** untuk bisnis Indonesia. Satu instalasi melayani ratusan perusahaan dengan isolasi data ketat per tenant.
+**GoERP** adalah **ERP SaaS multi-tenant** untuk bisnis Indonesia. Satu aplikasi melayani ratusan perusahaan, masing-masing terisolasi penuh lewat `tenant_id`.
 
-Menggabungkan **inti akuntansi double-entry** dengan modul operasional lengkap: **Penjualan, Pembelian, Inventory, Kas & Bank, Aset Tetap, Produksi, Import Excel Marketplace, Approval Workflow, Audit Trail, Laporan (PDF/Excel), Portal Customer, Blog/SEO, dan Backoffice SaaS** (tenant, langganan, billing, support).
+Setiap transaksi operasional **otomatis menjurnal ke buku besar (double-entry)**. Tidak ada transaksi yang berdiri sendiri tanpa jurnal.
 
-**Kenapa GoERP dibanding Jurnal.id / Accurate / Mekari?**
-- ✅ Modul produksi: BOM + versioning, Work Order, WIP, QC, Reject/Rework, HPP aktual, Borongan
-- ✅ Import Excel marketplace (Shopee / TikTok Shop / Lazada) dengan SKU matching otomatis + manual + bulk, proteksi duplikat, pengurangan stok otomatis
-- ✅ SaaS multi-tenant sejak hari pertama: jual ERP sebagai langganan (Starter / Pro / Business / Enterprise)
-- ✅ Backoffice: dashboard MRR, feature flag, limit paket, impersonation, pengumuman, tiket support, backup/restore
+**Beda dari Jurnal.id / Accurate / Mekari:**
+- Modul produksi: BOM + versioning, WIP, QC (bagus/reject/rework), selisih bahan, HPP aktual, upah borongan
+- Import Excel marketplace (Shopee / TikTok Shop / Lazada) dengan pencocokan SKU otomatis, proteksi duplikat, potong stok otomatis
+- SaaS sejak hari pertama: backoffice, langganan, billing, feature flag, impersonation, tiket support
+- Portal mandiri customer, outlet POS, CRM, HRM, proyek, budgeting, jurnal berulang, Blog/CMS + SEO programatik
 
-**Kondisi kode (terverifikasi):** 101 model Eloquent · 367 file admin Filament · 109 migration · 60+ tabel bisnis · Laravel 11 + Filament 3.3 + TailwindCSS + API Sanctum + DomPDF + Laravel Excel.
-
-## 2. Teknologi
+## Tumpukan Teknologi
 
 | Lapisan | Teknologi |
 |---|---|
-| Backend | Laravel 11, PHP 8.2+ |
+| Backend | Laravel 11 (PHP 8.2+) |
 | Panel Admin | Filament 3.3 |
 | Database | MySQL 8 |
-| Frontend Publik | Blade + TailwindCSS |
-| API (Mobile / Integrasi) | Laravel Sanctum (token, JSON) |
-| Queue | Redis + Horizon (produksi) |
-| Search | Meilisearch (opsional) |
-| Storage | Lokal / S3-compatible (R2 / MinIO) |
-| Export | barryvdh/laravel-dompdf (PDF), maatwebsite/excel (XLSX/CSV) |
-| Mobile | Flutter (roadmap, API-ready) |
+| Website publik | Blade + TailwindCSS + Vite |
+| PDF | barryvdh/laravel-dompdf |
+| Excel Import/Ekspor | maatwebsite/excel |
 
-## 3. Arsitektur (3 Lapisan)
-
-```
-Lapisan 1 — Manajemen SaaS: Tenant · Perusahaan · Cabang · Langganan · Billing · Feature Flag · Backoffice
-Lapisan 2 — ERP/Akuntansi Inti: Penjualan · Pembelian · Kas&Bank · Beban · Inventory · Akuntansi · Aset · Kontak · Laporan
-Lapisan 3 — Operasional: Produksi · Multi-Gudang · Excel Marketplace · SKU Matching · Portal Customer · Blog/SEO
-```
-
-**Aturan emas:** setiap transaksi operasional otomatis menjurnal. Tidak ada transaksi tanpa jurnal.
-
-```
-Faktur Jual diposting → Dr Piutang / Cr Penjualan + Dr HPP / Cr Persediaan
-Pembayaran diterima   → Dr Bank / Cr Piutang
-Faktur Beli           → Dr Persediaan / Cr Hutang
-Bayar supplier        → Dr Hutang / Cr Bank
-Pengeluaran bahan     → Dr WIP / Cr Bahan Baku
-Output produksi       → Dr Barang Jadi / Cr WIP
-```
-
-## 4. Daftar Fitur Lengkap (122+ fitur, 16 modul)
+## Daftar Fitur Lengkap (ID)
 
 ### A. SaaS & Multi-Tenant (6)
-| # | Fitur | Detail |
-|---|---|---|
-| A-1 | Arsitektur multi-tenant | Satu aplikasi, banyak customer. Tenant = batas data |
-| A-2 | Isolasi data | Setiap record punya `tenant_id` (global scope + middleware) |
-| A-3 | Login + cek langganan | User → tenant → status langganan. Kedaluwarsa = view-only, bisa perpanjang |
-| A-4 | Multi-perusahaan | Satu tenant, N perusahaan. Switcher di header |
-| A-5 | Multi-cabang | Cabang + PIC, telepon, alamat, gudang default, status aktif |
-| A-6 | Role & permission | Owner, Finance, Accounting, Purchasing, Gudang, Produksi, Sales, Auditor. Rinci: Lihat/Buat/Ubah/Hapus/Approve/Export/Cetak per menu |
+1. **Arsitektur multi-tenant** — satu aplikasi untuk banyak pelanggan; tenant = batas data.
+2. **Isolasi data** — semua record punya `tenant_id`; tidak ada kebocoran antar tenant.
+3. **Login + cek langganan** — tenant kedaluwarsa jadi view-only, bisa perpanjang.
+4. **Multi-perusahaan** — satu tenant bisa punya banyak perusahaan, ganti via header.
+5. **Multi-cabang** — cabang dengan nama PIC/telp, gudang default, status aktif.
+6. **Role & permission** — Owner, Finance, Accounting, Purchasing, Gudang, Produksi, Sales, Auditor; hak View/Create/Edit/Delete/Approve/Export/Print per menu.
 
 ### B. Dashboard & Navigasi (5)
-| # | Fitur | Detail |
-|---|---|---|
-| B-1 | Dashboard utama | Kartu kas, piutang, hutang, inventory, filter perusahaan/cabang/periode |
-| B-2 | Grafik penjualan | Harian/mingguan/bulanan/tahunan + perbandingan periode lalu (Chart.js) |
-| B-3 | Ringkasan cash flow | Kas masuk / keluar / bersih |
-| B-4 | Quick action | +Faktur, +SO, +PO, +Beban, +Pembayaran, +Produk, +Kontak |
-| B-5 | Global search & notifikasi | Cari faktur/PO/produk/kontak/jurnal; notifikasi jatuh tempo, approval, stok menipis, error import |
+7. **Dashboard utama** — kartu kas, piutang, hutang, inventory + filter perusahaan/cabang/periode.
+8. **Grafik penjualan** — harian/mingguan/bulanan/tahunan + perbandingan periode lalu.
+9. **Ringkasan arus kas** — kas masuk, kas keluar, bersih.
+10. **Aksi cepat** — tombol +Faktur, +SO, +PO, +Biaya, +Pembayaran, +Produk, +Kontak.
+11. **Pencarian global & notifikasi** — cari faktur/PO/produk/kontak/jurnal; notifikasi jatuh tempo, approval, stok menipis, error import.
 
 ### C. Penjualan (9)
-| # | Fitur | Detail |
-|---|---|---|
-| C-1 | Alur penuh | Penawaran → SO → Pengiriman → Faktur → Pembayaran → Retur |
-| C-2 | Penawaran (Quotation) | Tanggal kedaluwarsa, kirim/terima/tolak, 1-klik jadi SO |
-| C-3 | Sales Order | Reservasi stok, partial fulfillment, channel, sales |
-| C-4 | Pengiriman (Surat Jalan) | Parsial, tracking sisa qty |
-| C-5 | Faktur Penjualan | Diskon, pajak, multi-gudang/cabang, jatuh tempo, referensi |
-| C-6 | Status faktur | Draft → Open → Partial → Paid → Overdue → Void |
-| C-7 | Pembayaran customer | Penuh/parsial, cash/transfer/giro, otomatis update piutang |
-| C-8 | Retur penjualan | Stok masuk + refund atau nota kredit |
-| C-9 | Jurnal otomatis | Dr Piutang Cr Penjualan; Dr HPP Cr Persediaan; Dr Bank Cr Piutang. Export PDF per faktur |
+12. **Alur penjualan penuh** — Penawaran → Sales Order → Pengiriman → Faktur → Pembayaran.
+13. **Penawaran (Quotation)** — tanggal kedaluwarsa, kirim/terima/tolak, convert ke SO sekali klik.
+14. **Sales Order** — reservasi stok, pelunasan parsial, channel & sales.
+15. **Pengiriman (Surat Jalan)** — pengiriman parsial, sisa qty terpantau.
+16. **Faktur penjualan** — diskon, pajak, multi-cabang/gudang, jatuh tempo.
+17. **Status faktur** — Draft → Open → Partial → Paid → Overdue → Void.
+18. **Pembayaran customer** — lunas/cicilan, cash/transfer/giro, update piutang; **download PDF faktur**.
+19. **Retur penjualan** — barang masuk + refund atau nota kredit.
+20. **Jurnal otomatis (penjualan)** — Dr Piutang / Cr Penjualan; Dr HPP / Cr Persediaan; Dr Bank / Cr Piutang.
 
-### D. Pembelian (7)
-| # | Fitur | Detail |
-|---|---|---|
-| D-1 | Alur penuh | PO → Penerimaan → Faktur → Pembayaran → Retur |
-| D-2 | Purchase Order | Approval workflow, estimasi kirim, termin bayar |
-| D-3 | Penerimaan Barang | Qty terima aktual (boleh ≠ PO), parsial |
-| D-4 | Faktur Pembelian | Tagihan supplier → hutang, no. faktur supplier, jatuh tempo |
-| D-5 | Pembayaran supplier | Penuh/parsial, otomatis update hutang |
-| D-6 | Retur pembelian | Stok keluar + pengurang hutang / refund |
-| D-7 | Jurnal otomatis | Dr Persediaan Cr Hutang; Dr Hutang Cr Bank. Export PDF per PO |
+### D. Pembelian (7+)
+21. **Alur pembelian penuh** — Permintaan → PO → Penerimaan → Faktur → Pembayaran.
+22. **Purchase Request** — permintaan internal sebelum PO.
+23. **Purchase Order** — workflow approval, tanggal kirim, termin; **download PDF PO**.
+24. **Penerimaan barang** — stok masuk sesuai nyata, bisa parsial.
+25. **Faktur pembelian** — tagihan supplier → hutang.
+26. **Pembayaran supplier** — lunas/cicilan, update hutang.
+27. **Retur pembelian** — stok keluar + pengurang hutang/refund.
+28. **Jurnal otomatis (pembelian)** — Dr Persediaan / Cr Hutang; Dr Hutang / Cr Bank.
 
-### E. Produk & Inventory (9)
-| # | Fitur | Detail |
-|---|---|---|
-| E-1 | Master produk | SKU, barcode, kategori, brand, satuan, harga beli/jual, berat, dimensi, foto, link COA |
-| E-2 | Varian produk | Warna/ukuran/atribut → tiap kombinasi = SKU internal unik |
-| E-3 | SKU internal | Satu-satunya sumber kebenaran untuk jual, beli, stok, produksi, marketplace |
-| E-4 | Multi-gudang | Stok per gudang, terhubung ke cabang |
-| E-5 | Saldo stok | On Hand / Reserved / Available + harga rata-rata + harga beli terakhir |
-| E-6 | Log mutasi stok | Immutable before/after per SKU per gudang |
-| E-7 | Transfer gudang | Draft → Approved → In Transit → Received |
-| E-8 | Adjustment stok | Masuk / Keluar / Hilang / Rusak / Reject / Koreksi / Retur |
-| E-9 | Stock opname | Sistem vs fisik → selisih → approval → adjustment otomatis |
+### E. Produk & Inventory (12)
+29. **Master produk** — nama, SKU, barcode, kategori, brand, satuan, harga beli/jual, akun COA, foto, berat/dimensi.
+30. **Varian produk** — warna/ukuran/atribut; tiap kombinasi = SKU internal unik.
+31. **SKU internal sebagai kunci utama** — semua modul mengacu ke sini.
+32. **Kategori, Brand, Satuan** — kategori bertingkat, master brand & satuan.
+33. **Multi-gudang** — stok per gudang, terhubung ke cabang.
+34. **Saldo stok** — On Hand / Reserved / Available + harga rata-rata & harga beli terakhir.
+35. **Kartu mutasi stok** — log before/after yang tidak bisa diubah.
+36. **Transfer gudang** — Draft → Approved → In Transit → Received.
+37. **Penyesuaian stok** — masuk/keluar/hilang/rusak/reject/koreksi/retur + approval.
+38. **Stok opname** — sistem vs fisik, selisih, approval → penyesuaian otomatis.
+39. **Laporan inventory** — ringkasan, detail, kartu stok, valuasi, mutasi, stok menipis, stok negatif.
+40. **Import/ekspor Excel** — produk massal via Filament.
 
-### F. Kas, Bank, Beban, Kontak (7)
-| # | Fitur | Detail |
-|---|---|---|
-| F-1 | Akun kas & bank | Terhubung COA, saldo awal + berjalan |
-| F-2 | Terima uang | Kas masuk non-faktur + COA + kontak + memo + lampiran |
-| F-3 | Kirim uang | Kas keluar ke akun beban/aset |
-| F-4 | Transfer antar bank | Transfer masuk/keluar antar rekening perusahaan |
-| F-5 | Rekonsiliasi bank | Cocokkan sistem vs mutasi bank (flag + tanggal rekonsiliasi) |
-| F-6 | Beban | Kategori, departemen, cabang, pajak, sumber bank, lampiran |
-| F-7 | Kontak | Customer / Supplier / Karyawan / Lainnya; NPWP, NIK, termin, limit kredit |
+### F. Kas, Bank, Biaya, Kontak (10)
+41. **Akun bank & kas** — terhubung COA, saldo awal/berjalan.
+42. **Terima uang** — kas masuk di luar pembayaran faktur.
+43. **Kirim uang** — kas keluar ke akun biaya/aset.
+44. **Transfer antar bank** — antar rekening perusahaan.
+45. **Rekonsiliasi bank** — cocokkan sistem vs mutasi bank.
+46. **Biaya operasional** — kategori, departemen, cabang, pajak, lampiran, approval.
+47. **Kas bon** — panjar karyawan + penyelesaian.
+48. **Kas kecil** — buku kas kecil per outlet/cabang.
+49. **Metode pembayaran** — cash, transfer, giro, VA, e-wallet, lainnya.
+50. **Kontak** — customer/supplier/karyawan/lainnya + NPWP/NIK, termin, limit kredit.
 
-### G. Akuntansi Inti (7)
-| # | Fitur | Detail |
-|---|---|---|
-| G-1 | Chart of Accounts | Hirarki: 1-Aset, 2-Kewajiban, 3-Ekuitas, 4-Pendapatan, 5-HPP, 6-Beban, 7-Pendapatan Lain, 8-Beban Lain |
-| G-2 | Jurnal | Otomatis dari transaksi + manual; traceable via source_type/source_id |
-| G-3 | Jurnal manual | Validasi debit = kredit |
-| G-4 | Buku besar | Mutasi per akun: saldo awal → mutasi → saldo akhir |
-| G-5 | Saldo awal | Per akun (+ piutang/hutang per kontak) untuk migrasi |
-| G-6 | Lock period | Kunci periode YYYY-MM agar tidak bisa edit/backdate |
-| G-7 | Tutup buku | Checklist (rekonsiliasi bank, opname, penyusutan, trial balance OK) → pindahkan laba rugi ke laba ditahan |
+### G. Akuntansi Inti (10)
+51. **Chart of Accounts (COA)** — bertingkat: 1-Aset, 2-Kewajiban, 3-Ekuitas, 4-Pendapatan, 5-HPP, 6-Beban, 7/8-Lainnya; akun sistem bisa dikunci.
+52. **Jurnal umum** — otomatis dari tiap transaksi + tampilan terpusat.
+53. **Jurnal manual** — validasi debit = kredit.
+54. **Jurnal berulang** — entri terjadwal (sewa, langganan).
+55. **Buku besar** — saldo awal → mutasi → saldo akhir per akun.
+56. **Saldo awal** — termasuk piutang/hutang per kontak.
+57. **Periode fiskal, kunci periode & tutup buku** — kunci `YYYY-MM` dari edit backdate; checklist (rekonsiliasi bank, opname, penyusutan, trial balance OK) → laba rugi dipindah ke laba ditahan.
+58. **Multi-mata uang** — kurs + mata uang transaksi.
+59. **Tarif pajak** — nama, tarif, inclusive/exclusive, akun COA.
+60. **Budgeting** — anggaran per akun/periode vs realisasi.
 
-### H. Aset Tetap & Laporan (8+)
-| # | Fitur | Detail |
-|---|---|---|
-| H-1 | Aset tetap | Register, kategori, biaya/tanggal perolehan, nilai residu, umur manfaat, garis lurus / saldo menurun, jadwal penyusutan + jurnal otomatis |
-| H-2 | Laba Rugi | Laba kotor → bersih, visual Chart.js |
-| H-3 | Neraca | Aset = Kewajiban + Ekuitas |
-| H-4 | Arus Kas | Operasi / investasi / pendanaan |
-| H-5 | Trial Balance | Cek debit = kredit |
-| H-6 | Laporan pajak | Rekap per tarif pajak |
-| H-7 | AR/AP aging | Bucket overdue per customer/supplier |
-| H-8 | Laporan penjualan | Per produk, customer, sales, channel, cabang, tanggal |
-| H-9 | Laporan pembelian | Per supplier, produk, cabang |
-| H-10 | Laporan inventory | Ringkasan, detail, kartu stok, valuasi, mutasi, stok menipis, stok negatif |
-| H-11 | Laporan produksi | Output, variansi, HPP per unit |
+### H. Aset Tetap & Laporan Keuangan (8)
+61. **Aset tetap** — register, kategori, tgl/nilai perolehan, nilai sisa, umur manfaat, penyusutan garis lurus / saldo menurun + jurnal otomatis.
+62. **Laba rugi** — Pendapatan − HPP = Laba Kotor − Beban = Laba Bersih.
+63. **Neraca** — Aset = Kewajiban + Ekuitas.
+64. **Arus kas** — operasi / investasi / pendanaan.
+65. **Neraca saldo** — cek debit = kredit.
+66. **Laporan penjualan** — per produk, customer, sales, channel, cabang, tanggal; aging piutang.
+67. **Laporan pembelian** — per supplier, produk, cabang; aging hutang.
+68. **Template laporan + ekspor PDF/Excel** — simpan layout, ekspor semua laporan.
 
-### I. Approval & Audit (3)
-| # | Fitur | Detail |
-|---|---|---|
-| I-1 | Workflow approval | Draft → Submitted → Waiting → Approved → Posted / Rejected |
-| I-2 | Aturan approval | Multi-level berdasar nominal (mis. <5jt Supervisor, 5–50jt Manager, >50jt Owner) |
-| I-3 | Audit trail | User, waktu, modul, tipe/no dokumen, old/new JSON, IP, user agent. Immutable, hanya soft-delete |
+### I. Approval, Workflow & Audit (5)
+69. **Workflow approval** — Draft → Submitted → Waiting → Approved → Posted / Rejected.
+70. **Aturan approval** — bertingkat berdasar nominal (mis. <5 jt Supervisor, 5–50 jt Manager, >50 jt Owner).
+71. **Audit trail** — user, waktu, modul, tipe/no dokumen, old/new JSON, IP, user agent.
+72. **Riwayat login** — semua login tercatat per user/perangkat/IP.
+73. **Notifikasi** — jatuh tempo, approval, stok menipis, error import.
 
 ### J. Import Excel Marketplace (10)
-| # | Fitur | Detail |
-|---|---|---|
-| J-1 | Konsep tanpa API (V1) | Download Excel dari Shopee/TikTok/Lazada → upload ke GoERP |
-| J-2 | Wizard import | Pilih marketplace + gudang + upload XLSX/XLS/CSV |
-| J-3 | Parsing cerdas | No. order, tanggal, SKU marketplace, produk, varian, qty, harga, diskon |
-| J-4 | Auto SKU match | SKU marketplace = SKU internal → langsung terhubung |
-| J-5 | Manual SKU match | Pilih produk internal, mapping tersimpan untuk import berikutnya |
-| J-6 | Bulk matching | Bereskan semua SKU yang belum match sekaligus |
-| J-7 | Preview | Total: order, item, matched, unmatched, duplikat. Import diblokir jika masih ada unmatched |
-| J-8 | Proteksi duplikat | Lewati order/item yang sudah pernah diimport |
-| J-9 | Pengurangan stok otomatis | Mutasi stok SKU internal setelah import |
-| J-10 | Riwayat import | File, tanggal, marketplace, jumlah, status (Uploaded/Matched/Previewed/Imported/Failed) |
+74. **Konsep tanpa API (V1)** — unduh Excel dari Shopee/TikTok/Lazada → upload ke GoERP.
+75. **Wizard import** — pilih marketplace + gudang, upload XLSX/XLS/CSV.
+76. **Parsing cerdas** — no order, tanggal, SKU marketplace, nama, varian, qty, harga, diskon.
+77. **Cocok SKU otomatis** — SKU marketplace = SKU internal → langsung terhubung.
+78. **Cocok SKU manual** — pilih produk internal, mapping tersimpan untuk import berikut.
+79. **Bulk SKU matching** — bereskan semua SKU tak dikenal di satu layar.
+80. **Preview sebelum commit** — total order, item, cocok, tak cocok, duplikat; import diblokir jika masih ada yang tak cocok.
+81. **Proteksi duplikat** — ID item marketplace dicek ke DB; order yang sudah masuk dilewati.
+82. **Potong stok otomatis** — mutasi stok SKU internal setelah import.
+83. **Riwayat import** — file, tanggal, marketplace, jumlah, status.
 
 ### K. Produksi (13)
-| # | Fitur | Detail |
-|---|---|---|
-| K-1 | Alur produksi | BOM → Production Order → Material Request → Material Issue → WIP → Work Order → Output/QC → HPP aktual |
-| K-2 | BOM | Kebutuhan bahan per unit output, waste %, biaya tenaga + overhead standar |
-| K-3 | Versioning BOM | Order lama tetap pakai versi lamanya |
-| K-4 | Production Order | Target qty, versi BOM, tanggal mulai/selesai, gudang bahan + jadi |
-| K-5 | Work Order | Cutting → Sewing → Finishing → QC → Packing; tim/operator, target/aktual/reject/rework qty |
-| K-6 | Material request | Produksi → permintaan bahan ke gudang |
-| K-7 | Material issue | Stok ↓, nilai → WIP (Dr WIP Cr Bahan Baku) |
-| K-8 | WIP | Barang dalam proses sebelum jadi |
-| K-9 | Variansi bahan | Standar vs aktual |
-| K-10 | Output & QC | Klasifikasi Good / Reject / Rework |
-| K-11 | Reject & rework | Alasan defect (jahitan bolong, kotor, ukuran, warna, lainnya) → gudang reject |
-| K-12 | HPP aktual | Total biaya / output bagus per unit |
-| K-13 | Borongan | Upah per operasi per operator → jurnal (Dr Beban Produksi Cr Bank/Kas) |
+84. **Alur produksi** — BOM → Production Order → Permintaan Bahan → Pengeluaran Bahan → WIP → Output → QC.
+85. **Bill of Materials (BOM)** — kebutuhan bahan per unit jadi, waste %, biaya tenaga kerja/overhead standar.
+86. **Versioning BOM** — versi baru = record baru; order lama pakai versi lama.
+87. **Production Order** — target qty, versi BOM, tgl mulai/jatuh tempo, gudang bahan & jadi.
+88. **Work Order** — tahap: cutting → sewing → finishing → QC → packing; tim/operator, target/aktual/reject/rework.
+89. **Permintaan bahan** — produksi minta bahan ke gudang.
+90. **Pengeluaran bahan** — stok berkurang, nilai pindah ke WIP (Dr WIP / Cr Bahan Baku).
+91. **WIP** — nilai barang dalam proses.
+92. **Selisih bahan** — standar (BOM) vs aktual.
+93. **Output & QC** — klasifikasi bagus / reject / rework.
+94. **Reject & rework** — alasan defect (jahitan bolong, kotor, ukuran, warna, dll), gudang reject.
+95. **HPP aktual** — total bahan + tenaga + overhead ÷ output bagus.
+96. **Borongan** — upah per operator per operasi per qty (Dr Beban Produksi / Cr Kas/Bank).
 
-### L. Pengaturan (12)
-Perusahaan (logo, NPWP, NIB, alamat, timezone, tahun fiskal, mata uang) · Default akuntansi (AR/AP/persediaan/penjualan/HPP/pajak/laba ditahan) · Inventory (metode costing, stok negatif, multi-gudang, alert) · Default penjualan/pembelian (gudang, pajak, termin, limit kredit, approval, over-receipt) · Produksi (gudang bahan/WIP/jadi/reject, akun biaya) · Marketplace (wajib match, kurangi stok, buat SO/faktur/jurnal) · Penomoran transaksi (`INV/{YYYY}/{MM}/{####}` per tipe) · Tarif pajak (nama, tarif, inclusive/exclusive, COA) · Multi-currency + kurs · Lampiran (PDF/JPG/PNG/XLSX) · Notifikasi (jatuh tempo, approval, stok menipis, error import).
+### L. HRM, CRM, Proyek, POS (12)
+97. **Karyawan** — profil, departemen, jabatan, cabang.
+98. **Departemen & unit bisnis** — struktur organisasi.
+99. **Leads** — pipeline prospek.
+100. **Opportunity + aktivitas** — tahap deal + log follow-up.
+101. **Proyek** — tracker proyek + biaya.
+102. **Outlet POS** — master outlet retail/POS.
+103. **Promosi** — master diskon/promo.
+104. **Portal customer** — customer login lihat faktur & riwayat bayar.
+105. **Blog / CMS** — kategori + artikel, jadwal publish, halaman blog publik.
+106. **SEO programatik** — halaman best-category, alternatives, compare, under-price, learn-skill + sitemap + IndexNow.
+107. **Halaman dokumentasi** — dokumentasi dalam aplikasi.
+108. **Pengaturan per modul** — perusahaan, penjualan, pembelian, inventory, produksi, marketplace, akuntansi, pajak, notifikasi, format nomor (`INV/{YYYY}/{MM}/{####}`), lampiran.
 
-### M. Backoffice SaaS — Pemilik Platform (16)
-Dashboard (tenant, MRR, outstanding) · List/detail tenant (perusahaan, user, fitur, usage, billing, support) · 4 paket langganan (tanpa ubah kode) · Hak fitur per paket · Limit paket (user/perusahaan/cabang/gudang/storage) · Status (Trial → Active → Due → Grace → Suspended) · Tenant kedaluwarsa (view-only, bisa perpanjang, data aman) · Billing (faktur, pembayaran, renewal, diskon, kupon, pajak) · Monitor usage · Override fitur per tenant · Impersonation / login-sebagai-customer (tercatat) · Tiket support + balasan · Pengumuman (semua / paket / tenant) · Backup history/jadwal/restore · Activity log.
+### M. Backoffice SaaS — Khusus Superadmin (16)
+109. **Panel admin terpisah** (`/admin`) untuk pemilik platform.
+110. **Dashboard SaaS** — jumlah tenant, aktif/trial/expired, MRR, tagihan outstanding.
+111. **Manajemen tenant** — daftar + paket, tanggal, user, status.
+112. **Detail tenant** — perusahaan, langganan, user, fitur, usage, billing, support.
+113. **Paket langganan** — Starter/Pro/Business/Enterprise bisa diubah tanpa koding.
+114. **Hak fitur per paket** — flag accounting, inventory, produksi, marketplace, approval…
+115. **Limit paket** — maks user/perusahaan/cabang/gudang/penyimpanan.
+116. **Siklus langganan** — Trial → Active → Due → Grace → Suspended; expired = view-only, data aman.
+117. **Billing** — faktur langganan, pembayaran, perpanjangan, diskon, kupon, pajak.
+118. **Monitor usage** — user, perusahaan, produk, transaksi per tenant.
+119. **Override fitur** — toggle fitur per tenant.
+120. **Impersonation (login sebagai customer)** — tercatat penuh + aktivitas JSON.
+121. **Tiket support** — thread tenant → staff + prioritas/assign.
+122. **Pengumuman** — broadcast ke semua / per paket / per tenant.
+123. **Backup** — backup DB terjadwal + riwayat + restore.
+124. **Log aktivitas & audit** — visibilitas se-platform.
 
-### N. Modul bonus (sudah ada di kode — di luar PRD)
-| Modul | Isi |
-|---|---|
-| Portal Customer | Login terpisah untuk customer: dashboard, list/detail faktur, riwayat bayar |
-| CRM Lite | Lead, opportunity, aktivitas |
-| HR Lite | Karyawan, departemen |
-| Project & Budget | Project, anggaran vs aktual |
-| Kas Bon & Petty Cash | Uang muka, kas kecil |
-| Outlet POS, Promosi, Satuan, Brand, Mata Uang, Metode Bayar | Master siap ritel |
-| Jurnal Berulang, Periode Fiskal, Workflow Rule, Integrasi, API Key | Siap otomasi |
-| Blog + Kategori + SEO Programatik + Sitemap + IndexNow | Mesin marketing/SEO bawaan |
-| PDF + Excel di mana-mana | PDF faktur/PO, export laporan |
-| License Client (`routes/pair-routes.php`) | Siap pairing/lisensi |
-
-## 5. Paket Langganan
-
-| Fitur | Starter | Pro | Business | Enterprise |
-|---|---|---|---|---|
-| Akuntansi | ✅ | ✅ | ✅ | ✅ |
-| Inventory | ✅ | ✅ | ✅ | ✅ |
-| Multi-Gudang | ❌ | ✅ | ✅ | ✅ |
-| Approval | ❌ | ✅ | ✅ | ✅ |
-| Import Marketplace | ❌ | ❌ | ✅ | ✅ |
-| Produksi | ❌ | ❌ | ✅ | ✅ |
-| Maks. User | 3 | 10 | 25 | Unlimited |
-| Maks. Perusahaan | 1 | 3 | 10 | Unlimited |
-| Maks. Cabang / Gudang | 1 / 1 | 5 / 5 | 20 / 20 | Unlimited |
-| Support | Email | Email Prioritas | Chat + Email | Dedicated |
-
-## 6. Cara Instal
-
-```bash
-git clone https://github.com/linducip2208/goerp.git
-cd goerp
-composer install
-cp .env.example .env
-php artisan key:generate
-# isi DB_* di .env (MySQL 8), lalu:
-php artisan migrate --seed
-npm install && npm run build
-php artisan serve
-# Admin: /admin (Filament) · Portal: /portal · Blog: /blog · Docs: /docs
-```
-
-Kebutuhan: PHP 8.2+, Composer, Node 18+, MySQL 8.
-
-## 7. Role
-
-Owner · Finance · Accounting · Purchasing · Gudang · Produksi · Sales · Auditor (read-only) · Superadmin (khusus backoffice).
-
-## 8. Roadmap
-
-- [x] Fase 1 — SaaS + Akuntansi inti (MVP)
-- [x] Fase 2 — Kontrol operasional (multi-gudang, opname, approval, audit, aset, lock, tutup buku)
-- [x] Fase 3 — Produksi (BOM, WIP, QC, HPP, borongan)
-- [x] Fase 4 — Marketplace Excel (Shopee/TikTok/Lazada)
-- [ ] Fase 5 — API Marketplace, portal v2, multi-currency++, budgeting++, AI forecasting (BYOK), aplikasi Flutter
-
-## 9. Kontak (ID)
-
-> **Lindu Cipta — Penjualan / Support / Jasa Custom GoERP**
-> 📱 WhatsApp: **+62 812-9605-2010**
-> 🔗 Chat langsung: **https://wa.me/6281296052010**
-> Sertakan nama perusahaan + kebutuhan (demo / instal / custom / lisensi) saat chat.
-
-## 10. Lisensi
-
-MIT — bebas untuk komersial. Lihat `LICENSE`.
+### N. Integrasi & Sistem (8)
+125. **API keys** — kunci per tenant untuk integrasi.
+126. **Manajer integrasi** — provider terkonfigurasi (payment/SMS/storage/AI), tanpa secret hardcoded; terenkripsi.
+127. **AI Providers (BYOK)** — pakai kunci AI sendiri untuk forecasting/asisten.
+128. **Pusat notifikasi** — resource notifikasi dalam aplikasi.
+129. **User & log impersonation** — admin user penuh.
+130. **Framework import/ekspor** — semua master dukung Excel.
+131. **License pairing** — wizard pairing whitelabel (`/__pair`) RSA + AES-256-GCM.
+132. **Scheduler + queue** — cron `schedule:run`, queue worker supervisor.
 
 ---
 
-<a id="-العربية-arabic"></a>
-# 🇸🇦 العربية (Arabic)
+# 3. 🇸🇦 العربية (Arabic)
 
-## 1. ما هو GoERP؟
+## ما هو GoERP؟
 
-**GoERP** هو نظام **ERP سحابي متعدد المستأجرين (Multi-tenant SaaS)** مصمم للشركات الإندونيسية وجاهز للاستخدام العالمي. تثبيت واحد يخدم مئات الشركات مع عزل صارم للبيانات لكل مستأجر.
+**GoERP** هو نظام **ERP سحابي متعدد المستأجرين (Multi-Tenant)** مصمم للشركات الإندونيسية. تثبيت واحد يخدم مئات الشركات، وكل شركة معزولة تمامًا عبر `tenant_id`.
 
-يجمع بين **نواة محاسبية بنظام القيد المزدوج** ووحدات تشغيلية كاملة: **المبيعات، المشتريات، المخزون، النقد والبنوك، الأصول الثابتة، الإنتاج، استيراد إكسل للمتاجر الإلكترونية، سير الموافقات، سجل التدقيق، التقارير (PDF/Excel)، بوابة العملاء، المدونة/SEO، ولوحة تحكم SaaS** (المستأجرون، الاشتراكات، الفوترة، الدعم).
+كل معاملة تشغيلية **تُرحّل تلقائيًا إلى دفتر الأستاذ (قيد مزدوج)**. لا توجد معاملة بدون قيد محاسبي.
 
-**لماذا GoERP وليس Jurnal.id / Accurate / Mekari؟**
-- ✅ وحدة الإنتاج: BOM + إصدارات، أوامر التشغيل، WIP، QC، المرفوض/إعادة العمل، تكلفة HPP الفعلية، أجور القطعة (Borongan)
-- ✅ استيراد إكسل (Shopee / TikTok Shop / Lazada) مع مطابقة SKU تلقائية + يدوية + جماعية، حماية من التكرار، خصم تلقائي للمخزون
-- ✅ SaaS متعدد المستأجرين من اليوم الأول: بِع الـ ERP كاشتراك (Starter / Pro / Business / Enterprise)
-- ✅ لوحة المالك: لوحة MRR، أعلام الميزات، حدود الباقات، انتحال الدخول (Impersonation)، الإعلانات، تذاكر الدعم، النسخ الاحتياطي/الاستعادة
+**ما يميزه عن Jurnal.id / Accurate / Mekari:**
+- وحدة الإنتاج: BOM مع إصدارات، WIP (تحت التشغيل)، QC (سليم/تالف/إعادة عمل)، فروقات المواد، تكلفة الإنتاج الفعلية (HPP)، أجور القطعة (borongan)
+- استيراد Excel للمتاجر (Shopee / TikTok Shop / Lazada) مع مطابقة SKU تلقائية، وحماية من التكرار، وخصم المخزون تلقائيًا
+- SaaS منذ اليوم الأول: لوحة المالك، الاشتراكات، الفوترة، أعلام الميزات، انتحال الدخول، تذاكر الدعم
+- بوابة العملاء، نقاط البيع (POS)، CRM، HRM، المشاريع، الموازنات، القيود المتكررة، مدونة/CMS + سيو برمجي
 
-**واقع الكود (موثّق):** 101 موديل Eloquent · 367 ملف إدارة Filament · 109 هجرة (Migration) · +60 جدول أعمال · Laravel 11 + Filament 3.3 + TailwindCSS + API عبر Sanctum + DomPDF + Laravel Excel.
-
-## 2. التقنيات
+## التقنيات
 
 | الطبقة | التقنية |
 |---|---|
-| الخلفية | Laravel 11, PHP 8.2+ |
+| الخلفية | Laravel 11 (PHP 8.2+) |
 | لوحة الإدارة | Filament 3.3 |
 | قاعدة البيانات | MySQL 8 |
-| الواجهة العامة | Blade + TailwindCSS |
-| API (جوال / تكامل) | Laravel Sanctum (توكن، JSON) |
-| الطوابير | Redis + Horizon (للإنتاج) |
-| البحث | Meilisearch (اختياري) |
-| التخزين | محلي / متوافق مع S3 (R2 / MinIO) |
-| التصدير | barryvdh/laravel-dompdf (PDF)، maatwebsite/excel (XLSX/CSV) |
-| الجوال | Flutter (خارطة طريق، API جاهز) |
+| الموقع العام | Blade + TailwindCSS + Vite |
+| PDF | barryvdh/laravel-dompdf |
+| Excel | maatwebsite/excel |
 
-## 3. المعمارية (3 طبقات)
-
-```
-الطبقة 1 — إدارة SaaS: مستأجر · شركة · فرع · اشتراك · فوترة · أعلام ميزات · لوحة مالك
-الطبقة 2 — ERP/محاسبة أساسية: مبيعات · مشتريات · نقد وبنوك · مصاريف · مخزون · محاسبة · أصول · جهات اتصال · تقارير
-الطبقة 3 — تشغيلية: إنتاج · مخازن متعددة · إكسل المتاجر · مطابقة SKU · بوابة العملاء · مدونة/SEO
-```
-
-**القاعدة الذهبية:** كل معاملة تشغيلية تُرحَّل تلقائيًا إلى الدفتر. لا معاملة بدون قيد.
-
-```
-فاتورة بيع مرحّلة → مدين ذمم مدينة / دائن مبيعات + مدين COGS / دائن مخزون
-قبض → مدين بنك / دائن ذمم مدينة
-فاتورة شراء → مدين مخزون / دائن ذمم دائنة
-دفع لمورّد → مدين ذمم دائنة / دائن بنك
-صرف مواد → مدين WIP / دائن مواد خام
-مخرجات إنتاج → مدين بضاعة تامة / دائن WIP
-```
-
-## 4. قائمة الميزات الكاملة (122+ ميزة، 16 وحدة)
+## قائمة الميزات الكاملة (AR)
 
 ### أ. SaaS وتعدد المستأجرين (6)
-| # | الميزة | التفاصيل |
-|---|---|---|
-| A-1 | معمارية متعددة المستأجرين | تطبيق واحد، عملاء كثيرون. المستأجر = حد البيانات |
-| A-2 | عزل البيانات | كل سجل فيه `tenant_id` (نطاق عام + وسيط) |
-| A-3 | تسجيل الدخول + فحص الاشتراك | مستخدم ← مستأجر ← حالة الاشتراك. المنتهي = عرض فقط، قابل للتجديد |
-| A-4 | شركات متعددة | مستأجر واحد، N شركات. مبدّل في الأعلى |
-| A-5 | فروع متعددة | فرع + مسؤول + هاتف + عنوان + مخزن افتراضي + حالة |
-| A-6 | الأدوار والصلاحيات | مالك، مالية، محاسبة، مشتريات، مخزن، إنتاج، مبيعات، مدقق. دقيقة: عرض/إنشاء/تعديل/حذف/اعتماد/تصدير/طباعة لكل قائمة |
+1. **بنية متعددة المستأجرين** — تطبيق واحد للعديد من العملاء.
+2. **عزل البيانات** — كل سجل يحمل `tenant_id`؛ لا تسرب بين العملاء.
+3. **تسجيل الدخول + فحص الاشتراك** — المنتهي يصبح للعرض فقط مع إمكانية التجديد.
+4. **شركات متعددة** — المستأجر يملك عدة شركات والتبديل من الأعلى.
+5. **فروع متعددة** — الفروع مع المسؤول والمستودع الافتراضي.
+6. **الأدوار والصلاحيات** — مالك، مالية، محاسبة، مشتريات، مستودع، إنتاج، مبيعات، مدقق؛ عرض/إنشاء/تعديل/حذف/اعتماد/تصدير/طباعة لكل قائمة.
 
-### ب. لوحة القيادة والتنقل (5)
-لوحة رئيسية (نقد، ذمم مدينة/دائنة، مخزون، فلترة) · رسم المبيعات (يومي/أسبوعي/شهري/سنوي + مقارنة، Chart.js) · ملخص التدفق النقدي (داخل/خارج/صافي) · إجراءات سريعة (+فاتورة، +SO، +PO، +مصروف، +دفع، +منتج، +جهة) · بحث شامل + تنبيهات (استحقاق، اعتماد، مخزون منخفض، خطأ استيراد).
+### ب. لوحة التحكم والتنقل (5)
+7. **لوحة رئيسية** — النقدية، الذمم المدينة/الدائنة، المخزون + فلتر الشركة/الفرع/الفترة.
+8. **مخطط المبيعات** — يومي/أسبوعي/شهري/سنوي مع مقارنة الفترة السابقة.
+9. **ملخص التدفق النقدي** — داخل، خارج، صافي.
+10. **إجراءات سريعة** — +فاتورة، +طلب بيع، +طلب شراء، +مصروف، +دفعة، +منتج، +جهة اتصال.
+11. **بحث شامل وإشعارات** — بحث الفواتير/المنتجات/القيود؛ إشعارات الاستحقاق والاعتماد وانخفاض المخزون.
 
 ### ج. المبيعات (9)
-التدفق الكامل: عرض سعر ← أمر بيع ← تسليم ← فاتورة ← دفع ← مرتجع · عروض الأسعار (انتهاء، إرسال/قبول/رفض، تحويل بضغطة إلى SO) · أوامر البيع (حجز مخزون، تنفيذ جزئي، قناة، مندوب) · التسليم (جزئي، تتبع المتبقي) · الفواتير (خصم، ضريبة، مخازن/فروع، استحقاق) · الحالات: Draft ← Open ← Partial ← Paid ← Overdue ← Void · دفع العملاء (كامل/جزئي، نقدي/تحويل/شيك، تحديث تلقائي للذمم) · المرتجعات (دخول مخزني + استرداد أو إشعار دائن) · قيود تلقائية + تصدير PDF لكل فاتورة.
+12. **دورة كاملة** — عرض سعر ← طلب بيع ← تسليم ← فاتورة ← دفعة.
+13. **عروض الأسعار** — تاريخ انتهاء، إرسال/قبول/رفض، تحويل لطلب بضغطة.
+14. **طلبات البيع** — حجز المخزون، تنفيذ جزئي، القناة والمندوب.
+15. **التسليم** — تسليم جزئي وتتبع المتبقي.
+16. **فواتير البيع** — خصم، ضريبة، فروع/مستودعات، استحقاق.
+17. **حالات الفاتورة** — مسودة ← مفتوحة ← جزئية ← مدفوعة ← متأخرة ← ملغاة.
+18. **مدفوعات العملاء** — كاملة/جزئية، نقدي/تحويل/شيك، تحديث الذمم؛ **تحميل PDF**.
+19. **مرتجعات البيع** — دخول مخزني + استرداد أو إشعار دائن.
+20. **قيود تلقائية** — مدين ذمم / دائن مبيعات؛ مدين تكلفة / دائن مخزون؛ مدين بنك / دائن ذمم.
 
-### د. المشتريات (7)
-التدفق الكامل: PO ← استلام ← فاتورة ← دفع ← مرتجع · أوامر الشراء (اعتماد، تسليم متوقع، شروط دفع) · الاستلام (كمية فعلية، جزئي) · فواتير الموردين (← ذمم دائنة) · الدفع (كامل/جزئي) · المرتجعات (خروج مخزني + تخفيض ذمم/استرداد) · قيود تلقائية + PDF لكل PO.
+### د. المشتريات (7+)
+21. **دورة كاملة** — طلب داخلي ← أمر شراء ← استلام ← فاتورة ← دفعة.
+22. **طلب الشراء الداخلي** قبل أمر الشراء.
+23. **أوامر الشراء** — اعتماد، تاريخ التسليم، شروط الدفع؛ **PDF**.
+24. **استلام البضاعة** — بالكمية الفعلية، واستلام جزئي.
+25. **فواتير الشراء** — فاتورة المورد ← ذمم دائنة.
+26. **مدفوعات الموردين** — كاملة/جزئية وتحديث الذمم.
+27. **مرتجعات الشراء** — خروج مخزني + تخفيض الذمم/استرداد.
+28. **قيود تلقائية** — مدين مخزون / دائن ذمم؛ مدين ذمم / دائن بنك.
 
-### هـ. المنتجات والمخزون (9)
-ملف المنتج (SKU، باركود، فئة، علامة، وحدة، سعر شراء/بيع، وزن، أبعاد، صورة، ربط COA) · المتغيرات (لون/مقاس/خصائص ← كل تركيبة = SKU داخلي فريد) · SKU الداخلي مرجع وحيد لكل الوحدات · مخازن متعددة (مخزون لكل مخزن، مرتبط بالفرع) · الأرصدة (متاح/محجوز/صافي + متوسط التكلفة + آخر شراء) · سجل حركة غير قابل للتعديل (قبل/بعد) · تحويلات (Draft ← Approved ← In Transit ← Received) · تسويات (داخل/خارج/مفقود/تالف/مرفوض/تصحيح/مرتجع) · الجرد الفعلي (نظام مقابل فعلي ← فرق ← اعتماد ← تسوية تلقائية).
+### هـ. المنتجات والمخزون (12)
+29. **بطاقة المنتج** — الاسم، SKU، باركود، فئة، علامة، وحدة، سعري الشراء/البيع، حسابات COA، صورة.
+30. **المتغيرات** — لون/مقاس/خصائص؛ كل تركيبة = SKU داخلي فريد.
+31. **SKU الداخلي مرجع وحيد** لكل الوحدات.
+32. **الفئات والعلامات والوحدات** — فئات هرمية.
+33. **مستودعات متعددة** — مخزون لكل مستودع مرتبط بالفرع.
+34. **أرصدة المخزون** — متاح فعلي / محجوز / صافي + متوسط التكلفة وآخر سعر.
+35. **سجل الحركات** — قبل/بعد غير قابل للتعديل لكل حركة.
+36. **التحويل بين المستودعات** — مسودة ← معتمد ← بالطريق ← مستلم.
+37. **التسويات** — داخل/خارج/مفقود/تالف/مرفوض/تصحيح/مرتجع مع اعتماد.
+38. **الجرد الفعلي (Opname)** — النظام مقابل الفعلي، الفروقات، اعتماد ← تسوية تلقائية.
+39. **تقارير المخزون** — ملخص، تفصيلي، بطاقة صنف، تقييم، حركات، منخفض، سالب.
+40. **استيراد/تصدير Excel** للمنتجات.
 
-### و. النقد والبنوك والمصاريف وجهات الاتصال (7)
-حسابات نقد وبنوك (مرتبطة بـ COA، رصيد أولي + حالي) · قبض (غير فواتير + COA + جهة + مذكرة + مرفق) · صرف (إلى حساب مصروف/أصل) · تحويل بين البنوك · تسوية بنكية (مطابقة + تاريخ) · المصاريف (فئة، قسم، فرع، ضريبة، بنك، مرفق) · جهات الاتصال (عميل/مورد/موظف/أخرى؛ NPWP، NIK، شروط دفع، حد ائتماني).
+### و. النقدية والبنوك والمصروفات وجهات الاتصال (10)
+41. **حسابات البنوك والنقدية** — مرتبطة بـ COA مع أرصدة.
+42. **قبض** — نقد داخل خارج الفواتير.
+43. **صرف** — نقد خارج لحساب مصروف/أصل.
+44. **تحويل بين البنوك**.
+45. **تسوية بنكية** — مطابقة النظام مع كشف البنك.
+46. **المصروفات** — فئة، قسم، فرع، ضريبة، مرفق، اعتماد.
+47. **السلف (Kas Bon)** — سلف الموظفين وتسويتها.
+48. **الصندوق الصغير (Petty Cash)** لكل فرع/منفذ.
+49. **طرق الدفع** — نقدي، تحويل، شيك، VA، محافظ، أخرى.
+50. **جهات الاتصال** — عميل/مورد/موظف/أخرى مع NPWP/NIK وشروط الدفع والحد الائتماني.
 
-### ز. المحاسبة الأساسية (7)
-دليل الحسابات هرمي: 1-أصول، 2-التزامات، 3-حقوق، 4-إيرادات، 5-COGS، 6-مصاريف، 7-إيرادات أخرى، 8-مصاريف أخرى · قيود (تلقائية + يدوية؛ تتبع source_type/source_id) · قيد يدوي (مدين = دائن) · دفتر الأستاذ (أولي ← حركات ← ختامي) · أرصدة افتتاحية (لكل حساب + ذمم لكل جهة) · قفل الفترات (منع التعديل بأثر رجعي YYYY-MM) · إقفال الفترة (تشيك ليست: تسوية بنكية، جرد، إهلاك، ميزان OK ← ترحيل الأرباح إلى المحتجزة).
+### ز. المحاسبة الأساسية (10)
+51. **الدليل المحاسبي (COA)** — هرمي: 1-أصول، 2-خصوم، 3-حقوق، 4-إيراد، 5-تكلفة، 6-مصروف، 7/8-أخرى؛ قفل حسابات النظام.
+52. **القيود** — تلقائية من كل معاملة + عرض مركزي.
+53. **قيد يدوي** — المدين يجب أن يساوي الدائن.
+54. **القيود المتكررة** — مجدولة (إيجار، اشتراكات).
+55. **الأستاذ العام** — رصيد أول ← حركات ← رصيد آخر لكل حساب.
+56. **الأرصدة الافتتاحية** — بما فيها الذمم لكل جهة.
+57. **الفترات المالية والقفل والإقفال** — قفل `YYYY-MM` ضد التعديل بأثر رجعي؛ قائمة الإقفال (تسوية بنكية، جرد، إهلاك، ميزان سليم) ← ترحيل الأرباح للأرباح المحتجزة.
+58. **عملات متعددة** — أسعار الصرف.
+59. **الضرائب** — الاسم، النسبة، شامل/غير شامل، الحساب.
+60. **الموازنات** — موازنة لكل حساب/فترة مقابل الفعلي.
 
-### ح. الأصول والتقارير (8+)
-الأصول الثابتة (سجل، فئة، تكلفة/تاريخ اقتناء، خردة، عمر، قسط ثابت/متناقص، جدول إهلاك + قيد تلقائي) · الأرباح والخسائر (إجمالي ← صافي، Chart.js) · الميزانية (أصول = التزامات + حقوق) · التدفق النقدي (تشغيلي/استثماري/تمويلي) · ميزان المراجعة (مدين = دائن) · تقرير الضرائب · أعمار الذمم (متأخرات لكل عميل/مورد) · تقارير المبيعات (منتج، عميل، مندوب، قناة، فرع، تاريخ) · تقارير المشتريات · تقارير المخزون (ملخص، تفصيلي، بطاقة صنف، تقييم، حركة، منخفض، سالب) · تقارير الإنتاج (مخرجات، فروقات، تكلفة الوحدة).
+### ح. الأصول الثابتة والتقارير المالية (8)
+61. **الأصول الثابتة** — سجل، فئة، تاريخ/تكلفة الاقتناء، القيمة المتبقية، العمر، إهلاك ثابت/متناقص + قيد تلقائي.
+62. **الأرباح والخسائر** — الإيراد − التكلفة = مجمل − المصروف = صافي.
+63. **الميزانية العمومية** — الأصول = الخصوم + الحقوق.
+64. **التدفق النقدي** — تشغيلي / استثماري / تمويلي.
+65. **ميزان المراجعة** — المدين = الدائن.
+66. **تقارير المبيعات** — حسب المنتج/العميل/المندوب/القناة/الفرع/التاريخ؛ أعمار الذمم.
+67. **تقارير المشتريات** — حسب المورد/المنتج/الفرع؛ أعمار الذمم الدائنة.
+68. **قوالب التقارير + تصدير PDF/Excel**.
 
-### ط. الاعتماد والتدقيق (3)
-سير الاعتماد: Draft ← Submitted ← Waiting ← Approved ← Posted / Rejected · قواعد متعددة حسب المبلغ (مثال: <5M مشرف، 5–50M مدير، >50M مالك) · سجل تدقيق: مستخدم، وقت، وحدة، نوع/رقم المستند، قيم قديمة/جديدة JSON، IP، جهاز. غير قابل للتعديل، حذف ناعم فقط.
+### ط. الاعتماد والتدقيق (5)
+69. **سير الاعتماد** — مسودة ← مُرسل ← بانتظار ← معتمد ← مُرحّل / مرفوض.
+70. **قواعد الاعتماد** — متعددة المستويات حسب المبلغ.
+71. **سجل التدقيق** — المستخدم، الوقت، الوحدة، المستند، قديم/جديد JSON، IP، الجهاز.
+72. **سجل الدخول** لكل مستخدم/جهاز/IP.
+73. **الإشعارات** — استحقاق، اعتماد، مخزون منخفض، أخطاء الاستيراد.
 
-### ي. استيراد إكسل المتاجر (10)
-بدون API (V1): حمّل إكسل من Shopee/TikTok/Lazada ← ارفع إلى GoERP · معالج (متجر + مخزن + XLSX/XLS/CSV) · تحليل ذكي (رقم الطلب، تاريخ، SKU المتجر، منتج، متغير، كمية، سعر، خصم) · مطابقة تلقائية (SKU المتجر = الداخلي ← ربط فوري) · يدوية (اختر منتجًا، يُحفظ للمستقبل) · جماعية (حل كل غير المطابق دفعة واحدة) · معاينة (إجمالي: طلبات، أصناف، مطابق، غير مطابق، مكرر. يُمنع الاستيراد عند وجود غير مطابق) · حماية من التكرار (تخطي المستورد سابقًا) · خصم تلقائي للمخزون · سجل الاستيرادات (ملف، تاريخ، متجر، أعداد، حالة).
+### ي. استيراد Excel للمتاجر (10)
+74. **بدون API (V1)** — تنزيل Excel من Shopee/TikTok/Lazada ← رفعه إلى GoERP.
+75. **معالج الاستيراد** — اختيار المتجر + المستودع، رفع XLSX/XLS/CSV.
+76. **تحليل ذكي** — رقم الطلب، التاريخ، SKU المتجر، الاسم، المتغير، الكمية، السعر، الخصم.
+77. **مطابقة تلقائية** — SKU المتجر = الداخلي ← ربط فوري.
+78. **مطابقة يدوية** — اختيار المنتج الداخلي وحفظ الربط مستقبلًا.
+79. **مطابقة جماعية** في شاشة واحدة.
+80. **معاينة قبل الترحيل** — الإجماليات: طلبات، أصناف، مطابق، غير مطابق، مكرر؛ منع الاستيراد عند وجود غير مطابق.
+81. **حماية التكرار** — فحص ID المتجر ضد قاعدة البيانات.
+82. **خصم المخزون تلقائيًا** بعد الاستيراد.
+83. **سجل الاستيراد** — الملف، التاريخ، المتجر، الأعداد، الحالة.
 
 ### ك. الإنتاج (13)
-التدفق: BOM ← أمر إنتاج ← طلب مواد ← صرف ← WIP ← أوامر تشغيل ← مخرجات/QC ← HPP فعلية · BOM (مواد لكل وحدة، هالك %، أجور ومعايير) · إصدارات BOM (الطلبات القديمة تحتفظ بنسختها) · أمر الإنتاج (كمية مستهدفة، نسخة BOM، تواريخ، مخزن خام + تام) · أوامر التشغيل: قص ← خياطة ← تشطيب ← QC ← تغليف؛ فريق/عامل، مستهدف/فعلي/مرفوض/معاد · طلب المواد (إنتاج ← مخزن) · الصرف (مخزون ↓، القيمة ← WIP) · تتبع WIP · فروقات المواد (معياري مقابل فعلي) · المخرجات وQC (سليم/مرفوض/معاد) · المرفوض والمعاد (أسباب: خياطة مثقوبة، متسخ، مقاس، لون، أخرى ← مخزن مرفوضات) · HPP الفعلية (إجمالي/سليم لكل وحدة) · أجور القطعة (لكل عملية لكل عامل ← قيد).
+84. **الدورة** — BOM ← أمر إنتاج ← طلب مواد ← صرف ← WIP ← مخرجات ← QC.
+85. **BOM** — احتياج المواد لكل وحدة، نسبة الهالك، أجور/مصاريف معيارية.
+86. **إصدارات BOM** — الإصدار الجديد = سجل جديد.
+87. **أمر الإنتاج** — الكمية، إصدار BOM، تواريخ، مستودعات الخام والتام.
+88. **أوامر التشغيل** — قص ← خياطة ← تشطيب ← QC ← تغليف؛ فريق/عامل وكميات.
+89. **طلب المواد** من المستودع.
+90. **صرف المواد** — نقص المخزون وانتقال القيمة إلى WIP.
+91. **تتبع WIP**.
+92. **فروقات المواد** — معياري مقابل فعلي.
+93. **المخرجات وQC** — سليم / تالف / إعادة عمل.
+94. **التالف وإعادة العمل** — أسباب العيوب ومستودع التالف.
+95. **التكلفة الفعلية (HPP)** — إجمالي المواد + الأجور + المصاريف ÷ المخرج السليم.
+96. **أجور القطعة** لكل عامل/عملية/كمية.
 
-### ل. الإعدادات (12)
-الشركة (شعار، NPWP، NIB، عنوان، منطقة، سنة مالية، عملة) · افتراضات المحاسبة (ذمم مدينة/دائنة/مخزون/مبيعات/COGS/ضرائب/محتجزة) · المخزون (تكلفة، سالب، متعدد، تنبيهات) · افتراضات البيع/الشراء (مخزن، ضريبة، شروط، حد، اعتماد، استلام زائد) · الإنتاج (مخازن خام/WIP/تام/مرفوض، حسابات) · المتاجر (إلزام المطابقة، خصم مخزون، إنشاء SO/فاتورة/قيد) · ترقيم (`INV/{YYYY}/{MM}/{####}` لكل نوع) · ضرائب (اسم، نسبة، شامل/غير، COA) · عملات + أسعار صرف · مرفقات (PDF/JPG/PNG/XLSX) · تنبيهات (استحقاق، اعتماد، منخفض، خطأ).
+### ل. HRM وCRM والمشاريع وPOS (12)
+97. **الموظفون** — ملف، قسم، منصب، فرع.
+98. **الأقسام ووحدات الأعمال**.
+99. **العملاء المحتملون (Leads)**.
+100. **الفرص والأنشطة** — مراحل الصفقات وسجل المتابعة.
+101. **المشاريع** وتكاليفها.
+102. **منافذ POS**.
+103. **العروض والخصومات**.
+104. **بوابة العملاء** — عرض الفواتير والمدفوعات.
+105. **المدونة / CMS** — فئات ومقالات وجدولة نشر.
+106. **سيو برمجي** — صفحات best/alternatives/compare/under-price/learn + خريطة + IndexNow.
+107. **صفحة التوثيق** داخل التطبيق.
+108. **إعدادات كل وحدة** — الشركة، المبيعات، المشتريات، المخزون، الإنتاج، المتاجر، المحاسبة، الضرائب، الإشعارات، أرقام المستندات، المرفقات.
 
-### م. لوحة المالك SaaS (16)
-لوحة (مستأجرون، MRR، مستحق) · قائمة/تفاصيل المستأجرين (شركات، مستخدمون، ميزات، استخدام، فوترة، دعم) · 4 باقات (بدون كود) · استحقاق الميزات لكل باقة · حدود (مستخدمون/شركات/فروع/مخازن/تخزين) · الحالات (Trial ← Active ← Due ← Grace ← Suspended) · المنتهي (عرض فقط، تجديد، بيانات محفوظة) · فوترة (فاتورة، دفع، تجديد، خصم، كوبون، ضريبة) · مراقبة الاستخدام · تجاوز الميزات لكل مستأجر · انتحال الدخول (مسجَّل) · تذاكر + ردود · إعلانات (كل/باقة/مستأجر) · نسخ احتياطي/جدولة/استعادة · سجل الأنشطة.
+### م. لوحة المالك (16)
+109. **لوحة منفصلة** (`/admin`) لمالك المنصة.
+110. **لوحة SaaS** — العملاء، النشط/التجريبي/المنتهي، MRR، المستحق.
+111. **إدارة المستأجرين** مع الباقة والتواريخ والمستخدمين.
+112. **تفاصيل المستأجر** — الشركات، الاشتراك، المستخدمون، الميزات، الاستخدام، الفوترة، الدعم.
+113. **خطط الاشتراك** Starter/Pro/Business/Enterprise بدون كود.
+114. **استحقاق الميزات** لكل خطة.
+115. **حدود الباقات** — مستخدمون/شركات/فروع/مستودعات/تخزين.
+116. **دورة الاشتراك** — تجريبي ← نشط ← مستحق ← سماح ← موقوف؛ المنتهي للعرض فقط.
+117. **الفوترة** — فواتير الاشتراك، الدفع، التجديد، الخصم، الكوبون، الضريبة.
+118. **مراقبة الاستخدام** لكل مستأجر.
+119. **تحكم فردي** — تفعيل/تعطيل الميزات لكل مستأجر.
+120. **انتحال الدخول** — دخول كعميل مع تسجيل كامل.
+121. **تذاكر الدعم** مع الأولوية والإسناد.
+122. **الإعلانات** — للجميع / لخطة / لمستأجر.
+123. **النسخ الاحتياطي** — مجدول + سجل + استعادة.
+124. **سجلات النشاط والتدقيق** للمنصة.
 
-### ن. وحدات إضافية (موجودة فعلًا في الكود)
-| الوحدة | المحتوى |
-|---|---|
-| بوابة العملاء | دخول منفصل: لوحة، فواتير/تفاصيل، مدفوعات |
-| CRM خفيف | عملاء محتملون، فرص، أنشطة |
-| HR خفيف | موظفون، أقسام |
-| مشاريع وموازنات | مشاريع، فعلي مقابل موازنة |
-| سلف ونثرية | سلف، صندوق نثري |
-| منافذ POS، عروض، وحدات، علامات، عملات، طرق دفع | جاهز للتجزئة |
-| قيود متكررة، فترات مالية، قواعد سير، تكاملات، مفاتيح API | جاهز للأتمتة |
-| مدونة + فئات + SEO برمجي + خريطة + IndexNow | محرك تسويق مدمج |
-| PDF + Excel في كل مكان | PDFs للفواتير/PO، تصدير تقارير |
-| عميل الترخيص | جاهز للربط/الترخيص |
+### ن. التكاملات والنظام (8)
+125. **مفاتيح API** لكل مستأجر.
+126. **مدير التكاملات** — مزودون قابلون للضبط ومشفرة.
+127. **مزودو AI (BYOK)** — مفتاحك الخاص للتنبؤ/المساعد.
+128. **مركز الإشعارات**.
+129. **المستخدمون وسجل الانتحال**.
+130. **استيراد/تصدير Excel** لكل البيانات الأساسية.
+131. **ربط الترخيص** (`/__pair`) RSA + AES-256-GCM.
+132. **المجدول والطوابير** — cron وsupervisor.
 
-## 5. باقات الاشتراك
+---
 
-| الميزة | Starter | Pro | Business | Enterprise |
+## 💳 Subscription Plans / Paket Harga / خطط الاشتراك
+
+| Feature / Fitur / الميزة | Starter | Pro | Business | Enterprise |
 |---|---|---|---|---|
-| محاسبة | ✅ | ✅ | ✅ | ✅ |
-| مخزون | ✅ | ✅ | ✅ | ✅ |
-| مخازن متعددة | ❌ | ✅ | ✅ | ✅ |
-| اعتماد | ❌ | ✅ | ✅ | ✅ |
-| استيراد المتاجر | ❌ | ❌ | ✅ | ✅ |
-| إنتاج | ❌ | ❌ | ✅ | ✅ |
-| حد المستخدمين | 3 | 10 | 25 | غير محدود |
-| حد الشركات | 1 | 3 | 10 | غير محدود |
-| حد الفروع / المخازن | 1 / 1 | 5 / 5 | 20 / 20 | غير محدود |
-| الدعم | بريد | بريد مميز | محادثة + بريد | مخصص |
+| Accounting / Akuntansi / المحاسبة | ✅ Yes / Ya / نعم | ✅ | ✅ | ✅ |
+| Inventory / Inventaris / المخزون | ✅ | ✅ | ✅ | ✅ |
+| Multi-Warehouse / Multi-Gudang / مستودعات | ❌ | ✅ | ✅ | ✅ |
+| Marketplace Import / Import Marketplace / استيراد المتاجر | ❌ | ❌ | ✅ | ✅ |
+| Production / Produksi / الإنتاج | ❌ | ❌ | ✅ | ✅ |
+| Approval / Persetujuan / الاعتماد | ❌ | ✅ | ✅ | ✅ |
+| Max Users / Maks User / المستخدمون | 3 | 10 | 25 | Unlimited |
+| Max Companies / Maks Perusahaan / الشركات | 1 | 3 | 10 | Unlimited |
+| Max Branches / Maks Cabang / الفروع | 1 | 5 | 20 | Unlimited |
+| Max Warehouses / Maks Gudang / المستودعات | 1 | 5 | 20 | Unlimited |
+| Support / Dukungan / الدعم | Email | Priority Email | Chat + Email | Dedicated / Khusus / مخصص |
 
-## 6. التثبيت السريع
+---
+
+## 🚀 Installation / Instalasi / التثبيت
+
+Requirements: PHP 8.2+, MySQL 8.0+, Composer 2.x, Node.js 18+, Nginx/Apache.
 
 ```bash
 git clone https://github.com/linducip2208/goerp.git
 cd goerp
-composer install
+composer install --no-dev --optimize-autoloader
+npm install
+npm run build
 cp .env.example .env
 php artisan key:generate
-# اضبط DB_* في .env (MySQL 8)، ثم:
-php artisan migrate --seed
-npm install && npm run build
-php artisan serve
-# الإدارة: /admin (Filament) · البوابة: /portal · المدونة: /blog · المستندات: /docs
+# edit .env (DB_*, APP_URL, LICENSE_*)
+php artisan migrate
+php artisan db:seed --class=DemoDataSeeder
+php artisan make:filament-user --name="Admin" --email="admin@yourdomain.com"
+chmod -R 775 storage bootstrap/cache
 ```
 
-المتطلبات: PHP 8.2+، Composer، Node 18+، MySQL 8.
+Scheduler (cron):
 
-## 7. الأدوار
+```
+* * * * * cd /path/to/goerp && php artisan schedule:run >> /dev/null 2>&1
+```
 
-مالك · مالية · محاسبة · مشتريات · مخزن · إنتاج · مبيعات · مدقق (قراءة فقط) · مشرف عام (للمالك فقط).
+Queue (supervisor `/etc/supervisor/conf.d/goerp-worker.conf`):
 
-## 8. خارطة الطريق
+```ini
+[program:goerp-worker]
+command=php /path/to/goerp/artisan queue:work --sleep=3 --tries=3 --max-time=3600
+autostart=true
+autorestart=true
+user=www-data
+numprocs=2
+```
 
-- [x] المرحلة 1 — SaaS + محاسبة (MVP)
-- [x] المرحلة 2 — ضبط تشغيلي (مخازن، جرد، اعتماد، تدقيق، أصول، قفل، إقفال)
-- [x] المرحلة 3 — الإنتاج (BOM، WIP، QC، HPP، قطع)
-- [x] المرحلة 4 — إكسل المتاجر (Shopee/TikTok/Lazada)
-- [ ] المرحلة 5 — API المتاجر، بوابة v2، عملات++، موازنات++، توقعات AI (BYOK)، تطبيق Flutter
+Useful commands / Perintah berguna / أوامر مفيدة:
 
-## 9. الاتصال (AR)
+```bash
+php artisan optimize:clear
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+php artisan migrate:fresh --seed
+php artisan backup:database
+```
 
-> **ليندو تشيبتا — مبيعات / دعم / تطوير مخصص GoERP**
-> 📱 واتساب: **+62 812-9605-2010**
-> 🔗 محادثة مباشرة: **https://wa.me/6281296052010**
-> اذكر اسم شركتك + احتياجك (تجربة / تثبيت / تخصيص / ترخيص) عند المراسلة.
-
-## 10. الترخيص
-
-MIT — مجاني للاستخدام التجاري. راجع `LICENSE`.
+Panels:
+- App: `/app` — tenant users
+- Backoffice: `/admin` — superadmin (tenants, subscriptions, billing, support, announcements, backups)
+- Customer portal: `/portal` — customer login (invoices, payments)
 
 ---
 
-## 📞 Contact — Kontak — الاتصال
+## 📁 Project Structure
 
-| | |
-|---|---|
-| 👤 Name / Nama / الاسم | **Lindu Cipta** |
-| 📱 WhatsApp | **+62 812-9605-2010** |
-| 💬 Chat / Chat / محادثة | **https://wa.me/6281296052010** |
-| 🐙 GitHub | **https://github.com/linducip2208/goerp** |
+```
+goerp/
+├── app/Models/            → 101 Eloquent models
+├── app/Filament/App/      → ~68 tenant resources (Sales, Purchase, Inventory, Production, Accounting…)
+├── app/Filament/Admin/    → 9 backoffice resources (Tenants, Plans, Subscriptions, Billing, Support…)
+├── database/migrations/   → 109 migrations (~60+ tables)
+├── docs/                  → 01-ARCHITECTURE, 02-PRD, 03-ERD, 04-MODULES
+├── routes/                → web.php, api.php, console.php, pair-routes.php
+├── resources/views/       → Blade (welcome, blog, portal, docs, SEO)
+└── public/                → web root + sitemap.xml + indexnow-key.txt
+```
 
-<a href="https://wa.me/6281296052010"><img src="https://img.shields.io/badge/Chat_on_WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Chat on WhatsApp"></a>
+Full database map: see [`docs/03-ERD.md`](docs/03-ERD.md). Full module index: [`docs/04-MODULES.md`](docs/04-MODULES.md). Deploy guide: [`DEPLOYMENT.md`](DEPLOYMENT.md).
+
+---
+
+## 📞 Contact / Kontak / اتصل بنا
+
+**Developer: Lindu Cipta**
+**WhatsApp: [+6281296052010](https://wa.me/6281296052010)**
+
+- 🇬🇧 EN: Need installation, customization, new modules, or a demo? Chat on WhatsApp: https://wa.me/6281296052010
+- 🇮🇩 ID: Butuh instalasi, kustomisasi, modul baru, atau demo? Chat WhatsApp: https://wa.me/6281296052010 (Lindu Cipta)
+- 🇸🇦 AR: تحتاج تثبيتًا أو تخصيصًا أو وحدات جديدة أو عرضًا؟ راسلنا واتساب: https://wa.me/6281296052010 (Lindu Cipta)
+
+## License
+
+MIT — see `LICENSE` / open-source.
